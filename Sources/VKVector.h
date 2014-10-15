@@ -14,12 +14,60 @@
 
 @interface VKVector : NSObject
 
-
-@property (readonly) void* underlying;
-@property (readonly) VKLength length;
-@property (readonly) VKLength offset;
+@property (readonly) VKFloat* values;
 @property (readonly) VKStride stride;
+@property (readonly) VKLength length;
 
+@end
+
+
+
+
+
+@interface VKVector (Creating) <NSCopying>
+
+- (VKVector *)initWithLength:(VKLength)length;
+- (VKVector *)copy;
+
+@end
+
+
+
+
+
+@interface VKVector (Equality)
+
+- (NSUInteger)hash;
+- (BOOL)isEqual:(VKVector *)other;
+
+@end
+
+
+
+
+
+@interface VKVector (Filling)
+
+- (void)clear;
+- (void)fill:(VKFloat)value;
+- (void)generateFrom:(VKFloat)start by:(VKFloat)step;
+- (void)generateFrom:(VKFloat)start to:(VKFloat)end;
+
+@end
+
+
+
+
+
+@interface VKVector (Subvector)
+
+- (VKVector *)from:(VKOffset)start;
+- (VKVector *)to:(VKOffset)end;
+- (VKVector *)by:(VKStride)stride;
+
+- (VKVector *)from:(VKOffset)start to:(VKOffset)end;
+- (VKVector *)from:(VKOffset)start length:(VKLength)length;
+- (VKVector *)from:(VKOffset)start by:(VKStride)stride;
 
 @end
 

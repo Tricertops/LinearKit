@@ -11,7 +11,9 @@
 
 
 
-typedef unsigned long VKLength;
-typedef long VKStride;
+typedef unsigned long   VKLength;
+typedef unsigned long   VKOffset;
+typedef          long   VKStride;
+typedef         float   VKFloat;
 
 

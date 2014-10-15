@@ -374,6 +374,7 @@
 				5BFDB53119EE62D90030DC6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
