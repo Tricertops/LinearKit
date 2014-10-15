@@ -53,6 +53,8 @@
 - (void)generateFrom:(VKFloat)start by:(VKFloat)step;
 - (void)generateFrom:(VKFloat)start to:(VKFloat)end;
 
+- (void)setValues:(VKVector *)vector;
+
 @end
 
 
