@@ -8,13 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		5B61080C19EE5E2A0071B547 /* VectorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B61080819EE5E2A0071B547 /* VectorKit.h */; };
+		5BFDB4F419EE604C0030DC6F /* VKVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F219EE604C0030DC6F /* VKVector.h */; };
+		5BFDB4F519EE604C0030DC6F /* VKVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB4F319EE604C0030DC6F /* VKVector.m */; };
+		5BFDB4F819EE60860030DC6F /* VKTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F619EE60860030DC6F /* VKTypes.h */; };
+		5BFDB4F919EE60860030DC6F /* VKTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB4F719EE60860030DC6F /* VKTypes.m */; };
+		5BFDB53519EE62F80030DC6F /* VectorKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB53319EE62F80030DC6F /* VectorKitTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B6107F019EE5E050071B547 /* libVectorKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVectorKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B6107FB19EE5E050071B547 /* VectorKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VectorKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B61080819EE5E2A0071B547 /* VectorKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorKit.h; sourceTree = "<group>"; };
-		5B61080B19EE5E2A0071B547 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BFDB4F219EE604C0030DC6F /* VKVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVector.h; sourceTree = "<group>"; };
+		5BFDB4F319EE604C0030DC6F /* VKVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVector.m; sourceTree = "<group>"; };
+		5BFDB4F619EE60860030DC6F /* VKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKTypes.h; sourceTree = "<group>"; };
+		5BFDB4F719EE60860030DC6F /* VKTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKTypes.m; sourceTree = "<group>"; };
+		5BFDB52919EE62D90030DC6F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BFDB53219EE62F80030DC6F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BFDB53319EE62F80030DC6F /* VectorKitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorKitTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,7 +35,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B6107F819EE5E050071B547 /* Frameworks */ = {
+		5BFDB52619EE62D90030DC6F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,7 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				5B61080719EE5E2A0071B547 /* Sources */,
-				5B61080A19EE5E2A0071B547 /* Tests */,
+				5BFDB52A19EE62D90030DC6F /* Tests */,
 				5B6107F119EE5E050071B547 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				5B6107F019EE5E050071B547 /* libVectorKit.a */,
-				5B6107FB19EE5E050071B547 /* VectorKitTests.xctest */,
+				5BFDB52919EE62D90030DC6F /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,14 +67,19 @@
 			isa = PBXGroup;
 			children = (
 				5B61080819EE5E2A0071B547 /* VectorKit.h */,
+				5BFDB4F619EE60860030DC6F /* VKTypes.h */,
+				5BFDB4F719EE60860030DC6F /* VKTypes.m */,
+				5BFDB4F219EE604C0030DC6F /* VKVector.h */,
+				5BFDB4F319EE604C0030DC6F /* VKVector.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		5B61080A19EE5E2A0071B547 /* Tests */ = {
+		5BFDB52A19EE62D90030DC6F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5B61080B19EE5E2A0071B547 /* Info.plist */,
+				5BFDB53219EE62F80030DC6F /* Info.plist */,
+				5BFDB53319EE62F80030DC6F /* VectorKitTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -76,6 +91,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFDB4F819EE60860030DC6F /* VKTypes.h in Headers */,
+				5BFDB4F419EE604C0030DC6F /* VKVector.h in Headers */,
 				5B61080C19EE5E2A0071B547 /* VectorKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,21 +117,21 @@
 			productReference = 5B6107F019EE5E050071B547 /* libVectorKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		5B6107FA19EE5E050071B547 /* OS X Tests */ = {
+		5BFDB52819EE62D90030DC6F /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B61080419EE5E050071B547 /* Build configuration list for PBXNativeTarget "OS X Tests" */;
+			buildConfigurationList = 5BFDB52F19EE62D90030DC6F /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
-				5B6107F719EE5E050071B547 /* Sources */,
-				5B6107F819EE5E050071B547 /* Frameworks */,
-				5B6107F919EE5E050071B547 /* Resources */,
+				5BFDB52519EE62D90030DC6F /* Sources */,
+				5BFDB52619EE62D90030DC6F /* Frameworks */,
+				5BFDB52719EE62D90030DC6F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "OS X Tests";
-			productName = VectorKitTests;
-			productReference = 5B6107FB19EE5E050071B547 /* VectorKitTests.xctest */;
+			name = Tests;
+			productName = Tests;
+			productReference = 5BFDB52919EE62D90030DC6F /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -129,7 +146,7 @@
 					5B6107EF19EE5E050071B547 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
-					5B6107FA19EE5E050071B547 = {
+					5BFDB52819EE62D90030DC6F = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
 				};
@@ -147,13 +164,13 @@
 			projectRoot = "";
 			targets = (
 				5B6107EF19EE5E050071B547 /* VectorKit */,
-				5B6107FA19EE5E050071B547 /* OS X Tests */,
+				5BFDB52819EE62D90030DC6F /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5B6107F919EE5E050071B547 /* Resources */ = {
+		5BFDB52719EE62D90030DC6F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -167,13 +184,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFDB4F919EE60860030DC6F /* VKTypes.m in Sources */,
+				5BFDB4F519EE604C0030DC6F /* VKVector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B6107F719EE5E050071B547 /* Sources */ = {
+		5BFDB52519EE62D90030DC6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFDB53519EE62F80030DC6F /* VectorKitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +314,7 @@
 			};
 			name = Release;
 		};
-		5B61080519EE5E050071B547 /* Debug */ = {
+		5BFDB53019EE62D90030DC6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -306,13 +326,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = VectorKitTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		5B61080619EE5E050071B547 /* Release */ = {
+		5BFDB53119EE62D90030DC6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -320,7 +340,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = VectorKitTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -345,12 +365,13 @@
 				5B61080319EE5E050071B547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		5B61080419EE5E050071B547 /* Build configuration list for PBXNativeTarget "OS X Tests" */ = {
+		5BFDB52F19EE62D90030DC6F /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5B61080519EE5E050071B547 /* Debug */,
-				5B61080619EE5E050071B547 /* Release */,
+				5BFDB53019EE62D90030DC6F /* Debug */,
+				5BFDB53119EE62D90030DC6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
