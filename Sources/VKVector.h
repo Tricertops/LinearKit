@@ -26,8 +26,14 @@
 
 @interface VKVector (Creating) <NSCopying>
 
-- (VKVector *)initWithLength:(VKLength)length;
++ (VKVector *)vectorWithLength:(VKLength)length;
 - (VKVector *)copy;
+
+#define VKVectorMake(VKFloat...)    _VKVectorMake(VKFloat)
+- (VKVector *)initWithValues:(const VKFloat[])values length:(VKLength)length;
+
++ (VKVector *)new NS_UNAVAILABLE;
+- (VKVector *)init NS_UNAVAILABLE;
 
 @end
 
@@ -72,5 +78,20 @@
 - (VKVector *)from:(VKOffset)start by:(VKStride)stride;
 
 @end
+
+
+
+
+
+
+
+
+
+
+#define _VKVectorMake(...) \
+(VKVector *)({ \
+    VKFloat values[] = { __VA_ARGS__ }; \
+    [[VKVector alloc] initWithValues:values length:sizeof(values)/sizeof(VKFloat)]; \
+})
 
 
