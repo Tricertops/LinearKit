@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "VKPrivateVector.h"
+#import "VKVector+Private.h"
 
 
 
@@ -20,13 +20,34 @@
 
 
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
+- (instancetype)initSubclass {
+    return [super init];
 }
+
+
+- (VKFloat *)values {
+    return NULL;
+}
+
+
+- (VKStride)stride {
+    return 0;
+}
+
+
+- (VKLength)length {
+    return 0;
+}
+
+
+
+@end
+
+
+
+
+
+@implementation VKVector (Equality)
 
 
 
@@ -38,6 +59,8 @@
 - (BOOL)isEqual:(VKVector *)other {
     if (self == other) return YES;
     if ( ! [other isKindOfClass:[VKVector class]]) return NO;
+    
+    //TODO: Compare actual values
     return (   self.values == other.values
             && self.stride == other.stride
             && self.length == other.length);

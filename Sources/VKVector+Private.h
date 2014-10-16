@@ -12,8 +12,12 @@
 
 @interface VKVector ()
 
-- (instancetype)init;
+- (instancetype)initSubclass;
 
 @end
+
+
+
+#define VKUnwrap(VKVector)      (self.values), (self.stride)
 
 

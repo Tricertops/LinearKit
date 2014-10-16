@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "VKPrivateVector.h"
+#import "VKVector+Private.h"
 
 
 
@@ -28,14 +28,20 @@
 
 
 
-- (VKVector *)initWithLength:(VKLength)length {
-    self = [super init];
+- (VKVector *)initWithValues:(const VKFloat*)values length:(VKLength)length {
+    self = [super initSubclass];
     if (self) {
         self->_values = malloc(length * sizeof(VKFloat));
         self->_stride = 1;
         self->_length = length;
         
-        [self clear];
+        if (values) {
+            // Matrix copy, where the vectors are 1×N matrices. No strides.
+            vDSP_mmov(values, self->_values, 1, length, 1, 1); //BENCH: mmov()
+        }
+        else {
+            [self clear]; //BENCH: calloc()
+        }
     }
     return self;
 }
