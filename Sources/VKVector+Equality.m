@@ -1,47 +1,12 @@
 //
-//  VKVector.m
+//  VKVector+Equality.m
 //  VectorKit
 //
-//  Created by Martin Kiss on 15.10.14.
+//  Created by Martin Kiss on 16.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
 #import "VKVector+Private.h"
-
-
-
-@implementation VKVector
-
-
-
-@dynamic values;
-@dynamic stride;
-@dynamic length;
-
-
-
-- (instancetype)initSubclass {
-    return [super init];
-}
-
-
-- (VKFloat *)values {
-    return NULL;
-}
-
-
-- (VKStride)stride {
-    return 0;
-}
-
-
-- (VKLength)length {
-    return 0;
-}
-
-
-
-@end
 
 
 
@@ -52,6 +17,7 @@
 
 
 - (NSUInteger)hash {
+    //TODO: Include values, at least few first and few last
     return (NSUInteger)self.values ^ self.stride ^ self.length;
 }
 
