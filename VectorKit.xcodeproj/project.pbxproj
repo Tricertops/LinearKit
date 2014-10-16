@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B61080C19EE5E2A0071B547 /* VectorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B61080819EE5E2A0071B547 /* VectorKit.h */; };
+		5B86E13A19F05E5000523073 /* VKVector+Filling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E13819F05E5000523073 /* VKVector+Filling.m */; };
 		5B86E13E19F05F8F00523073 /* VKVector+Creating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E13C19F05F8F00523073 /* VKVector+Creating.m */; };
 		5BFDB4F419EE604C0030DC6F /* VKVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F219EE604C0030DC6F /* VKVector.h */; };
 		5BFDB4F519EE604C0030DC6F /* VKVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB4F319EE604C0030DC6F /* VKVector.m */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		5B6107F019EE5E050071B547 /* libVectorKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVectorKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B61080819EE5E2A0071B547 /* VectorKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorKit.h; sourceTree = "<group>"; };
+		5B86E13819F05E5000523073 /* VKVector+Filling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKVector+Filling.m"; sourceTree = "<group>"; };
 		5B86E13C19F05F8F00523073 /* VKVector+Creating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKVector+Creating.m"; sourceTree = "<group>"; };
 		5BFDB4F219EE604C0030DC6F /* VKVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVector.h; sourceTree = "<group>"; };
 		5BFDB4F319EE604C0030DC6F /* VKVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVector.m; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				5BFDB4F319EE604C0030DC6F /* VKVector.m */,
 				5BFDB53E19EEFC0C0030DC6F /* VKSteadyVector.m */,
 				5B86E13C19F05F8F00523073 /* VKVector+Creating.m */,
+				5B86E13819F05E5000523073 /* VKVector+Filling.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BFDB4F919EE60860030DC6F /* VKTypes.m in Sources */,
+				5B86E13A19F05E5000523073 /* VKVector+Filling.m in Sources */,
 				5BFDB4F519EE604C0030DC6F /* VKVector.m in Sources */,
 				5B86E13E19F05F8F00523073 /* VKVector+Creating.m in Sources */,
 				5BFDB54019EEFC0C0030DC6F /* VKSteadyVector.m in Sources */,

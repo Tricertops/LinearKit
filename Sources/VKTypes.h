@@ -17,3 +17,7 @@ typedef          long   VKStride;
 typedef         float   VKFloat;
 
 
+extern VKFloat const VKZero;
+extern VKFloat const VKOne;
+
+

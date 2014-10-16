@@ -9,3 +9,8 @@
 #import "VKTypes.h"
 
 
+
+VKFloat const VKZero = 0;
+VKFloat const VKOne = 1;
+
+
