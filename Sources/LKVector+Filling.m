@@ -1,18 +1,18 @@
 //
-//  VKVector+Filling.m
-//  VectorKit
+//  LKVector+Filling.m
+//  LinearKit
 //
 //  Created by Martin Kiss on 16.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "VKVector+Private.h"
+#import "LKVector+Private.h"
 
 
 
 
 
-@implementation VKVector (Filling)
+@implementation LKVector (Filling)
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-- (void)setValues:(VKVector *)vector {
+- (void)setValues:(LKVector *)vector {
     VKLength length = MIN(self.length, vector.length);
     // Adds zero, because there is no specialized function for vector copy with stride.
     vDSP_vsadd(VKUnwrap(vector), &VKZero, VKUnwrap(self), length); //BENCH: Other?

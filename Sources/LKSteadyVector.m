@@ -1,16 +1,16 @@
 //
-//  VKSteadyVector.m
-//  VectorKit
+//  LKSteadyVector.m
+//  LinearKit
 //
 //  Created by Martin Kiss on 15.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "VKVector+Private.h"
+#import "LKVector+Private.h"
 
 
 
-@interface VKSteadyVector : VKVector
+@interface LKSteadyVector : LKVector
 
 @end
 
@@ -18,7 +18,7 @@
 
 
 
-@implementation VKSteadyVector
+@implementation LKSteadyVector
 
 
 
@@ -31,7 +31,7 @@
 }
 
 
-- (VKVector *)initWithValues:(const VKFloat*)values length:(VKLength)length {
+- (LKVector *)initWithValues:(const VKFloat*)values length:(VKLength)length {
     self = [super initSubclass];
     if (self) {
         if (length) {

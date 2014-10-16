@@ -1,16 +1,16 @@
 //
-//  VKVector+Private.m
-//  VectorKit
+//  LKVector+Private.m
+//  LinearKit
 //
 //  Created by Martin Kiss on 15.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "VKVector+Private.h"
+#import "LKVector+Private.h"
 
 
 
-@implementation VKVector
+@implementation LKVector
 
 
 

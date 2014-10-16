@@ -1,16 +1,16 @@
 //
-//  VKVector+Private.h
-//  VectorKit
+//  LKVector+Private.h
+//  LinearKit
 //
 //  Created by Martin Kiss on 15.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "VKVector.h"
+#import "LKVector.h"
 
 
 
-@interface VKVector ()
+@interface LKVector ()
 
 - (instancetype)initSubclass;
 
@@ -18,6 +18,6 @@
 
 
 
-#define VKUnwrap(VKVector)      (self.values), (self.stride)
+#define VKUnwrap(LKVector)      (self.values), (self.stride)
 
 

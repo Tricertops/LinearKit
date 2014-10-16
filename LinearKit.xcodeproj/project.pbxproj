@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B61080C19EE5E2A0071B547 /* VectorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B61080819EE5E2A0071B547 /* VectorKit.h */; };
-		5B86E13619F0342F00523073 /* libVectorKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6107F019EE5E050071B547 /* libVectorKit.a */; };
-		5B86E13A19F05E5000523073 /* VKVector+Filling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E13819F05E5000523073 /* VKVector+Filling.m */; };
-		5B86E13E19F05F8F00523073 /* VKVector+Creating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E13C19F05F8F00523073 /* VKVector+Creating.m */; };
-		5B86E14219F063C300523073 /* VKVector+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E14019F063C300523073 /* VKVector+Equality.m */; };
-		5B86E14419F0660500523073 /* TestVKVector+Creating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E14319F0660500523073 /* TestVKVector+Creating.m */; };
-		5BFDB4F419EE604C0030DC6F /* VKVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F219EE604C0030DC6F /* VKVector.h */; };
-		5BFDB4F519EE604C0030DC6F /* VKVector+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB4F319EE604C0030DC6F /* VKVector+Private.m */; };
-		5BFDB4F819EE60860030DC6F /* VKTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F619EE60860030DC6F /* VKTypes.h */; };
-		5BFDB54019EEFC0C0030DC6F /* VKSteadyVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB53E19EEFC0C0030DC6F /* VKSteadyVector.m */; };
-		5BFDB54319EEFC990030DC6F /* VKVector+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB54119EEFC990030DC6F /* VKVector+Private.h */; };
+		5B61080C19EE5E2A0071B547 /* LinearKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B61080819EE5E2A0071B547 /* LinearKit.h */; };
+		5B86E13619F0342F00523073 /* libLinearKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6107F019EE5E050071B547 /* libLinearKit.a */; };
+		5B86E13A19F05E5000523073 /* LKVector+Filling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E13819F05E5000523073 /* LKVector+Filling.m */; };
+		5B86E13E19F05F8F00523073 /* LKVector+Creating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E13C19F05F8F00523073 /* LKVector+Creating.m */; };
+		5B86E14219F063C300523073 /* LKVector+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E14019F063C300523073 /* LKVector+Equality.m */; };
+		5B86E14419F0660500523073 /* TestLKVector+Creating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E14319F0660500523073 /* TestLKVector+Creating.m */; };
+		5BFDB4F419EE604C0030DC6F /* LKVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F219EE604C0030DC6F /* LKVector.h */; };
+		5BFDB4F519EE604C0030DC6F /* LKVector+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB4F319EE604C0030DC6F /* LKVector+Private.m */; };
+		5BFDB4F819EE60860030DC6F /* LKTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F619EE60860030DC6F /* LKTypes.h */; };
+		5BFDB54019EEFC0C0030DC6F /* LKSteadyVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB53E19EEFC0C0030DC6F /* LKSteadyVector.m */; };
+		5BFDB54319EEFC990030DC6F /* LKVector+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB54119EEFC990030DC6F /* LKVector+Private.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,19 +31,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5B6107F019EE5E050071B547 /* libVectorKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVectorKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B61080819EE5E2A0071B547 /* VectorKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorKit.h; sourceTree = "<group>"; };
-		5B86E13819F05E5000523073 /* VKVector+Filling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKVector+Filling.m"; sourceTree = "<group>"; };
-		5B86E13C19F05F8F00523073 /* VKVector+Creating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKVector+Creating.m"; sourceTree = "<group>"; };
-		5B86E14019F063C300523073 /* VKVector+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKVector+Equality.m"; sourceTree = "<group>"; };
-		5B86E14319F0660500523073 /* TestVKVector+Creating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestVKVector+Creating.m"; sourceTree = "<group>"; };
-		5BFDB4F219EE604C0030DC6F /* VKVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVector.h; sourceTree = "<group>"; };
-		5BFDB4F319EE604C0030DC6F /* VKVector+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKVector+Private.m"; sourceTree = "<group>"; };
-		5BFDB4F619EE60860030DC6F /* VKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKTypes.h; sourceTree = "<group>"; };
+		5B6107F019EE5E050071B547 /* libLinearKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLinearKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B61080819EE5E2A0071B547 /* LinearKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearKit.h; sourceTree = "<group>"; };
+		5B86E13819F05E5000523073 /* LKVector+Filling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Filling.m"; sourceTree = "<group>"; };
+		5B86E13C19F05F8F00523073 /* LKVector+Creating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Creating.m"; sourceTree = "<group>"; };
+		5B86E14019F063C300523073 /* LKVector+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Equality.m"; sourceTree = "<group>"; };
+		5B86E14319F0660500523073 /* TestLKVector+Creating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestLKVector+Creating.m"; sourceTree = "<group>"; };
+		5BFDB4F219EE604C0030DC6F /* LKVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKVector.h; sourceTree = "<group>"; };
+		5BFDB4F319EE604C0030DC6F /* LKVector+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Private.m"; sourceTree = "<group>"; };
+		5BFDB4F619EE60860030DC6F /* LKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKTypes.h; sourceTree = "<group>"; };
 		5BFDB52919EE62D90030DC6F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BFDB53219EE62F80030DC6F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BFDB53E19EEFC0C0030DC6F /* VKSteadyVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKSteadyVector.m; sourceTree = "<group>"; };
-		5BFDB54119EEFC990030DC6F /* VKVector+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VKVector+Private.h"; sourceTree = "<group>"; };
+		5BFDB53E19EEFC0C0030DC6F /* LKSteadyVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKSteadyVector.m; sourceTree = "<group>"; };
+		5BFDB54119EEFC990030DC6F /* LKVector+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Private.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B86E13619F0342F00523073 /* libVectorKit.a in Frameworks */,
+				5B86E13619F0342F00523073 /* libLinearKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +77,7 @@
 		5B6107F119EE5E050071B547 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B6107F019EE5E050071B547 /* libVectorKit.a */,
+				5B6107F019EE5E050071B547 /* libLinearKit.a */,
 				5BFDB52919EE62D90030DC6F /* Tests.xctest */,
 			);
 			name = Products;
@@ -86,15 +86,15 @@
 		5B61080719EE5E2A0071B547 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5B61080819EE5E2A0071B547 /* VectorKit.h */,
-				5BFDB4F619EE60860030DC6F /* VKTypes.h */,
-				5BFDB4F219EE604C0030DC6F /* VKVector.h */,
-				5BFDB54119EEFC990030DC6F /* VKVector+Private.h */,
-				5BFDB4F319EE604C0030DC6F /* VKVector+Private.m */,
-				5BFDB53E19EEFC0C0030DC6F /* VKSteadyVector.m */,
-				5B86E13C19F05F8F00523073 /* VKVector+Creating.m */,
-				5B86E14019F063C300523073 /* VKVector+Equality.m */,
-				5B86E13819F05E5000523073 /* VKVector+Filling.m */,
+				5B61080819EE5E2A0071B547 /* LinearKit.h */,
+				5BFDB4F619EE60860030DC6F /* LKTypes.h */,
+				5BFDB4F219EE604C0030DC6F /* LKVector.h */,
+				5BFDB54119EEFC990030DC6F /* LKVector+Private.h */,
+				5BFDB4F319EE604C0030DC6F /* LKVector+Private.m */,
+				5BFDB53E19EEFC0C0030DC6F /* LKSteadyVector.m */,
+				5B86E13C19F05F8F00523073 /* LKVector+Creating.m */,
+				5B86E14019F063C300523073 /* LKVector+Equality.m */,
+				5B86E13819F05E5000523073 /* LKVector+Filling.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				5BFDB53219EE62F80030DC6F /* Info.plist */,
-				5B86E14319F0660500523073 /* TestVKVector+Creating.m */,
+				5B86E14319F0660500523073 /* TestLKVector+Creating.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -115,19 +115,19 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BFDB4F819EE60860030DC6F /* VKTypes.h in Headers */,
-				5BFDB4F419EE604C0030DC6F /* VKVector.h in Headers */,
-				5BFDB54319EEFC990030DC6F /* VKVector+Private.h in Headers */,
-				5B61080C19EE5E2A0071B547 /* VectorKit.h in Headers */,
+				5BFDB4F819EE60860030DC6F /* LKTypes.h in Headers */,
+				5BFDB4F419EE604C0030DC6F /* LKVector.h in Headers */,
+				5BFDB54319EEFC990030DC6F /* LKVector+Private.h in Headers */,
+				5B61080C19EE5E2A0071B547 /* LinearKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5B6107EF19EE5E050071B547 /* VectorKit */ = {
+		5B6107EF19EE5E050071B547 /* LinearKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B61080119EE5E050071B547 /* Build configuration list for PBXNativeTarget "VectorKit" */;
+			buildConfigurationList = 5B61080119EE5E050071B547 /* Build configuration list for PBXNativeTarget "LinearKit" */;
 			buildPhases = (
 				5B6107EC19EE5E050071B547 /* Sources */,
 				5B6107ED19EE5E050071B547 /* Frameworks */,
@@ -137,9 +137,9 @@
 			);
 			dependencies = (
 			);
-			name = VectorKit;
+			name = LinearKit;
 			productName = VectorKit;
-			productReference = 5B6107F019EE5E050071B547 /* libVectorKit.a */;
+			productReference = 5B6107F019EE5E050071B547 /* libLinearKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5BFDB52819EE62D90030DC6F /* Tests */ = {
@@ -177,7 +177,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5B6107EB19EE5E050071B547 /* Build configuration list for PBXProject "VectorKit" */;
+			buildConfigurationList = 5B6107EB19EE5E050071B547 /* Build configuration list for PBXProject "LinearKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -189,7 +189,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B6107EF19EE5E050071B547 /* VectorKit */,
+				5B6107EF19EE5E050071B547 /* LinearKit */,
 				5BFDB52819EE62D90030DC6F /* Tests */,
 			);
 		};
@@ -210,11 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B86E13A19F05E5000523073 /* VKVector+Filling.m in Sources */,
-				5BFDB4F519EE604C0030DC6F /* VKVector+Private.m in Sources */,
-				5B86E13E19F05F8F00523073 /* VKVector+Creating.m in Sources */,
-				5B86E14219F063C300523073 /* VKVector+Equality.m in Sources */,
-				5BFDB54019EEFC0C0030DC6F /* VKSteadyVector.m in Sources */,
+				5B86E13A19F05E5000523073 /* LKVector+Filling.m in Sources */,
+				5BFDB4F519EE604C0030DC6F /* LKVector+Private.m in Sources */,
+				5B86E13E19F05F8F00523073 /* LKVector+Creating.m in Sources */,
+				5B86E14219F063C300523073 /* LKVector+Equality.m in Sources */,
+				5BFDB54019EEFC0C0030DC6F /* LKSteadyVector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B86E14419F0660500523073 /* TestVKVector+Creating.m in Sources */,
+				5B86E14419F0660500523073 /* TestLKVector+Creating.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +231,7 @@
 /* Begin PBXTargetDependency section */
 		5B86E13519F0342B00523073 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5B6107EF19EE5E050071B547 /* VectorKit */;
+			target = 5B6107EF19EE5E050071B547 /* LinearKit */;
 			targetProxy = 5B86E13419F0342B00523073 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -336,7 +336,7 @@
 			buildSettings = {
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LinearKit;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
@@ -346,7 +346,7 @@
 			buildSettings = {
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LinearKit;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
@@ -388,7 +388,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5B6107EB19EE5E050071B547 /* Build configuration list for PBXProject "VectorKit" */ = {
+		5B6107EB19EE5E050071B547 /* Build configuration list for PBXProject "LinearKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B6107FF19EE5E050071B547 /* Debug */,
@@ -397,7 +397,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B61080119EE5E050071B547 /* Build configuration list for PBXNativeTarget "VectorKit" */ = {
+		5B61080119EE5E050071B547 /* Build configuration list for PBXNativeTarget "LinearKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B61080219EE5E050071B547 /* Debug */,

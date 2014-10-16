@@ -1,17 +1,17 @@
 //
-//  TestVKVector+Creating.m
-//  VectorKit
+//  TestLKVector+Creating.m
+//  LinearKit
 //
 //  Created by Martin Kiss on 16.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
 @import XCTest;
-#import "VectorKit.h"
+#import "LinearKit.h"
 
 
 
-@interface TestVKVector_Creating : XCTestCase
+@interface TestLKVector_Creating : XCTestCase
 
 @end
 
@@ -19,12 +19,12 @@
 
 
 
-@implementation TestVKVector_Creating
+@implementation TestLKVector_Creating
 
 
 
-- (void)test_VKVectorMake {
-    VKVector *vector = VKVectorMake(1, 4, 6, 7, 1);
+- (void)test_LKVectorMake {
+    LKVector *vector = LKVectorMake(1, 4, 6, 7, 1);
     XCTAssertNotNil(vector);
     XCTAssertEqual(vector.length, 5);
     XCTAssertEqual(vector.values[0], 1);
@@ -35,8 +35,8 @@
 }
 
 
-- (void)test_VKVectorMake_noValues {
-    VKVector *vector = VKVectorMake();
+- (void)test_LKVectorMake_noValues {
+    LKVector *vector = LKVectorMake();
     XCTAssertNotNil(vector);
     XCTAssertEqual(vector.values, NULL);
     XCTAssertEqual(vector.stride, 1);
@@ -46,7 +46,7 @@
 
 
 - (void)test_vectorWithLength {
-    VKVector *vector = [VKVector vectorWithLength:5];
+    LKVector *vector = [LKVector vectorWithLength:5];
     XCTAssertNotEqual(vector.values, NULL);
     XCTAssertEqual(vector.stride, 1);
     XCTAssertEqual(vector.length, 5);
@@ -59,7 +59,7 @@
 
 
 - (void)test_vectorWithLength_zero {
-    VKVector *vector = [VKVector vectorWithLength:0];
+    LKVector *vector = [LKVector vectorWithLength:0];
     XCTAssertNotNil(vector);
     XCTAssertEqual(vector.values, NULL);
     XCTAssertEqual(vector.stride, 1);

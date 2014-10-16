@@ -1,12 +1,12 @@
 //
-//  VectorKit.h
-//  VectorKit
+//  LinearKit.h
+//  LinearKit
 //
 //  Created by Martin Kiss on 15.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
 
-#import "VKTypes.h"
-#import "VKVector.h"
+#import "LKTypes.h"
+#import "LKVector.h"
 

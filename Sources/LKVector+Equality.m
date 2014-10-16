@@ -1,18 +1,18 @@
 //
-//  VKVector+Equality.m
-//  VectorKit
+//  LKVector+Equality.m
+//  LinearKit
 //
 //  Created by Martin Kiss on 16.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "VKVector+Private.h"
+#import "LKVector+Private.h"
 
 
 
 
 
-@implementation VKVector (Equality)
+@implementation LKVector (Equality)
 
 
 
@@ -22,9 +22,9 @@
 }
 
 
-- (BOOL)isEqual:(VKVector *)other {
+- (BOOL)isEqual:(LKVector *)other {
     if (self == other) return YES;
-    if ( ! [other isKindOfClass:[VKVector class]]) return NO;
+    if ( ! [other isKindOfClass:[LKVector class]]) return NO;
     
     //TODO: Compare actual values
     return (   self.values == other.values

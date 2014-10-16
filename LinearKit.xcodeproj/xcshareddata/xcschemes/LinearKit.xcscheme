@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5B6107EF19EE5E050071B547"
-               BuildableName = "libVectorKit.a"
-               BlueprintName = "VectorKit"
-               ReferencedContainer = "container:VectorKit.xcodeproj">
+               BuildableName = "libLinearKit.a"
+               BlueprintName = "LinearKit"
+               ReferencedContainer = "container:LinearKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "5BFDB52819EE62D90030DC6F"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
-               ReferencedContainer = "container:VectorKit.xcodeproj">
+               ReferencedContainer = "container:LinearKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5B6107EF19EE5E050071B547"
-            BuildableName = "libVectorKit.a"
-            BlueprintName = "VectorKit"
-            ReferencedContainer = "container:VectorKit.xcodeproj">
+            BuildableName = "libLinearKit.a"
+            BlueprintName = "LinearKit"
+            ReferencedContainer = "container:LinearKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5B6107EF19EE5E050071B547"
-            BuildableName = "libVectorKit.a"
-            BlueprintName = "VectorKit"
-            ReferencedContainer = "container:VectorKit.xcodeproj">
+            BuildableName = "libLinearKit.a"
+            BlueprintName = "LinearKit"
+            ReferencedContainer = "container:LinearKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5B6107EF19EE5E050071B547"
-            BuildableName = "libVectorKit.a"
-            BlueprintName = "VectorKit"
-            ReferencedContainer = "container:VectorKit.xcodeproj">
+            BuildableName = "libLinearKit.a"
+            BlueprintName = "LinearKit"
+            ReferencedContainer = "container:LinearKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
