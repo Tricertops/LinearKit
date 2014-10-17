@@ -8,6 +8,8 @@
 
 @import Foundation;
 @import Accelerate;
+#import "LKPrecision.h"
+
 
 
 
@@ -15,7 +17,8 @@ typedef unsigned long LKIndex;
 typedef LKIndex LKLength;
 typedef LKIndex LKOffset;
 typedef long LKStride;
-typedef float LKFloat;
+
+typedef LKPrecision(float, double) LKFloat;
 
 
 extern LKFloat const LKZero;

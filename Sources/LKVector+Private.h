@@ -24,4 +24,7 @@
 
 #define LKUnwrap(LKVector)      (self.head), (self.stride)
 
+#define LK_vDSP(name)           LKPrecision(vDSP_ ## name, vDSP_ ## name ## D)
+#define LK_f(name)              LKPrecision(name ## f, name)
+
 

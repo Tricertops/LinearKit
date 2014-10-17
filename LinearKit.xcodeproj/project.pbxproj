@@ -37,6 +37,7 @@
 		5B61080819EE5E2A0071B547 /* LinearKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearKit.h; sourceTree = "<group>"; };
 		5B736B2919F1988300DDDFCD /* LKVector+Accessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Accessing.m"; sourceTree = "<group>"; };
 		5B736B2C19F1A82100DDDFCD /* TestLKVector+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestLKVector+Equality.m"; sourceTree = "<group>"; };
+		5B736B2E19F1BAE900DDDFCD /* LKPrecision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKPrecision.h; sourceTree = "<group>"; };
 		5B86E13819F05E5000523073 /* LKVector+Filling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Filling.m"; sourceTree = "<group>"; };
 		5B86E13C19F05F8F00523073 /* LKVector+Creating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Creating.m"; sourceTree = "<group>"; };
 		5B86E14019F063C300523073 /* LKVector+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Equality.m"; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				5B61080819EE5E2A0071B547 /* LinearKit.h */,
+				5B736B2E19F1BAE900DDDFCD /* LKPrecision.h */,
 				5BFDB4F619EE60860030DC6F /* LKTypes.h */,
 				5BFDB4F219EE604C0030DC6F /* LKVector.h */,
 				5BFDB54119EEFC990030DC6F /* LKVector+Private.h */,

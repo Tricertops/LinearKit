@@ -61,11 +61,11 @@ LKFloat const LKInfinity = INFINITY;
 NSUInteger LKHash(LKFloat value) {
     // Taken from _CFHashDouble() at http://www.opensource.apple.com/source/CF/CF-550/ForFoundationOnly.h
     LKFloat absolute = ABS(value);
-    LKFloat integral = round(absolute);
-    LKFloat floating = absolute - integral;
-    NSUInteger integralHash = 2654435761U * fmod(integral, NSUIntegerMax);
-    NSUInteger floatingHash = floating * NSUIntegerMax;
-    return integralHash + floatingHash;
+    LKFloat integral = LK_f(round)(absolute);
+    LKFloat fragment = absolute - integral;
+    NSUInteger integralHash = 2654435761U * LK_f(fmod)(integral, NSUIntegerMax);
+    NSUInteger fragmentHash = fragment * NSUIntegerMax;
+    return integralHash + fragmentHash;
 }
 
 
