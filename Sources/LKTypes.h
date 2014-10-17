@@ -20,6 +20,8 @@ typedef float LKFloat;
 
 extern LKFloat const LKZero;
 extern LKFloat const LKOne;
+extern LKFloat const LKNAN;
+extern LKFloat const LKInfinity;
 
 
 extern NSUInteger LKHash(LKFloat);

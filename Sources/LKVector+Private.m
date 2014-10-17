@@ -51,6 +51,8 @@
 
 LKFloat const LKZero = 0;
 LKFloat const LKOne = 1;
+LKFloat const LKNAN = NAN;
+LKFloat const LKInfinity = INFINITY;
 
 
 
