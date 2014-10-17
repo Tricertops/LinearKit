@@ -34,16 +34,13 @@
 - (LKVector *)initWithValues:(const LKFloat*)values length:(LKLength)length {
     self = [super initSubclass];
     if (self) {
+        self->_length = length;
         if (length) {
-            self->_values = malloc(length * sizeof(LKFloat));
-            self->_length = length;
+            self->_values = calloc(length, sizeof(LKFloat));
             
             if (values) {
-                // Matrix copy, where the vectors are 1×N matrices. No strides.
-                vDSP_mmov(values, self->_values, 1, length, 1, 1); //BENCH: mmov()
-            }
-            else {
-                [self clear]; //BENCH: calloc()
+                LKLength bytes = length * sizeof(LKFloat);
+                memcpy(self->_values, values, bytes);
             }
         }
     }
