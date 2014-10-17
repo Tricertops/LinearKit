@@ -18,6 +18,6 @@
 
 
 
-#define VKUnwrap(LKVector)      (self.values), (self.stride)
+#define LKUnwrap(LKVector)      (self.values), (self.stride)
 
 

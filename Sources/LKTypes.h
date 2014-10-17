@@ -11,13 +11,13 @@
 
 
 
-typedef unsigned long   VKLength;
-typedef unsigned long   VKOffset;
-typedef          long   VKStride;
-typedef         float   VKFloat;
+typedef unsigned long   LKLength;
+typedef unsigned long   LKOffset;
+typedef          long   LKStride;
+typedef         float   LKFloat;
 
 
-extern VKFloat const VKZero;
-extern VKFloat const VKOne;
+extern LKFloat const LKZero;
+extern LKFloat const LKOne;
 
 

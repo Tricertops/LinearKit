@@ -26,16 +26,16 @@
 @synthesize length = _length;
 
 
-- (VKStride)stride {
+- (LKStride)stride {
     return 1;
 }
 
 
-- (LKVector *)initWithValues:(const VKFloat*)values length:(VKLength)length {
+- (LKVector *)initWithValues:(const LKFloat*)values length:(LKLength)length {
     self = [super initSubclass];
     if (self) {
         if (length) {
-            self->_values = malloc(length * sizeof(VKFloat));
+            self->_values = malloc(length * sizeof(LKFloat));
             self->_length = length;
             
             if (values) {

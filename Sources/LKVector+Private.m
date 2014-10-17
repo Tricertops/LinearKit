@@ -25,17 +25,17 @@
 }
 
 
-- (VKFloat *)values {
+- (LKFloat *)values {
     return NULL;
 }
 
 
-- (VKStride)stride {
+- (LKStride)stride {
     return 0;
 }
 
 
-- (VKLength)length {
+- (LKLength)length {
     return 0;
 }
 
@@ -47,7 +47,7 @@
 
 
 
-VKFloat const VKZero = 0;
-VKFloat const VKOne = 1;
+LKFloat const LKZero = 0;
+LKFloat const LKOne = 1;
 
 

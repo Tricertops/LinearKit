@@ -17,12 +17,12 @@
 
 
 
-+ (LKVector *)vectorWithLength:(VKLength)length {
++ (LKVector *)vectorWithLength:(LKLength)length {
     return [[LKVector alloc] initWithValues:NULL length:length];
 }
 
 
-- (LKVector *)initWithValues:(const VKFloat [])values length:(VKLength)length {
+- (LKVector *)initWithValues:(const LKFloat [])values length:(LKLength)length {
     return [[LKSteadyVector alloc] initWithValues:values length:length];
 }
 

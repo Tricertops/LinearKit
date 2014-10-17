@@ -17,13 +17,13 @@
 
 
 - (void)clear {
-    vDSP_vclr(VKUnwrap(self), self.length);
+    vDSP_vclr(LKUnwrap(self), self.length);
 }
 
 
-- (void)fill:(VKFloat)value {
+- (void)fill:(LKFloat)value {
     if (value) {
-        vDSP_vfill(&value, VKUnwrap(self), self.length);
+        vDSP_vfill(&value, LKUnwrap(self), self.length);
     }
     else {
         [self clear];
@@ -31,21 +31,21 @@
 }
 
 
-- (void)generateFrom:(VKFloat)start by:(VKFloat)step {
-    vDSP_vramp(&start, &step, VKUnwrap(self), self.length);
+- (void)generateFrom:(LKFloat)start by:(LKFloat)step {
+    vDSP_vramp(&start, &step, LKUnwrap(self), self.length);
 }
 
 
-- (void)generateFrom:(VKFloat)start to:(VKFloat)end {
-    vDSP_vgen(&start, &end, VKUnwrap(self), self.length);
+- (void)generateFrom:(LKFloat)start to:(LKFloat)end {
+    vDSP_vgen(&start, &end, LKUnwrap(self), self.length);
 }
 
 
 
 - (void)setValues:(LKVector *)vector {
-    VKLength length = MIN(self.length, vector.length);
+    LKLength length = MIN(self.length, vector.length);
     // Adds zero, because there is no specialized function for vector copy with stride.
-    vDSP_vsadd(VKUnwrap(vector), &VKZero, VKUnwrap(self), length); //BENCH: Other?
+    vDSP_vsadd(LKUnwrap(vector), &LKZero, LKUnwrap(self), length); //BENCH: Other?
 }
 
 
