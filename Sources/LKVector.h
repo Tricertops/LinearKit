@@ -41,6 +41,7 @@
 
 @property (readonly) LKLength length;
 - (LKFloat)valueAtIndex:(LKIndex)index;
+- (void)setValue:(LKFloat)value atIndex:(LKIndex)index;
 
 - (void)enumerateValuesConcurrently:(BOOL)concurrently usingBlock:(void(^)(LKIndex, LKFloat))block;
 - (void)transformValuesConcurrently:(BOOL)concurrently usingBlock:(LKFloat(^)(LKIndex, LKFloat))block;

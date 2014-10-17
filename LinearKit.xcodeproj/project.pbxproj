@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B61080C19EE5E2A0071B547 /* LinearKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B61080819EE5E2A0071B547 /* LinearKit.h */; };
 		5B736B2B19F1988300DDDFCD /* LKVector+Accessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B736B2919F1988300DDDFCD /* LKVector+Accessing.m */; };
+		5B736B2D19F1A82100DDDFCD /* TestLKVector+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B736B2C19F1A82100DDDFCD /* TestLKVector+Equality.m */; };
 		5B86E13619F0342F00523073 /* libLinearKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6107F019EE5E050071B547 /* libLinearKit.a */; };
 		5B86E13A19F05E5000523073 /* LKVector+Filling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E13819F05E5000523073 /* LKVector+Filling.m */; };
 		5B86E13E19F05F8F00523073 /* LKVector+Creating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E13C19F05F8F00523073 /* LKVector+Creating.m */; };
@@ -35,6 +36,7 @@
 		5B6107F019EE5E050071B547 /* libLinearKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLinearKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B61080819EE5E2A0071B547 /* LinearKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearKit.h; sourceTree = "<group>"; };
 		5B736B2919F1988300DDDFCD /* LKVector+Accessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Accessing.m"; sourceTree = "<group>"; };
+		5B736B2C19F1A82100DDDFCD /* TestLKVector+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestLKVector+Equality.m"; sourceTree = "<group>"; };
 		5B86E13819F05E5000523073 /* LKVector+Filling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Filling.m"; sourceTree = "<group>"; };
 		5B86E13C19F05F8F00523073 /* LKVector+Creating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Creating.m"; sourceTree = "<group>"; };
 		5B86E14019F063C300523073 /* LKVector+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Equality.m"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				5BFDB53219EE62F80030DC6F /* Info.plist */,
 				5B86E14319F0660500523073 /* TestLKVector+Creating.m */,
+				5B736B2C19F1A82100DDDFCD /* TestLKVector+Equality.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B86E14419F0660500523073 /* TestLKVector+Creating.m in Sources */,
+				5B736B2D19F1A82100DDDFCD /* TestLKVector+Equality.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

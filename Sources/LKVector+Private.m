@@ -53,3 +53,14 @@ LKFloat const LKZero = 0;
 LKFloat const LKOne = 1;
 
 
+
+
+
+NSUInteger LKHash(LKFloat f) {
+    // Taken from: http://www.opensource.apple.com/source/CF/CF-550/ForFoundationOnly.h
+    LKFloat i = round(ABS(f));
+    NSUInteger h = 2654435761U * fmod(i, ULONG_MAX);
+    return (h + (f - i) * ULONG_MAX);
+}
+
+

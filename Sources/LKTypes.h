@@ -22,3 +22,6 @@ extern LKFloat const LKZero;
 extern LKFloat const LKOne;
 
 
+extern NSUInteger LKHash(LKFloat);
+
+

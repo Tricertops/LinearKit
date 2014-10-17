@@ -12,24 +12,33 @@
 
 
 
-@implementation LKVector (Equality) //TODO: Different implementations for subclasses.
+@implementation LKVector (Equality)
 
 
 
 - (NSUInteger)hash {
-    //TODO: Include values, at least few first and few last
-    return (NSUInteger)self.head ^ self.stride ^ self.length;
+    __block NSUInteger hash = self.length;
+    [self enumerateValuesConcurrently:NO usingBlock:^(LKIndex index, LKFloat value) {
+        hash ^= LKHash(value);
+    }];
+    return hash;
 }
 
 
 - (BOOL)isEqual:(LKVector *)other {
     if (self == other) return YES;
     if ( ! [other isKindOfClass:[LKVector class]]) return NO;
+    if (self.length != other.length) return NO;
     
-    //TODO: Compare actual values
-    return (   self.head == other.head
-            && self.stride == other.stride
-            && self.length == other.length);
+    LKLength length = MIN(self.length, other.length);
+    for (LKIndex index = 0; index < length; index++) {
+        LKFloat my = [self valueAtIndex:index];
+        LKFloat his = [other valueAtIndex:index];
+        if (my != his) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 

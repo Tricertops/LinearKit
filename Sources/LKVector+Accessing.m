@@ -20,6 +20,11 @@
 }
 
 
+- (void)setValue:(LKFloat)value atIndex:(LKIndex)index {
+    self.head[index * self.stride] = value;
+}
+
+
 - (void)enumerateValuesConcurrently:(BOOL)concurrently usingBlock:(void(^)(LKIndex index, LKFloat value))block {
     LKFloat* head = self.head;
     LKStride stride = self.stride;
