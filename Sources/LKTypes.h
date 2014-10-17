@@ -11,10 +11,11 @@
 
 
 
-typedef unsigned long   LKLength;
-typedef unsigned long   LKOffset;
-typedef          long   LKStride;
-typedef         float   LKFloat;
+typedef unsigned long LKIndex;
+typedef LKIndex LKLength;
+typedef LKIndex LKOffset;
+typedef long LKStride;
+typedef float LKFloat;
 
 
 extern LKFloat const LKZero;
