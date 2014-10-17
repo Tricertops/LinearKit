@@ -12,6 +12,8 @@
 
 @interface LKSteadyVector : LKVector
 
+@property (readonly) NSMutableData *data;
+
 @end
 
 
@@ -22,34 +24,28 @@
 
 
 
-@synthesize values = _values;
-@synthesize length = _length;
-
-
-- (LKStride)stride {
-    return 1;
-}
-
-
-- (LKVector *)initWithValues:(const LKFloat*)values length:(LKLength)length {
+- (LKVector *)initWithMutableData:(NSMutableData *)data {
     self = [super initSubclass];
     if (self) {
-        self->_length = length;
-        if (length) {
-            self->_values = calloc(length, sizeof(LKFloat));
-            
-            if (values) {
-                LKLength bytes = length * sizeof(LKFloat);
-                memcpy(self->_values, values, bytes);
-            }
-        }
+        self->_data = (data.length? data : nil);
     }
     return self;
 }
 
 
-- (void)dealloc {
-    free(self->_values);
+
+- (LKFloat *)head {
+    return (LKFloat*)self.data.mutableBytes; //BENCH: _ivar
+}
+
+
+- (LKLength)length {
+    return self.data.length / sizeof(LKFloat); //BENCH: _ivar
+}
+
+
+- (LKStride)stride {
+    return 1;
 }
 
 

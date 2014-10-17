@@ -12,11 +12,13 @@
 
 @implementation LKVector
 
+@end
 
 
-@dynamic values;
-@dynamic stride;
-@dynamic length;
+
+
+
+@implementation LKVector (Private)
 
 
 
@@ -25,7 +27,7 @@
 }
 
 
-- (LKFloat *)values {
+- (LKFloat *)head {
     return NULL;
 }
 

@@ -14,10 +14,6 @@
 
 @interface LKVector : NSObject
 
-@property (readonly) LKFloat* values;
-@property (readonly) LKStride stride;
-@property (readonly) LKLength length;
-
 @end
 
 
@@ -30,10 +26,24 @@
 - (LKVector *)copy;
 
 #define LKVectorMake(LKFloat...)    _LKVectorMake(LKFloat)
-- (LKVector *)initWithValues:(const LKFloat[])values length:(LKLength)length;
+- (LKVector *)initWithMutableData:(NSMutableData *)data;
 
 + (LKVector *)new NS_UNAVAILABLE;
 - (LKVector *)init NS_UNAVAILABLE;
+
+@end
+
+
+
+
+
+@interface LKVector (Accessing)
+
+@property (readonly) LKLength length;
+- (LKFloat)valueAtIndex:(LKIndex)index;
+
+- (void)enumerateValuesConcurrently:(BOOL)concurrently usingBlock:(void(^)(LKIndex, LKFloat))block;
+- (void)transformValuesConcurrently:(BOOL)concurrently usingBlock:(LKFloat(^)(LKIndex, LKFloat))block;
 
 @end
 
@@ -91,7 +101,8 @@
 #define _LKVectorMake(...) \
 (LKVector *)({ \
     LKFloat values[] = { __VA_ARGS__ }; \
-    [[LKVector alloc] initWithValues:values length:sizeof(values)/sizeof(LKFloat)]; \
+    NSMutableData *data = [NSMutableData dataWithBytes:values length:sizeof(values)]; \
+    [[LKVector alloc] initWithMutableData:data]; \
 })
 
 

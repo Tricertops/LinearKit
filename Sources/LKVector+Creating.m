@@ -7,7 +7,6 @@
 //
 
 #import "LKVector+Private.h"
-#import "LKSteadyVector.m"
 
 
 
@@ -18,12 +17,13 @@
 
 
 + (LKVector *)vectorWithLength:(LKLength)length {
-    return [[LKVector alloc] initWithValues:NULL length:length];
+    NSMutableData *data = [NSMutableData dataWithLength:length * sizeof(LKFloat)];
+    return [[LKVector alloc] initWithMutableData:data];
 }
 
 
-- (LKVector *)initWithValues:(const LKFloat [])values length:(LKLength)length {
-    return [[LKSteadyVector alloc] initWithValues:values length:length];
+- (LKVector *)initWithMutableData:(NSMutableData *)data {
+    return [[NSClassFromString(@"LKSteadyVector") alloc] initWithMutableData:data];
 }
 
 
@@ -34,7 +34,8 @@
 
 
 - (LKVector *)copyWithZone:(NSZone *)zone {
-    return [[LKVector alloc] initWithValues:self.values length:self.length];
+    //TODO: Wrong, must use striding.
+    return nil;
 }
 
 

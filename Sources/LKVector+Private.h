@@ -10,7 +10,11 @@
 
 
 
-@interface LKVector ()
+@interface LKVector (Private)
+
+@property (readonly) LKFloat* head;
+@property (readonly) LKStride stride;
+@property (readonly) LKLength length;
 
 - (instancetype)initSubclass;
 
@@ -18,6 +22,6 @@
 
 
 
-#define LKUnwrap(LKVector)      (self.values), (self.stride)
+#define LKUnwrap(LKVector)      (self.head), (self.stride)
 
 
