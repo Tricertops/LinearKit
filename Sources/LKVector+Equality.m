@@ -18,8 +18,8 @@
 
 - (NSUInteger)hash {
     __block NSUInteger hash = self.length;
-    [self enumerateValuesConcurrently:NO usingBlock:^(LKIndex index, LKFloat value) {
-        hash ^= LKHash(value);
+    [self enumerateConcurrently:NO block:^(LKIndex index, LKFloat *reference) {
+        hash ^= LKHash(*reference);
     }];
     return hash;
 }
