@@ -34,9 +34,9 @@
     for (LKIndex index = 0; index < length; index++) {
         LKFloat my = [self valueAtIndex:index];
         LKFloat his = [other valueAtIndex:index];
-        if (my != his) {
-            return NO;
-        }
+        
+        if (isnan(my) && isnan(his)) continue;
+        if (my != his) return NO;
     }
     return YES;
 }

@@ -23,6 +23,7 @@
 
 #else
     #error Unsupported precision, valid values are only 1 (single, 32-bit) and 2 (double, 64-bit).
+    // Add support for 4 (quadruple, 128-bit) once "long double" is supported by Accelerate.framework
 #endif
 
 
