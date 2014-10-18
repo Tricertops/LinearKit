@@ -22,6 +22,16 @@
 
 
 
+
+
+@interface LKSteadyVector : LKVector
+
+@end
+
+
+
+
+
 #define LKUnwrap(LKVector)      (self.head), (self.stride)
 
 #define LK_vDSP(name)           LKPrecision(vDSP_ ## name, vDSP_ ## name ## D)

@@ -10,7 +10,7 @@
 
 
 
-@interface LKSteadyVector : LKVector
+@interface LKSteadyVector ()
 
 @property (readonly) NSMutableData *data;
 

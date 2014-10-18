@@ -23,19 +23,18 @@
 
 
 - (LKVector *)initWithMutableData:(NSMutableData *)data {
-    return [[NSClassFromString(@"LKSteadyVector") alloc] initWithMutableData:data];
+    return [[LKSteadyVector alloc] initWithMutableData:data];
 }
 
 
 
 - (LKVector *)copy {
-    return [super copy];
+    return nil; //TODO
 }
 
 
-- (LKVector *)copyWithZone:(NSZone *)zone {
-    //TODO: Wrong, must use striding.
-    return nil;
+- (LKVector *)copyWithZone:(__unused NSZone *)zone {
+    return [self copyWithZone:NULL];
 }
 
 

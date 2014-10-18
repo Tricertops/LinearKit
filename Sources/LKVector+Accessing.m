@@ -16,18 +16,18 @@
 
 
 - (LKFloat)valueAtIndex:(LKIndex)index {
-    return self.head[index * self.stride];
+    return self.head[(LKStride)index * self.stride];
 }
 
 
 - (void)setValue:(LKFloat)value atIndex:(LKIndex)index {
-    self.head[index * self.stride] = value;
+    self.head[(LKStride)index * self.stride] = value;
 }
 
 
 - (LKFloat *(^)(LKIndex))at {
     return ^LKFloat*(LKIndex index){
-        return self.head + (index * self.stride);
+        return self.head + ((LKStride)index * self.stride);
     };
 }
 
@@ -41,12 +41,12 @@
     if (concurrently) {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         dispatch_apply(length, queue, ^(size_t index){
-            block(index, head + (index * stride));
+            block(index, head + ((LKStride)index * stride));
         });
     }
     else {
         for (LKIndex index = 0; index < length; index++) {
-            block(index, head + (index * stride));
+            block(index, head + ((LKStride)index * stride));
         }
     }
 }
