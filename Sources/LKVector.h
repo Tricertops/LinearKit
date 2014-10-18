@@ -89,6 +89,8 @@
 - (LKVector *)from:(LKOffset)start length:(LKLength)length;
 - (LKVector *)from:(LKOffset)start by:(LKStride)stride;
 
+- (LKVector *)reversed; //TODO: Negative stride.
+
 @end
 
 

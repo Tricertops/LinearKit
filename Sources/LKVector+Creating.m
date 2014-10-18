@@ -29,7 +29,9 @@
 
 
 - (LKVector *)copy {
-    return nil; //TODO
+    LKVector *vector = [LKVector vectorWithLength:self.length];
+    [vector setValues:self];
+    return vector;
 }
 
 

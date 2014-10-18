@@ -35,7 +35,13 @@ extern NSString * const LKIndexException;
 extern NSException * LKException(NSString *name, NSString *format, ...) NS_FORMAT_FUNCTION(2, 3);
 extern void LKAssertIndex(LKVector *vector, LKIndex index);
 
-#define LKUnwrap(LKVector)      (self.head), (self.stride)
+
+
+
+
+
+
+#define LKUnwrap(LKVector)      (LKVector.head), (LKVector.stride)
 
 #define LK_vDSP(name)           LKPrecision(vDSP_ ## name, vDSP_ ## name ## D)
 #define LK_f(name)              LKPrecision(name ## f, name)

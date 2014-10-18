@@ -54,6 +54,14 @@
 }
 
 
+- (void)test_copy {
+    LKVector *a = TestLKVector;
+    LKVector *b = [a copy];
+    XCTAssertNotEqual(a, b);
+    XCTAssertEqualObjects(a, b);
+}
+
+
 
 
 
