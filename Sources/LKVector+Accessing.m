@@ -16,17 +16,20 @@
 
 
 - (LKFloat)valueAtIndex:(LKIndex)index {
+    LKAssertIndex(self, index);
     return self.head[(LKStride)index * self.stride];
 }
 
 
 - (void)setValue:(LKFloat)value atIndex:(LKIndex)index {
+    LKAssertIndex(self, index);
     self.head[(LKStride)index * self.stride] = value;
 }
 
 
 - (LKFloat *(^)(LKIndex))at {
     return ^LKFloat*(LKIndex index){
+        LKAssertIndex(self, index);
         return self.head + ((LKStride)index * self.stride);
     };
 }

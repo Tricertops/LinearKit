@@ -31,6 +31,9 @@
 
 
 
+extern NSString * const LKIndexException;
+extern NSException * LKException(NSString *name, NSString *format, ...) NS_FORMAT_FUNCTION(2, 3);
+extern void LKAssertIndex(LKVector *vector, LKIndex index);
 
 #define LKUnwrap(LKVector)      (self.head), (self.stride)
 

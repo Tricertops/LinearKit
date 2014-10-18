@@ -49,6 +49,28 @@
 
 
 
+NSString * const LKIndexException = @"LKIndexException";
+
+
+NSException * LKException(NSString *name, NSString *format, ...) {
+    va_list vargs;
+    va_start(vargs, format);
+    NSString *reason = [[NSString alloc] initWithFormat:format arguments:vargs];
+    va_end(vargs);
+    return [NSException exceptionWithName:name reason:reason userInfo:nil];
+}
+
+
+void LKAssertIndex(LKVector *vector, LKIndex index) {
+    if (index >= vector.length) {
+        @throw LKException(LKIndexException, @"Index %lu out of bounds for %@", index, vector.debugDescription);
+    }
+}
+
+
+
+
+
 LKFloat const LKZero = 0;
 LKFloat const LKEpsion = LKPrecision(FLT_EPSILON, DBL_EPSILON);
 LKFloat const LKOne = 1;
