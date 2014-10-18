@@ -43,8 +43,8 @@
 - (LKFloat)valueAtIndex:(LKIndex)index;
 - (void)setValue:(LKFloat)value atIndex:(LKIndex)index;
 
-- (void)enumerateValuesConcurrently:(BOOL)concurrently usingBlock:(void(^)(LKIndex, LKFloat))block;
-- (void)transformValuesConcurrently:(BOOL)concurrently usingBlock:(LKFloat(^)(LKIndex, LKFloat))block;
+- (LKFloat*(^)(LKIndex index))at;
+- (void)enumerateConcurrently:(BOOL)concurrently block:(void(^)(LKIndex index, LKFloat* reference))block;
 
 @end
 
