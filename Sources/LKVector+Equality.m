@@ -26,17 +26,27 @@
 
 
 - (BOOL)isEqual:(LKVector *)other {
+    return [self isEqual:other epsilon:0];
+}
+
+
+- (BOOL)isEqual:(LKVector *)other epsilon:(LKFloat)epsilon {
     if (self == other) return YES;
     if ( ! [other isKindOfClass:[LKVector class]]) return NO;
     if (self.length != other.length) return NO;
     
+    LKFloat* myHead = self.head;
+    LKStride myStride = self.stride;
+    LKFloat* hisHead = other.head;
+    LKStride hisStride = other.stride;
+    
     LKLength length = MIN(self.length, other.length);
     for (LKIndex index = 0; index < length; index++) {
-        LKFloat my = [self valueAtIndex:index];
-        LKFloat his = [other valueAtIndex:index];
+        LKFloat my = myHead[index * myStride];
+        LKFloat his = hisHead[index * hisStride];
         
         if (isnan(my) && isnan(his)) continue;
-        if (my != his) return NO;
+        if (ABS(my - his) > epsilon) return NO;
     }
     return YES;
 }

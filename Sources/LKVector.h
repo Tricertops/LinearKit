@@ -56,6 +56,7 @@
 
 - (NSUInteger)hash;
 - (BOOL)isEqual:(LKVector *)other;
+- (BOOL)isEqual:(LKVector *)other epsilon:(LKFloat)epsilon;
 
 @end
 

@@ -38,10 +38,22 @@
 - (void)test_inequal {
     LKVector *a = TestLKVector;
     LKVector *b = TestLKVector;
-    [b setValue:5 atIndex:0];
+    *b.at(0) += 1;
     XCTAssertNotEqualObjects(a, b);
     XCTAssertNotEqual(a.hash, b.hash);
 }
+
+
+- (void)test_epsilon {
+    LKVector *a = TestLKVector;
+    LKVector *b = TestLKVector;
+    *b.at(2) += LKEpsion;
+    XCTAssertNotEqualObjects(a, b);
+    XCTAssertNotEqual(a.hash, b.hash);
+    XCTAssertTrue([a isEqual:b epsilon:LKEpsion]);
+}
+
+
 
 
 

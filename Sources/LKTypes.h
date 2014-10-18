@@ -22,9 +22,10 @@ typedef LKPrecision(float, double) LKFloat;
 
 
 extern LKFloat const LKZero;
+extern LKFloat const LKEpsion;
 extern LKFloat const LKOne;
-extern LKFloat const LKNAN;
 extern LKFloat const LKInfinity;
+extern LKFloat const LKNAN;
 
 
 extern NSUInteger LKHash(LKFloat);
