@@ -29,7 +29,18 @@
 
 @interface LKSteadyVector : LKVector
 
+- (LKVector *)initWithMutableData:(NSMutableData *)data;
+
 @end
+
+
+
+@interface LKSubvector : LKVector
+
+- (instancetype)initWithSource:(LKVector *)vector offset:(LKInteger)offset stride:(LKInteger)stride length:(LKInteger)length;
+
+@end
+
 
 
 

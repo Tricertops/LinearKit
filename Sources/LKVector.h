@@ -89,7 +89,7 @@
 - (LKVector *)subvectorFrom:(LKInteger)start length:(LKInteger)length;
 - (LKVector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride;
 
-- (LKVector *)reversedVector; //TODO: Negative stride.
+- (LKVector *)reversedVector;
 
 @end
 

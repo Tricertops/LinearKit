@@ -81,13 +81,13 @@ LKInteger const LKIntegerMax = LONG_MAX;
 
 
 LKUInteger LKUnsigned(LKInteger integer) {
-    if (integer < 0) return 0;
+    if (integer < 0) @throw LKException(LKIndexException, @"This integer must not be negative.");
     return (LKUInteger)integer;
 }
 
 
 LKInteger LKSigned(LKUInteger integer) {
-    if (integer > LKIntegerMax) return LKIntegerMax;
+    if (integer > LKIntegerMax) @throw LKException(LKIndexException, @"This integer is too large.");
     return (LKInteger)integer;
 }
 
