@@ -18,9 +18,9 @@
 
 - (NSString *)description {
     // [a, b, c, d, ... 20 more ]
-    static LKLength const printedLength = 20;
+    static LKInteger const printedLength = 20;
     NSMutableArray *values = [NSMutableArray new];
-    [self enumerateConcurrently:NO block:^(LKIndex index, LKFloat *reference) {
+    [self enumerateConcurrently:NO block:^(LKInteger index, LKFloat *reference) {
         //TODO: Subvector to count
         if (index < printedLength) {
             [values addObject:[NSString stringWithFormat:@"%g", *reference]];
@@ -29,8 +29,9 @@
     NSMutableString *description = [NSMutableString new];
     [description appendString:@"["];
     [description appendString:[values componentsJoinedByString:@", "]];
-    if (self.length > printedLength) {
-        [description appendFormat:@", ... %lu more", self.length - printedLength];
+    LKInteger more = self.length - printedLength;
+    if (more > 0) {
+        [description appendFormat:@", ... %li more", more];
     }
     [description appendString:@"]"];
     return description;

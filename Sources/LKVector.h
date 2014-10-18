@@ -22,7 +22,7 @@
 
 @interface LKVector (Creating) <NSCopying>
 
-+ (LKVector *)vectorWithLength:(LKLength)length;
++ (LKVector *)vectorWithLength:(LKInteger)length;
 - (LKVector *)copy;
 
 #define LKVectorMake(LKFloat...)    _LKVectorMake(LKFloat)
@@ -39,12 +39,12 @@
 
 @interface LKVector (Accessing)
 
-@property (readonly) LKLength length;
-- (LKFloat)valueAtIndex:(LKIndex)index;
-- (void)setValue:(LKFloat)value atIndex:(LKIndex)index;
+@property (readonly) LKInteger length;
+- (LKFloat)valueAtIndex:(LKInteger)index;
+- (void)setValue:(LKFloat)value atIndex:(LKInteger)index;
 
-- (LKFloat*(^)(LKIndex index))at;
-- (void)enumerateConcurrently:(BOOL)concurrently block:(void(^)(LKIndex index, LKFloat* reference))block;
+- (LKFloat*(^)(LKInteger index))at;
+- (void)enumerateConcurrently:(BOOL)concurrently block:(void(^)(LKInteger index, LKFloat* reference))block;
 
 @end
 
@@ -81,15 +81,15 @@
 
 @interface LKVector (Subvector)
 
-- (LKVector *)from:(LKOffset)start;
-- (LKVector *)to:(LKOffset)end;
-- (LKVector *)by:(LKStride)stride;
+- (LKVector *)subvectorFrom:(LKInteger)start;
+- (LKVector *)subvectorTo:(LKInteger)end;
+- (LKVector *)subvectorBy:(LKInteger)stride;
 
-- (LKVector *)from:(LKOffset)start to:(LKOffset)end;
-- (LKVector *)from:(LKOffset)start length:(LKLength)length;
-- (LKVector *)from:(LKOffset)start by:(LKStride)stride;
+- (LKVector *)subvectorFrom:(LKInteger)start to:(LKInteger)end;
+- (LKVector *)subvectorFrom:(LKInteger)start length:(LKInteger)length;
+- (LKVector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride;
 
-- (LKVector *)reversed; //TODO: Negative stride.
+- (LKVector *)reversedVector; //TODO: Negative stride.
 
 @end
 

@@ -13,10 +13,13 @@
 @interface LKVector (Private)
 
 @property (readonly) LKFloat* head;
-@property (readonly) LKStride stride;
-@property (readonly) LKLength length;
+@property (readonly) LKInteger stride;
+@property (readonly) LKInteger length;
 
 - (instancetype)initSubclass;
+
+- (BOOL)isIndexValid:(LKInteger)index;
+- (void)validateIndex:(LKInteger)index;
 
 @end
 
@@ -33,7 +36,6 @@
 
 extern NSString * const LKIndexException;
 extern NSException * LKException(NSString *name, NSString *format, ...) NS_FORMAT_FUNCTION(2, 3);
-extern void LKAssertIndex(LKVector *vector, LKIndex index);
 
 
 

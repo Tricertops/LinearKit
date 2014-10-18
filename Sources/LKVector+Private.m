@@ -32,13 +32,26 @@
 }
 
 
-- (LKStride)stride {
+- (LKInteger)stride {
     return 0;
 }
 
 
-- (LKLength)length {
+- (LKInteger)length {
     return 0;
+}
+
+
+
+- (BOOL)isIndexValid:(__unused LKInteger)index {
+    return NO;
+}
+
+
+- (void)validateIndex:(LKInteger)index {
+    if ( ! [self isIndexValid:index]) {
+        @throw LKException(LKIndexException, @"Index %li out of bounds for %@", index, self.debugDescription);
+    }
 }
 
 
@@ -61,10 +74,21 @@ NSException * LKException(NSString *name, NSString *format, ...) {
 }
 
 
-void LKAssertIndex(LKVector *vector, LKIndex index) {
-    if (index >= vector.length) {
-        @throw LKException(LKIndexException, @"Index %lu out of bounds for %@", index, vector.debugDescription);
-    }
+
+
+
+LKInteger const LKIntegerMax = LONG_MAX;
+
+
+LKUInteger LKUnsigned(LKInteger integer) {
+    if (integer < 0) return 0;
+    return (LKUInteger)integer;
+}
+
+
+LKInteger LKSigned(LKUInteger integer) {
+    if (integer > LKIntegerMax) return LKIntegerMax;
+    return (LKInteger)integer;
 }
 
 

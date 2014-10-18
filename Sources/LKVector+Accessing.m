@@ -15,41 +15,42 @@
 
 
 
-- (LKFloat)valueAtIndex:(LKIndex)index {
-    LKAssertIndex(self, index);
-    return self.head[(LKStride)index * self.stride];
+- (LKFloat)valueAtIndex:(LKInteger)index {
+    [self validateIndex:index];
+    return self.head[index * self.stride];
 }
 
 
-- (void)setValue:(LKFloat)value atIndex:(LKIndex)index {
-    LKAssertIndex(self, index);
-    self.head[(LKStride)index * self.stride] = value;
+- (void)setValue:(LKFloat)value atIndex:(LKInteger)index {
+    [self validateIndex:index];
+    self.head[index * self.stride] = value;
 }
 
 
-- (LKFloat *(^)(LKIndex))at {
-    return ^LKFloat*(LKIndex index){
-        LKAssertIndex(self, index);
-        return self.head + ((LKStride)index * self.stride);
+- (LKFloat *(^)(LKInteger))at {
+    return ^LKFloat*(LKInteger index){
+        [self validateIndex:index];
+        return self.head + (index * self.stride);
     };
 }
 
 
 
-- (void)enumerateConcurrently:(BOOL)concurrently block:(void (^)(LKIndex, LKFloat *))block {
+- (void)enumerateConcurrently:(BOOL)concurrently block:(void (^)(LKInteger, LKFloat *))block {
     LKFloat* head = self.head;
-    LKStride stride = self.stride;
-    LKLength length = self.length;
+    LKInteger stride = self.stride;
+    LKInteger length = self.length;
     
     if (concurrently) {
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        dispatch_apply(length, queue, ^(size_t index){
-            block(index, head + ((LKStride)index * stride));
+        dispatch_apply(LKUnsigned(length), queue, ^(size_t index){
+            LKInteger signedIndex = LKSigned(index);
+            block(signedIndex, head + (signedIndex * stride));
         });
     }
     else {
-        for (LKIndex index = 0; index < length; index++) {
-            block(index, head + ((LKStride)index * stride));
+        for (LKInteger index = 0; index < length; index++) {
+            block(index, head + (index * stride));
         }
     }
 }

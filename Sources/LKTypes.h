@@ -12,15 +12,14 @@
 
 
 
+typedef long LKInteger;
+typedef unsigned long LKUInteger;
+extern LKInteger const LKIntegerMax;
+extern LKUInteger LKUnsigned(LKInteger);
+extern LKInteger LKSigned(LKUInteger);
 
-typedef unsigned long LKIndex;
-typedef LKIndex LKLength;
-typedef LKIndex LKOffset;
-typedef long LKStride;
 
 typedef LKPrecision(float, double) LKFloat;
-
-
 extern LKFloat const LKZero;
 extern LKFloat const LKEpsion;
 extern LKFloat const LKOne;

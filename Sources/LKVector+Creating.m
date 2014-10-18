@@ -16,8 +16,9 @@
 
 
 
-+ (LKVector *)vectorWithLength:(LKLength)length {
-    NSMutableData *data = [NSMutableData dataWithLength:length * sizeof(LKFloat)];
++ (LKVector *)vectorWithLength:(LKInteger)length {
+    LKUInteger unsignedLength = LKUnsigned(length);
+    NSMutableData *data = [NSMutableData dataWithLength:unsignedLength * sizeof(LKFloat)];
     return [[LKVector alloc] initWithMutableData:data];
 }
 

@@ -17,8 +17,8 @@
 
 
 - (NSUInteger)hash {
-    __block NSUInteger hash = self.length;
-    [self enumerateConcurrently:NO block:^(__unused LKIndex index, LKFloat *reference) {
+    __block NSUInteger hash = LKUnsigned(self.length) * 2654435761U;
+    [self enumerateConcurrently:NO block:^(__unused LKInteger index, LKFloat *reference) {
         hash ^= LKHash(*reference);
     }];
     return hash;
@@ -36,14 +36,14 @@
     if (self.length != other.length) return NO;
     
     LKFloat* myHead = self.head;
-    LKStride myStride = self.stride;
+    LKInteger myStride = self.stride;
     LKFloat* hisHead = other.head;
-    LKStride hisStride = other.stride;
+    LKInteger hisStride = other.stride;
     
-    LKLength length = MIN(self.length, other.length);
-    for (LKIndex index = 0; index < length; index++) {
-        LKFloat my = myHead[(LKStride)index * myStride];
-        LKFloat his = hisHead[(LKStride)index * hisStride];
+    LKInteger length = MIN(self.length, other.length);
+    for (LKInteger index = 0; index < length; index++) {
+        LKFloat my = myHead[index * myStride];
+        LKFloat his = hisHead[index * hisStride];
         
         if (isnan(my) && isnan(his)) continue;
         if (ABS(my - his) > epsilon) return NO;
