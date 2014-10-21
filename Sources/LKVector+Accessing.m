@@ -27,10 +27,15 @@
 }
 
 
-- (LKFloat *(^)(LKInteger))at {
+- (LKFloat*)referenceAtIndex:(LKInteger)index {
+    [self validateIndex:index];
+    return self.head + (index * self.stride);
+}
+
+
+- (LKFloat*(^)(LKInteger))at {
     return ^LKFloat*(LKInteger index){
-        [self validateIndex:index];
-        return self.head + (index * self.stride);
+        return [self referenceAtIndex:index];
     };
 }
 

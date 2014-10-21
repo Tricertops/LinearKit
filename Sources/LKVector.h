@@ -43,6 +43,7 @@
 - (LKFloat)valueAtIndex:(LKInteger)index;
 - (void)setValue:(LKFloat)value atIndex:(LKInteger)index;
 
+- (LKFloat*)referenceAtIndex:(LKInteger)index;
 - (LKFloat*(^)(LKInteger index))at;
 - (void)enumerateConcurrently:(BOOL)concurrently block:(void(^)(LKInteger index, LKFloat* reference))block;
 
