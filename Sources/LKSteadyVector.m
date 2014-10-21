@@ -48,9 +48,6 @@
 }
 
 
-- (BOOL)isIndexValid:(LKInteger)index {
-    return (0 <= index && index < self->_length);
-}
 
 
 

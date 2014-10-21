@@ -22,7 +22,12 @@
 
 
 - (LKVector *)subvectorTo:(LKInteger)end {
-    return [[LKSubvector alloc] initWithSource:self offset:0 stride:1 length:end];
+    return [[LKSubvector alloc] initWithSource:self offset:0 stride:1 length:(end + 1)];
+}
+
+
+- (LKVector *)subvectorWithLength:(LKInteger)length {
+    return [[LKSubvector alloc] initWithSource:self offset:0 stride:1 length:length];
 }
 
 

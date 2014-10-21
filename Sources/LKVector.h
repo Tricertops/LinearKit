@@ -83,6 +83,7 @@
 
 - (LKVector *)subvectorFrom:(LKInteger)start;
 - (LKVector *)subvectorTo:(LKInteger)end;
+- (LKVector *)subvectorWithLength:(LKInteger)length;
 - (LKVector *)subvectorBy:(LKInteger)stride;
 
 - (LKVector *)subvectorFrom:(LKInteger)start to:(LKInteger)end;

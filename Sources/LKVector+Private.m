@@ -44,7 +44,7 @@
 
 
 - (BOOL)isIndexValid:(__unused LKInteger)index {
-    return NO;
+    return (0 <= index && index < self.length);
 }
 
 
