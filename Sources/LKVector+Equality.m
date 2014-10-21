@@ -17,7 +17,7 @@
 
 
 - (NSUInteger)hash {
-    __block NSUInteger hash = LKUnsigned(self.length) * 2654435761U;
+    __block NSUInteger hash = LKUnsigned(self.length) * LKHashFactor;
     [self enumerateConcurrently:NO block:^(__unused LKInteger index, LKFloat *reference) {
         hash ^= LKHash(*reference);
     }];

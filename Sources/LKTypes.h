@@ -28,5 +28,6 @@ extern LKFloat const LKNAN;
 
 
 extern NSUInteger LKHash(LKFloat);
+extern LKUInteger const LKHashFactor;
 
 

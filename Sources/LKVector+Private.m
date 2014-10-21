@@ -110,9 +110,12 @@ NSUInteger LKHash(LKFloat value) {
     LKFloat absolute = ABS(value);
     LKFloat integral = LK_f(round)(absolute);
     LKFloat fragment = absolute - integral;
-    NSUInteger integralHash = 2654435761U * LK_f(fmod)(integral, NSUIntegerMax);
+    NSUInteger integralHash = LKHashFactor * LK_f(fmod)(integral, NSUIntegerMax);
     NSUInteger fragmentHash = fragment * NSUIntegerMax;
     return integralHash + fragmentHash;
 }
+
+
+LKUInteger const LKHashFactor = 2654435761U;
 
 
