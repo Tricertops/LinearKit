@@ -76,6 +76,12 @@
 
 
 
+- (NSString *)debugDescription {
+    return [NSString stringWithFormat:@"<%@: %p; offset=%li; stride=%li; length=%li; source=%@>", self.class, self, self->_offset, self->_stride, self->_length, self->_source.debugDescription];
+}
+
+
+
 @end
 
 

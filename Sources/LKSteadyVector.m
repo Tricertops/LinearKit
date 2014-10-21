@@ -49,6 +49,10 @@
 
 
 
+- (NSString *)debugDescription {
+    return [NSString stringWithFormat:@"<%@: %p; length=%li; data=<%@:%p>>", self.class, self, self->_length, self->_data.class, self->_data];
+}
+
 
 
 @end

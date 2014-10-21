@@ -18,14 +18,14 @@
 
 - (NSString *)description {
     // [a, b, c, d, ... 20 more ]
-    static LKInteger const printedLength = 20;
+    LKInteger printedLength = MIN(self.length, 20);
+    
     NSMutableArray *values = [NSMutableArray new];
-    [self enumerateConcurrently:NO block:^(LKInteger index, LKFloat *reference) {
-        //TODO: Subvector to count
-        if (index < printedLength) {
-            [values addObject:[NSString stringWithFormat:@"%g", *reference]];
-        }
-    }];
+    for (LKInteger index = 0; index < printedLength; index++) {
+        LKFloat value = [self valueAtIndex:index];
+        [values addObject:[NSString stringWithFormat:@"%f", value]];
+    }
+    
     NSMutableString *description = [NSMutableString new];
     [description appendString:@"["];
     [description appendString:[values componentsJoinedByString:@", "]];
@@ -35,11 +35,6 @@
     }
     [description appendString:@"]"];
     return description;
-}
-
-
-- (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"<%@ %p: %lu values %@>", self.class, self, self.length, self];
 }
 
 
