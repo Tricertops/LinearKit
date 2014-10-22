@@ -42,7 +42,7 @@
         self->_offset = offset;
         [vector validateIndex:offset];
         
-        self->_head = vector.head + offset;
+        self->_head = [vector referenceAtIndex:offset];
         self->_stride = vector.stride * stride;
         self->_length = length;
         

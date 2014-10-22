@@ -51,7 +51,7 @@
 }
 
 
-- (LKVector *)reversedVector {
+- (LKVector *)reversed {
     return [[LKSubvector alloc] initWithSource:self offset:(self.length - 1) stride:-1 length:self.length];
 }
 

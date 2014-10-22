@@ -132,6 +132,16 @@
 }
 
 
+- (void)test_reversed {
+    LKVector *vector = TestLKVector;
+    XCTAssertEqualObjects([vector reversed], LKVectorMake(M_PI, -486.47, 0.834513759, 7.9, 4));
+    XCTAssertEqualObjects([[vector reversed] reversed], vector);
+    XCTAssertEqualObjects([[vector subvectorWithLength:3] reversed], LKVectorMake(0.834513759, 7.9, 4));
+    XCTAssertEqualObjects([[vector subvectorBy:2] reversed], LKVectorMake(M_PI, 0.834513759, 4));
+    XCTAssertEqualObjects([[vector subvectorFrom:3 to:4] reversed], LKVectorMake(M_PI, -486.47));
+}
+
+
 
 @end
 

@@ -76,7 +76,7 @@
 - (LKVector *)subvectorFrom:(LKInteger)start length:(LKInteger)length;
 - (LKVector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride;
 
-- (LKVector *)reversedVector;
+- (LKVector *)reversed;
 
 @end
 
