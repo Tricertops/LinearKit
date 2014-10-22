@@ -65,21 +65,6 @@
 
 
 
-@interface LKVector (Filling)
-
-- (void)clear;
-- (void)fill:(LKFloat)value;
-- (void)generateFrom:(LKFloat)start by:(LKFloat)step;
-- (void)generateFrom:(LKFloat)start to:(LKFloat)end;
-
-- (void)setValues:(LKVector *)vector;
-
-@end
-
-
-
-
-
 @interface LKVector (Subvector)
 
 - (LKVector *)subvectorFrom:(LKInteger)start;
@@ -95,6 +80,20 @@
 
 @end
 
+
+
+
+
+@interface LKVector (Filling)
+
+- (void)clear;
+- (void)fill:(LKFloat)value;
+- (void)generateFrom:(LKFloat)start by:(LKFloat)step;
+- (void)generateFrom:(LKFloat)start to:(LKFloat)end;
+
+- (void)setValues:(LKVector *)vector;
+
+@end
 
 
 

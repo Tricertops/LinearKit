@@ -32,7 +32,7 @@
 
 
 - (LKVector *)subvectorBy:(LKInteger)stride {
-    return [[LKSubvector alloc] initWithSource:self offset:0 stride:stride length:(self.length / stride)];
+    return [[LKSubvector alloc] initWithSource:self offset:0 stride:stride length:ceil(LKOne * self.length / stride)];
 }
 
 
