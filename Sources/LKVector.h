@@ -11,8 +11,6 @@
 
 
 
-
-
 @interface LKVector : NSObject <NSCopying>
 
 
@@ -49,6 +47,13 @@
 
 
 
+#define _LKVectorMake(...) \
+(LKVector *)({ \
+    LKFloat values[] = { __VA_ARGS__ }; \
+    NSMutableData *data = [NSMutableData dataWithBytes:values length:sizeof(values)]; \
+    [[LKVector alloc] initWithMutableData:data]; \
+})
+
 
 
 @interface LKVector (Filling)
@@ -61,20 +66,5 @@
 - (void)setValues:(LKVector *)vector;
 
 @end
-
-
-
-
-
-
-
-
-
-#define _LKVectorMake(...) \
-(LKVector *)({ \
-    LKFloat values[] = { __VA_ARGS__ }; \
-    NSMutableData *data = [NSMutableData dataWithBytes:values length:sizeof(values)]; \
-    [[LKVector alloc] initWithMutableData:data]; \
-})
 
 

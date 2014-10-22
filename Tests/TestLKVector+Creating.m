@@ -18,8 +18,6 @@
 
 
 
-
-
 @implementation TestLKVector_Creating
 
 

@@ -22,8 +22,6 @@
 
 
 
-
-
 @implementation LKDataVector
 
 

@@ -18,8 +18,6 @@
 
 
 
-
-
 @implementation TestLKVector_Equality
 
 
@@ -60,8 +58,6 @@
     XCTAssertNotEqual(a, b);
     XCTAssertEqualObjects(a, b);
 }
-
-
 
 
 
