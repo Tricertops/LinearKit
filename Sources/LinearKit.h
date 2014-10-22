@@ -9,6 +9,7 @@
 
 
 #import "LKTypes.h"
+#import "NSNumber.h"
 #import "LKVector.h"
 #import "LKSubvector.h"
 #import "LKOperation.h"

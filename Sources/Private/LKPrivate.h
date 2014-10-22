@@ -28,6 +28,7 @@
 
 
 extern NSString * const LKIndexException;
+extern NSString * const LKFormatException;
 extern NSException * LKException(NSString *name, NSString *format, ...) NS_FORMAT_FUNCTION(2, 3);
 
 
