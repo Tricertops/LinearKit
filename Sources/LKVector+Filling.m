@@ -17,11 +17,13 @@
 
 
 - (void)clear {
+    //TODO: Variable length operation.
     LK_vDSP(vclr)(LKUnwrap(self), LKUnsigned(self.length));
 }
 
 
 - (void)fill:(LKFloat)value {
+    //TODO: Variable length operation with optimization for zeros.
     if (value) {
         LK_vDSP(vfill)(&value, LKUnwrap(self), LKUnsigned(self.length));
     }
@@ -32,21 +34,21 @@
 
 
 - (void)generateFrom:(LKFloat)start by:(LKFloat)step {
+    //TODO: Variable length operation.
     LK_vDSP(vramp)(&start, &step, LKUnwrap(self), LKUnsigned(self.length));
 }
 
 
 - (void)generateFrom:(LKFloat)start to:(LKFloat)end {
+    //TODO: Variable length operation.
     LK_vDSP(vgen)(&start, &end, LKUnwrap(self), LKUnsigned(self.length));
 }
 
 
 
 - (void)setValues:(LKVector *)vector {
-    //TODO: Inverse using -copyValuesTo: for LKLazyVector
-    LKInteger length = MIN(self.length, vector.length);
-    // Adds zero, because there is no specialized function for vector copy with stride.
-    LK_vDSP(vsadd)(LKUnwrap(vector), &LKZero, LKUnwrap(self), LKUnsigned(length)); //BENCH: Other?
+    //! Reversing responsibility, because the other vector may know how to optimize the transaction.
+    [vector copyValuesTo:self];
 }
 
 

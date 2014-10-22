@@ -56,6 +56,14 @@
 
 
 
+- (void)copyValuesTo:(LKVector *)vector {
+    LKInteger length = MIN(self.length, vector.length);
+    // Adds zero, because there is no specialized function for vector copy with stride.
+    LK_vDSP(vsadd)(LKUnwrap(self), &LKZero, LKUnwrap(vector), LKUnsigned(length)); //BENCH: Other fake operation?
+}
+
+
+
 @end
 
 

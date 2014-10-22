@@ -21,6 +21,8 @@
 - (BOOL)isIndexValid:(LKInteger)index;
 - (void)validateIndex:(LKInteger)index;
 
+- (void)copyValuesTo:(LKVector *)vector;
+
 @end
 
 
@@ -40,6 +42,13 @@
 - (instancetype)initWithSource:(LKVector *)vector offset:(LKInteger)offset stride:(LKInteger)stride length:(LKInteger)length;
 
 @end
+
+
+
+@interface LKOperationVector : LKVector
+
+@end
+
 
 
 
