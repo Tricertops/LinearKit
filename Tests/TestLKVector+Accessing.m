@@ -8,7 +8,7 @@
 
 @import XCTest;
 #import "LinearKit.h"
-#import "LKVector+Private.h"
+#import "LKPrivate.h"
 
 
 

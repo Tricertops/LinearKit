@@ -12,35 +12,17 @@
 
 
 
-@interface LKVector : NSObject
-@end
+@interface LKVector : NSObject <NSCopying>
 
-
-@interface LKSubvector : LKVector
-@end
-
-
-
-
-
-@interface LKVector (Creating) <NSCopying>
 
 + (LKVector *)vectorWithLength:(LKInteger)length;
-- (LKVector *)copy;
-
 #define LKVectorMake(LKFloat...)    _LKVectorMake(LKFloat)
 - (LKVector *)initWithMutableData:(NSMutableData *)data;
-
 + (LKVector *)new NS_UNAVAILABLE;
 - (LKVector *)init NS_UNAVAILABLE;
 
-@end
+- (LKVector *)copy;
 
-
-
-
-
-@interface LKVector (Accessing)
 
 @property (readonly) LKInteger length;
 - (LKFloat)valueAtIndex:(LKInteger)index;
@@ -50,36 +32,11 @@
 - (LKFloat*(^)(LKInteger index))at;
 - (void)enumerateConcurrently:(BOOL)concurrently block:(void(^)(LKInteger index, LKFloat* reference))block;
 
-@end
-
-
-
-
-
-@interface LKVector (Equality)
 
 - (NSUInteger)hash;
 - (BOOL)isEqual:(LKVector *)other;
 - (BOOL)isEqual:(LKVector *)other epsilon:(LKFloat)epsilon;
 
-@end
-
-
-
-
-
-@interface LKVector (Subvector)
-
-- (LKSubvector *)subvectorFrom:(LKInteger)start;
-- (LKSubvector *)subvectorTo:(LKInteger)end;
-- (LKSubvector *)subvectorWithLength:(LKInteger)length;
-- (LKSubvector *)subvectorBy:(LKInteger)stride;
-
-- (LKSubvector *)subvectorFrom:(LKInteger)start to:(LKInteger)end;
-- (LKSubvector *)subvectorFrom:(LKInteger)start length:(LKInteger)length;
-- (LKSubvector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride;
-
-- (LKSubvector *)reversed;
 
 @end
 

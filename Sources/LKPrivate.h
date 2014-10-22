@@ -1,20 +1,20 @@
 //
-//  LKVector+Private.h
+//  LKPrivate.h
 //  LinearKit
 //
-//  Created by Martin Kiss on 15.10.14.
+//  Created by Martin Kiss on 22.10.14.
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
+#import "LKTypes.h"
 #import "LKVector.h"
 
 
 
-@interface LKVector (Private)
+@interface LKVector ()
 
 @property (readonly) LKFloat* head;
 @property (readonly) LKInteger stride;
-@property (readonly) LKInteger length;
 
 - (instancetype)initSubclass;
 
@@ -27,39 +27,8 @@
 
 
 
-
-
-@interface LKDataVector : LKVector
-
-- (LKVector *)initWithMutableData:(NSMutableData *)data;
-
-@end
-
-
-
-@interface LKSubvector ()
-
-- (instancetype)initWithSource:(LKVector *)vector offset:(LKInteger)offset stride:(LKInteger)stride length:(LKInteger)length;
-
-@end
-
-
-
-@interface LKOperationVector : LKVector
-
-@end
-
-
-
-
-
-
 extern NSString * const LKIndexException;
 extern NSException * LKException(NSString *name, NSString *format, ...) NS_FORMAT_FUNCTION(2, 3);
-
-
-
-
 
 
 

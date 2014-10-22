@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
+#import "LKDataVector.h"
 #import "LKVector+Private.h"
 
 

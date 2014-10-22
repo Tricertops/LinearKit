@@ -7,6 +7,10 @@
 //
 
 
+
 #import "LKTypes.h"
 #import "LKVector.h"
+#import "LKSubvector.h"
+#import "LKOperation.h"
+
 

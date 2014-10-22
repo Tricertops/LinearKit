@@ -6,14 +6,13 @@
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "LKVector+Private.h"
+#import "LKOperation.h"
 
 
 
-@implementation LKOperationVector
+@implementation LKOperation
 
 //TODO: Block taking destination.
-//TODO: Evaluate on access of the head.
 //TODO: Support variable length operations.
 
 @end
