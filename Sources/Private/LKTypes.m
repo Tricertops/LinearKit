@@ -35,6 +35,7 @@ NSUInteger LKHash(LKFloat value) {
 
 
 NSString * const LKIndexException = @"LKIndexException";
+NSString * const LKFormatException = @"LKFormatException";
 
 
 NSException * LKException(NSString *name, NSString *format, ...) {

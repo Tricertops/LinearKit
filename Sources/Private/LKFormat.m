@@ -25,9 +25,15 @@
 - (instancetype)initWithType:(const char *)encodedType normalization:(LKFloat)factor {
     self = [super init];
     if (self) {
+        if ([self.class isTypeSupported:encodedType]) {
+            @throw LKException(LKFormatException, @"Type “%s” is not supported by LKFormat class", encodedType);
+        }
         self->_type = encodedType;
         self->_typeSize = [self.class sizeOfType:encodedType];
-        //TODO: Check for supported types.
+        
+        if (isfinite(factor)) {
+            @throw LKException(LKFormatException, @"Normalization factor of LKFormat must be a finite number");
+        }
         self->_normalizationFactor = factor;
     }
     return self;
@@ -35,27 +41,38 @@
 
 
 
++ (BOOL)isTypeSupported:(const char *)encodedType {
+    static NSSet *supported = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        supported = [NSSet setWithObjects:
+                     @(@encode(char)),           //  8-bit   signed
+                     @(@encode(short)),          // 16-bit   signed
+                     @(@encode(int)),            // 32-bit   signed
+                     @(@encode(unsigned char)),  //  8-bit unsigned
+                     @(@encode(unsigned short)), // 16-bit unsigned
+                     @(@encode(unsigned int)),   // 32-bit unsigned
+                     @(@encode(float)),          // single precision
+                     @(@encode(double)),         // double precision
+                     nil];
+    });
+    return [supported containsObject:@(encodedType)];
+}
+
+
 + (LKFloat)largestPositiveValueForType:(const char *)encodedType {
     static NSDictionary *largestValues = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         largestValues = @{
-                          @"c": @((LKFloat)CHAR_MAX),
-                          @"s": @((LKFloat)SHRT_MAX),
-                          @"i": @((LKFloat)INT_MAX),
-                          @"l": @((LKFloat)LONG_MAX),
-                          @"q": @((LKFloat)LONG_LONG_MAX),
-                          
-                          @"C": @((LKFloat)UCHAR_MAX),
-                          @"S": @((LKFloat)USHRT_MAX),
-                          @"I": @((LKFloat)UINT_MAX),
-                          @"L": @((LKFloat)ULONG_MAX),
-                          @"Q": @((LKFloat)ULONG_LONG_MAX),
-                          
-                          @"f": @((LKFloat)FLT_MAX),
-                          @"d": @((LKFloat)DBL_MAX),
-                          
-                          @"B": @((LKFloat)YES),
+                          @(@encode(char))          : @((LKFloat)CHAR_MAX),
+                          @(@encode(short))         : @((LKFloat)SHRT_MAX),
+                          @(@encode(int))           : @((LKFloat)INT_MAX),
+                          @(@encode(unsigned char)) : @((LKFloat)UCHAR_MAX),
+                          @(@encode(unsigned short)): @((LKFloat)USHRT_MAX),
+                          @(@encode(unsigned int))  : @((LKFloat)UINT_MAX),
+                          @(@encode(float))         : @((LKFloat)FLT_MAX),
+                          @(@encode(double))        : @((LKFloat)DBL_MAX),
                           };
     });
     NSNumber *largest = [largestValues objectForKey:@(encodedType)];
@@ -68,22 +85,14 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sizes = @{
-                  @"c": @(sizeof(char)),
-                  @"s": @(sizeof(short)),
-                  @"i": @(sizeof(int)),
-                  @"l": @(sizeof(long)),
-                  @"q": @(sizeof(long long)),
-                  
-                  @"C": @(sizeof(unsigned char)),
-                  @"S": @(sizeof(unsigned short)),
-                  @"I": @(sizeof(unsigned int)),
-                  @"L": @(sizeof(unsigned long)),
-                  @"Q": @(sizeof(unsigned long long)),
-                  
-                  @"f": @(sizeof(float)),
-                  @"d": @(sizeof(double)),
-                  
-                  @"B": @(sizeof(_Bool)),
+                  @(@encode(char))          : @(sizeof(char)),
+                  @(@encode(short))         : @(sizeof(short)),
+                  @(@encode(int))           : @(sizeof(int)),
+                  @(@encode(unsigned char)) : @(sizeof(unsigned char)),
+                  @(@encode(unsigned short)): @(sizeof(unsigned short)),
+                  @(@encode(unsigned int))  : @(sizeof(unsigned int)),
+                  @(@encode(float))         : @(sizeof(float)),
+                  @(@encode(double))        : @(sizeof(double)),
                   };
     });
     NSNumber *largest = [sizes objectForKey:@(encodedType)];
@@ -92,10 +101,52 @@
 
 
 
+#define LKTypeCompare(encoded, type)    ( [encoded isEqualToString:@(@encode(type))] )
+
 - (LKVector *)createVectorFromData:(NSData *)data {
     LKInteger length = (LKInteger)(data.length / self.typeSize);
     LKVector *vector = [LKVector vectorWithLength:length];
-    //TODO: Use appropriate function.
+    NSString *type = @(self.type);
+    
+#define LKCall(type)  ((type *)data.bytes, 1, LKUnwrap(vector), LKUnsigned(length))
+    
+    if      (LKTypeCompare(type, char)) {
+        LK_vDSP(vflt8)LKCall(char);
+    }
+    else if (LKTypeCompare(type, short)) {
+        LK_vDSP(vflt16)LKCall(short);
+    }
+    else if (LKTypeCompare(type, int)) {
+        LK_vDSP(vflt32)LKCall(int);
+    }
+    else if (LKTypeCompare(type, unsigned char)) {
+        LK_vDSP(vfltu8)LKCall(unsigned char);
+    }
+    else if (LKTypeCompare(type, unsigned short)) {
+        LK_vDSP(vfltu16)LKCall(unsigned short);
+    }
+    else if (LKTypeCompare(type, unsigned int)) {
+        LK_vDSP(vfltu32)LKCall(unsigned int);
+    }
+    else if (LKTypeCompare(type, float)) {
+        LKPrecision(// Precision 1: copy
+                    vDSP_vsadd((float *)data.bytes, 1, &LKZero,
+                               LKUnwrap(vector),
+                               LKUnsigned(length)),
+                    // Precision 2: convert
+                    (vDSP_vspdp)LKCall(float));
+    }
+    else if (LKTypeCompare(type, double)) {
+        LKPrecision(// Precision 1: convert
+                    (vDSP_vdpsp)LKCall(double),
+                    // Precision 2: copy
+                    vDSP_vsaddD((double *)data.bytes, 1, &LKZero,
+                                LKUnwrap(vector),
+                                LKUnsigned(length)));
+    }
+    
+#undef LKCall
+    
     return vector;
 }
 
@@ -103,7 +154,47 @@
 - (NSMutableData *)createDataFromVector:(LKVector *)vector {
     LKUInteger length = (LKUInteger)vector.length * self.typeSize;
     NSMutableData *data = [NSMutableData dataWithLength:length];
-    //TODO: Use appropriate function.
+    NSString *type = @(self.type);
+    
+#define LKCall(type)  (LKUnwrap(vector), (type *)data.bytes, 1, length)
+    
+    if      (LKTypeCompare(type, char)) {
+        LK_vDSP(vfix8)LKCall(char);
+    }
+    else if (LKTypeCompare(type, short)) {
+        LK_vDSP(vfix16)LKCall(short);
+    }
+    else if (LKTypeCompare(type, int)) {
+        LK_vDSP(vfix32)LKCall(int);
+    }
+    else if (LKTypeCompare(type, unsigned char)) {
+        LK_vDSP(vfixu8)LKCall(unsigned char);
+    }
+    else if (LKTypeCompare(type, unsigned short)) {
+        LK_vDSP(vfixu16)LKCall(unsigned short);
+    }
+    else if (LKTypeCompare(type, unsigned int)) {
+        LK_vDSP(vfixu32)LKCall(unsigned int);
+    }
+    else if (LKTypeCompare(type, float)) {
+        LKPrecision(// Precision 1: copy
+                    vDSP_vsadd(LKUnwrap(vector), &LKZero,
+                               (float *)data.bytes, 1,
+                               length),
+                    // Precision 2: convert
+                    (vDSP_vdpsp)LKCall(float));
+    }
+    else if (LKTypeCompare(type, double)) {
+        LKPrecision(// Precision 1: convert
+                    (vDSP_vspdp)LKCall(double),
+                    // Precision 2: copy
+                    vDSP_vsaddD(LKUnwrap(vector), &LKZero,
+                                (double *)data.bytes, 1,
+                                length));
+    }
+    
+#undef LKCall
+    
     return data;
 }
 
