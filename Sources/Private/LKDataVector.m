@@ -7,7 +7,7 @@
 //
 
 #import "LKDataVector.h"
-#import "LKVector+Private.h"
+#import "LKPrivate.h"
 
 
 
