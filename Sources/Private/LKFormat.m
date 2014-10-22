@@ -68,12 +68,12 @@
         factors = @{
                     @(@encode(char))          : @((LKFloat)CHAR_MAX),
                     @(@encode(short))         : @((LKFloat)SHRT_MAX),
-                    @(@encode(int))           : @((LKFloat)INT_MAX),
                     @(@encode(unsigned char)) : @((LKFloat)UCHAR_MAX),
                     @(@encode(unsigned short)): @((LKFloat)USHRT_MAX),
-                    @(@encode(unsigned int))  : @((LKFloat)UINT_MAX),
                     @(@encode(float))         : @((LKFloat)FLT_MAX),
-                    //! Default normalization is not supported for type "double" while working with single precision.
+                    //! Default normalization is not supported for types that exceed current precision.
+                    @(@encode(int))           : @((LKFloat)LKPrecision(NAN, INT_MAX)),
+                    @(@encode(unsigned int))  : @((LKFloat)LKPrecision(NAN, UINT_MAX)),
                     @(@encode(double))        : @((LKFloat)LKPrecision(NAN, DBL_MAX)),
                     };
     });
