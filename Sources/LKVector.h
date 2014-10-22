@@ -13,7 +13,10 @@
 
 
 @interface LKVector : NSObject
+@end
 
+
+@interface LKSubvector : LKVector
 @end
 
 
@@ -67,16 +70,16 @@
 
 @interface LKVector (Subvector)
 
-- (LKVector *)subvectorFrom:(LKInteger)start;
-- (LKVector *)subvectorTo:(LKInteger)end;
-- (LKVector *)subvectorWithLength:(LKInteger)length;
-- (LKVector *)subvectorBy:(LKInteger)stride;
+- (LKSubvector *)subvectorFrom:(LKInteger)start;
+- (LKSubvector *)subvectorTo:(LKInteger)end;
+- (LKSubvector *)subvectorWithLength:(LKInteger)length;
+- (LKSubvector *)subvectorBy:(LKInteger)stride;
 
-- (LKVector *)subvectorFrom:(LKInteger)start to:(LKInteger)end;
-- (LKVector *)subvectorFrom:(LKInteger)start length:(LKInteger)length;
-- (LKVector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride;
+- (LKSubvector *)subvectorFrom:(LKInteger)start to:(LKInteger)end;
+- (LKSubvector *)subvectorFrom:(LKInteger)start length:(LKInteger)length;
+- (LKSubvector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride;
 
-- (LKVector *)reversed;
+- (LKSubvector *)reversed;
 
 @end
 

@@ -37,7 +37,7 @@
 
 
 
-@interface LKSubvector : LKVector
+@interface LKSubvector ()
 
 - (instancetype)initWithSource:(LKVector *)vector offset:(LKInteger)offset stride:(LKInteger)stride length:(LKInteger)length;
 
