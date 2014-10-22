@@ -23,6 +23,7 @@
 - (instancetype)initWithType:(const char *)encodedType normalization:(LKFloat)factor;
 @property (readonly) const char *type;
 @property (readonly) LKUInteger typeSize;
+@property (readonly) BOOL isTypeSigned;
 @property (readonly) LKFloat normalizationFactor;
 
 

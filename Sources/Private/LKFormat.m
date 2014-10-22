@@ -30,6 +30,7 @@
         }
         self->_type = encodedType;
         self->_typeSize = [self.class sizeOfType:encodedType];
+        self->_isTypeSigned = [self.class isSignedType:encodedType];
         
         if (isfinite(factor)) {
             @throw LKException(LKFormatException, @"Normalization factor of LKFormat must be a finite number");
@@ -100,6 +101,22 @@
 }
 
 
++ (BOOL)isSignedType:(const char *)encodedType {
+    static NSSet *signedTypes = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        signedTypes = [NSSet setWithObjects:
+                       @(@encode(char)),   //  8-bit   signed
+                       @(@encode(short)),  // 16-bit   signed
+                       @(@encode(int)),    // 32-bit   signed
+                       @(@encode(float)),  // single precision
+                       @(@encode(double)), // double precision
+                       nil];
+    });
+    return [signedTypes containsObject:@(encodedType)];
+}
+
+
 
 #define LKTypeCompare(encoded, type)    ( [encoded isEqualToString:@(@encode(type))] )
 
@@ -147,11 +164,26 @@
     
 #undef LKCall
     
+    LKFloat factor = self.normalizationFactor;
+    if (factor != 1 && factor != 0) {
+        LK_vDSP(vsdiv)(LKUnwrap(vector), &factor, LKUnwrap(vector), LKUnsigned(length));
+    }
     return vector;
 }
 
 
 - (NSMutableData *)createDataFromVector:(LKVector *)vector {
+    LKFloat factor = self.normalizationFactor;
+    if (factor != 1 && factor != 0) {
+        LKVector *denormalized = [LKVector vectorWithLength:vector.length];
+        BOOL isSigned = self.isTypeSigned;
+        LKFloat min = (isSigned? -1 : 0);
+        LKFloat max = (isSigned? +1 : 1);
+        LK_vDSP(vclip)(LKUnwrap(vector), &min, &max, LKUnwrap(denormalized), LKUnsigned(vector.length));
+        LK_vDSP(vsmul)(LKUnwrap(denormalized), &factor, LKUnwrap(denormalized), LKUnsigned(vector.length));
+        vector = denormalized;
+    }
+    
     LKUInteger length = (LKUInteger)vector.length * self.typeSize;
     NSMutableData *data = [NSMutableData dataWithLength:length];
     NSString *type = @(self.type);
