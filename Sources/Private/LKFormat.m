@@ -26,6 +26,7 @@
     self = [super init];
     if (self) {
         self->_type = encodedType;
+        self->_typeSize = [self.class sizeOfType:encodedType];
         //TODO: Check for supported types.
         self->_normalizationFactor = factor;
     }
@@ -59,6 +60,51 @@
     });
     NSNumber *largest = [largestValues objectForKey:@(encodedType)];
     return [largest LK_floatValue];
+}
+
+
++ (LKUInteger)sizeOfType:(const char *)encodedType {
+    static NSDictionary *sizes = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizes = @{
+                  @"c": @(sizeof(char)),
+                  @"s": @(sizeof(short)),
+                  @"i": @(sizeof(int)),
+                  @"l": @(sizeof(long)),
+                  @"q": @(sizeof(long long)),
+                  
+                  @"C": @(sizeof(unsigned char)),
+                  @"S": @(sizeof(unsigned short)),
+                  @"I": @(sizeof(unsigned int)),
+                  @"L": @(sizeof(unsigned long)),
+                  @"Q": @(sizeof(unsigned long long)),
+                  
+                  @"f": @(sizeof(float)),
+                  @"d": @(sizeof(double)),
+                  
+                  @"B": @(sizeof(_Bool)),
+                  };
+    });
+    NSNumber *largest = [sizes objectForKey:@(encodedType)];
+    return [largest LK_floatValue];
+}
+
+
+
+- (LKVector *)createVectorFromData:(NSData *)data {
+    LKInteger length = (LKInteger)(data.length / self.typeSize);
+    LKVector *vector = [LKVector vectorWithLength:length];
+    //TODO: Use appropriate function.
+    return vector;
+}
+
+
+- (NSMutableData *)createDataFromVector:(LKVector *)vector {
+    LKUInteger length = (LKUInteger)vector.length * self.typeSize;
+    NSMutableData *data = [NSMutableData dataWithLength:length];
+    //TODO: Use appropriate function.
+    return data;
 }
 
 

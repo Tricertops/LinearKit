@@ -7,6 +7,7 @@
 //
 
 #import "LKTypes.h"
+#import "LKFormat.h"
 
 
 
@@ -16,7 +17,11 @@
 
 
 + (LKVector *)vectorWithLength:(LKInteger)length;
++ (LKVector *)vectorFromData:(NSData *)data format:(LKFormat *)format;
 #define LKVectorMake(LKFloat...)    _LKVectorMake(LKFloat)
+
+
+
 - (LKVector *)initWithMutableData:(NSMutableData *)data;
 + (LKVector *)new NS_UNAVAILABLE;
 - (LKVector *)init NS_UNAVAILABLE;
@@ -31,6 +36,8 @@
 - (LKFloat*)referenceAtIndex:(LKInteger)index;
 - (LKFloat*(^)(LKInteger index))at;
 - (void)enumerateConcurrently:(BOOL)concurrently block:(void(^)(LKInteger index, LKFloat* reference))block;
+
+- (NSMutableData *)copyDataWithFormat:(LKFormat *)format;
 
 
 - (NSUInteger)hash;

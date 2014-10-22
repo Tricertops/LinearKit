@@ -32,6 +32,11 @@
 }
 
 
++ (LKVector *)vectorFromData:(NSData *)data format:(LKFormat *)format {
+    return [format createVectorFromData:data];
+}
+
+
 - (instancetype)initSubclass {
     return [super init];
 }
@@ -148,6 +153,11 @@
             block(index, head + (index * stride));
         }
     }
+}
+
+
+- (NSMutableData *)copyDataWithFormat:(LKFormat *)format {
+    return [format createDataFromVector:self];
 }
 
 
