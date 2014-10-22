@@ -17,7 +17,7 @@
 
 
 + (instancetype)formatWithType:(const char *)encodedType normalized:(BOOL)normalized {
-    LKFloat factor = (normalized? [self largestPositiveValueForType:encodedType] : 1);
+    LKFloat factor = (normalized? [self defaultNormalizationfactorForType:encodedType] : 1);
     return [[self alloc] initWithType:encodedType normalization:factor];
 }
 
@@ -61,22 +61,23 @@
 }
 
 
-+ (LKFloat)largestPositiveValueForType:(const char *)encodedType {
-    static NSDictionary *largestValues = nil;
++ (LKFloat)defaultNormalizationfactorForType:(const char *)encodedType {
+    static NSDictionary *factors = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        largestValues = @{
-                          @(@encode(char))          : @((LKFloat)CHAR_MAX),
-                          @(@encode(short))         : @((LKFloat)SHRT_MAX),
-                          @(@encode(int))           : @((LKFloat)INT_MAX),
-                          @(@encode(unsigned char)) : @((LKFloat)UCHAR_MAX),
-                          @(@encode(unsigned short)): @((LKFloat)USHRT_MAX),
-                          @(@encode(unsigned int))  : @((LKFloat)UINT_MAX),
-                          @(@encode(float))         : @((LKFloat)FLT_MAX),
-                          @(@encode(double))        : @((LKFloat)DBL_MAX),
-                          };
+        factors = @{
+                    @(@encode(char))          : @((LKFloat)CHAR_MAX),
+                    @(@encode(short))         : @((LKFloat)SHRT_MAX),
+                    @(@encode(int))           : @((LKFloat)INT_MAX),
+                    @(@encode(unsigned char)) : @((LKFloat)UCHAR_MAX),
+                    @(@encode(unsigned short)): @((LKFloat)USHRT_MAX),
+                    @(@encode(unsigned int))  : @((LKFloat)UINT_MAX),
+                    @(@encode(float))         : @((LKFloat)FLT_MAX),
+                    //! Default normalization is not supported for type "double" while working with single precision.
+                    @(@encode(double))        : @((LKFloat)LKPrecision(NAN, DBL_MAX)),
+                    };
     });
-    NSNumber *largest = [largestValues objectForKey:@(encodedType)];
+    NSNumber *largest = [factors objectForKey:@(encodedType)];
     return [largest LK_floatValue];
 }
 
