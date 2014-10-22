@@ -62,6 +62,73 @@
     XCTAssertEqualObjects([vector subvectorBy:3], LKVectorMake(4, -486.47));
     XCTAssertEqualObjects([vector subvectorBy:4], LKVectorMake(4, M_PI));
     XCTAssertEqualObjects([vector subvectorBy:5], LKVectorMake(4));
+    XCTAssertEqualObjects([vector subvectorBy:6], LKVectorMake(4));
+    XCTAssertEqualObjects([vector subvectorBy:6724576254], LKVectorMake(4));
+}
+
+
+- (void)test_subvectorFromTo {
+    LKVector *vector = TestLKVector;
+    XCTAssertEqualObjects([vector subvectorFrom:0 to:0], LKVectorMake(4));
+    XCTAssertEqualObjects([vector subvectorFrom:0 to:1], LKVectorMake(4, 7.9));
+    XCTAssertEqualObjects([vector subvectorFrom:0 to:2], LKVectorMake(4, 7.9, 0.834513759));
+    XCTAssertEqualObjects([vector subvectorFrom:0 to:3], LKVectorMake(4, 7.9, 0.834513759, -486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:0 to:4], vector);
+    XCTAssertEqualObjects([vector subvectorFrom:1 to:1], LKVectorMake(7.9));
+    XCTAssertEqualObjects([vector subvectorFrom:1 to:2], LKVectorMake(7.9, 0.834513759));
+    XCTAssertEqualObjects([vector subvectorFrom:1 to:3], LKVectorMake(7.9, 0.834513759, -486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:1 to:4], LKVectorMake(7.9, 0.834513759, -486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:2 to:2], LKVectorMake(0.834513759));
+    XCTAssertEqualObjects([vector subvectorFrom:2 to:3], LKVectorMake(0.834513759, -486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:2 to:4], LKVectorMake(0.834513759, -486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:3 to:3], LKVectorMake(-486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:3 to:4], LKVectorMake(-486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:4 to:4], LKVectorMake(M_PI));
+}
+
+
+- (void)test_subvectorFromLength {
+    LKVector *vector = TestLKVector;
+    XCTAssertEqualObjects([vector subvectorFrom:0 length:1], LKVectorMake(4));
+    XCTAssertEqualObjects([vector subvectorFrom:0 length:2], LKVectorMake(4, 7.9));
+    XCTAssertEqualObjects([vector subvectorFrom:0 length:3], LKVectorMake(4, 7.9, 0.834513759));
+    XCTAssertEqualObjects([vector subvectorFrom:0 length:4], LKVectorMake(4, 7.9, 0.834513759, -486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:0 length:5], vector);
+    XCTAssertEqualObjects([vector subvectorFrom:1 length:1], LKVectorMake(7.9));
+    XCTAssertEqualObjects([vector subvectorFrom:1 length:2], LKVectorMake(7.9, 0.834513759));
+    XCTAssertEqualObjects([vector subvectorFrom:1 length:3], LKVectorMake(7.9, 0.834513759, -486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:1 length:4], LKVectorMake(7.9, 0.834513759, -486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:2 length:1], LKVectorMake(0.834513759));
+    XCTAssertEqualObjects([vector subvectorFrom:2 length:2], LKVectorMake(0.834513759, -486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:2 length:3], LKVectorMake(0.834513759, -486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:3 length:1], LKVectorMake(-486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:3 length:2], LKVectorMake(-486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:4 length:1], LKVectorMake(M_PI));
+}
+
+
+- (void)test_subvectorFromBy {
+    LKVector *vector = TestLKVector;
+    XCTAssertEqualObjects([vector subvectorFrom:0 by:1], vector);
+    XCTAssertEqualObjects([vector subvectorFrom:0 by:2], LKVectorMake(4, 0.834513759, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:0 by:3], LKVectorMake(4, -486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:0 by:4], LKVectorMake(4, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:0 by:5], LKVectorMake(4));
+    XCTAssertEqualObjects([vector subvectorFrom:0 by:6], LKVectorMake(4));
+    XCTAssertEqualObjects([vector subvectorFrom:1 by:1], LKVectorMake(7.9, 0.834513759, -486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:1 by:2], LKVectorMake(7.9, -486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:1 by:3], LKVectorMake(7.9, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:1 by:4], LKVectorMake(7.9));
+    XCTAssertEqualObjects([vector subvectorFrom:1 by:5], LKVectorMake(7.9));
+    XCTAssertEqualObjects([vector subvectorFrom:2 by:1], LKVectorMake(0.834513759, -486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:2 by:2], LKVectorMake(0.834513759, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:2 by:3], LKVectorMake(0.834513759));
+    XCTAssertEqualObjects([vector subvectorFrom:2 by:4], LKVectorMake(0.834513759));
+    XCTAssertEqualObjects([vector subvectorFrom:3 by:1], LKVectorMake(-486.47, M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:3 by:2], LKVectorMake(-486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:3 by:3], LKVectorMake(-486.47));
+    XCTAssertEqualObjects([vector subvectorFrom:4 by:1], LKVectorMake(M_PI));
+    XCTAssertEqualObjects([vector subvectorFrom:4 by:2], LKVectorMake(M_PI));
 }
 
 

@@ -32,12 +32,12 @@
 
 
 - (LKVector *)subvectorBy:(LKInteger)stride {
-    return [[LKSubvector alloc] initWithSource:self offset:0 stride:stride length:ceil(LKOne * self.length / stride)];
+    return [[LKSubvector alloc] initWithSource:self offset:0 stride:stride length:ceil((LKFloat)self.length / stride)];
 }
 
 
 - (LKVector *)subvectorFrom:(LKInteger)start to:(LKInteger)end {
-    return [[LKSubvector alloc] initWithSource:self offset:start stride:1 length:end - start];
+    return [[LKSubvector alloc] initWithSource:self offset:start stride:1 length:(end + 1) - start];
 }
 
 
@@ -47,7 +47,7 @@
 
 
 - (LKVector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride {
-    return [[LKSubvector alloc] initWithSource:self offset:start stride:stride length:(self.length / stride)];
+    return [[LKSubvector alloc] initWithSource:self offset:start stride:stride length:ceil((LKFloat)(self.length-start) / stride)];
 }
 
 
