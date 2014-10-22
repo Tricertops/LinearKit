@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B2D4A8A19F797A700D15E17 /* TestLKVector+Accessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D4A8919F797A700D15E17 /* TestLKVector+Accessing.m */; };
 		5B3379B719F2F21900CBE28C /* LKVector+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3379B519F2F21900CBE28C /* LKVector+Description.m */; };
 		5B61080C19EE5E2A0071B547 /* LinearKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B61080819EE5E2A0071B547 /* LinearKit.h */; };
 		5B736B2B19F1988300DDDFCD /* LKVector+Accessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B736B2919F1988300DDDFCD /* LKVector+Accessing.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B2D4A8919F797A700D15E17 /* TestLKVector+Accessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestLKVector+Accessing.m"; sourceTree = "<group>"; };
 		5B3379B519F2F21900CBE28C /* LKVector+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Description.m"; sourceTree = "<group>"; };
 		5B6107F019EE5E050071B547 /* libLinearKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLinearKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B61080819EE5E2A0071B547 /* LinearKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearKit.h; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				5BFDB53219EE62F80030DC6F /* Info.plist */,
 				5B86E14319F0660500523073 /* TestLKVector+Creating.m */,
 				5B736B2C19F1A82100DDDFCD /* TestLKVector+Equality.m */,
+				5B2D4A8919F797A700D15E17 /* TestLKVector+Accessing.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			files = (
 				5B86E14419F0660500523073 /* TestLKVector+Creating.m in Sources */,
 				5B736B2D19F1A82100DDDFCD /* TestLKVector+Equality.m in Sources */,
+				5B2D4A8A19F797A700D15E17 /* TestLKVector+Accessing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
