@@ -1,5 +1,5 @@
 //
-//  LKSteadyVector.m
+//  LKDataVector.m
 //  LinearKit
 //
 //  Created by Martin Kiss on 15.10.14.
@@ -10,7 +10,7 @@
 
 
 
-@interface LKSteadyVector ()
+@interface LKDataVector ()
 
 @property (readonly) NSMutableData *data;
 
@@ -23,7 +23,7 @@
 
 
 
-@implementation LKSteadyVector
+@implementation LKDataVector
 
 
 

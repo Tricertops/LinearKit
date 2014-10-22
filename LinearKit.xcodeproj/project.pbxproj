@@ -24,7 +24,7 @@
 		5BFDB4F419EE604C0030DC6F /* LKVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F219EE604C0030DC6F /* LKVector.h */; };
 		5BFDB4F519EE604C0030DC6F /* LKVector+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB4F319EE604C0030DC6F /* LKVector+Private.m */; };
 		5BFDB4F819EE60860030DC6F /* LKTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F619EE60860030DC6F /* LKTypes.h */; };
-		5BFDB54019EEFC0C0030DC6F /* LKSteadyVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB53E19EEFC0C0030DC6F /* LKSteadyVector.m */; };
+		5BFDB54019EEFC0C0030DC6F /* LKDataVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDB53E19EEFC0C0030DC6F /* LKDataVector.m */; };
 		5BFDB54319EEFC990030DC6F /* LKVector+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB54119EEFC990030DC6F /* LKVector+Private.h */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		5BFDB4F619EE60860030DC6F /* LKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKTypes.h; sourceTree = "<group>"; };
 		5BFDB52919EE62D90030DC6F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BFDB53219EE62F80030DC6F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BFDB53E19EEFC0C0030DC6F /* LKSteadyVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKSteadyVector.m; sourceTree = "<group>"; };
+		5BFDB53E19EEFC0C0030DC6F /* LKDataVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDataVector.m; sourceTree = "<group>"; };
 		5BFDB54119EEFC990030DC6F /* LKVector+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Private.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +115,7 @@
 				5B3379B519F2F21900CBE28C /* LKVector+Description.m */,
 				5B7371D319F30FE600CFBC60 /* LKVector+Subvector.m */,
 				5B86E13819F05E5000523073 /* LKVector+Filling.m */,
-				5BFDB53E19EEFC0C0030DC6F /* LKSteadyVector.m */,
+				5BFDB53E19EEFC0C0030DC6F /* LKDataVector.m */,
 				5B7371CF19F2F7FB00CFBC60 /* LKSubvector.m */,
 				5B538DFC19F8178B005E7773 /* LKOperationVector.m */,
 			);
@@ -244,7 +244,7 @@
 				5B7371D119F2F7FB00CFBC60 /* LKSubvector.m in Sources */,
 				5B86E14219F063C300523073 /* LKVector+Equality.m in Sources */,
 				5B538DFE19F8178B005E7773 /* LKOperationVector.m in Sources */,
-				5BFDB54019EEFC0C0030DC6F /* LKSteadyVector.m in Sources */,
+				5BFDB54019EEFC0C0030DC6F /* LKDataVector.m in Sources */,
 				5B3379B719F2F21900CBE28C /* LKVector+Description.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

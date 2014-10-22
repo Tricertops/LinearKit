@@ -29,7 +29,7 @@
 
 
 
-@interface LKSteadyVector : LKVector
+@interface LKDataVector : LKVector
 
 - (LKVector *)initWithMutableData:(NSMutableData *)data;
 

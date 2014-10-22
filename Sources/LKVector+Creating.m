@@ -24,7 +24,7 @@
 
 
 - (LKVector *)initWithMutableData:(NSMutableData *)data {
-    return [[LKSteadyVector alloc] initWithMutableData:data];
+    return [[LKDataVector alloc] initWithMutableData:data];
 }
 
 
