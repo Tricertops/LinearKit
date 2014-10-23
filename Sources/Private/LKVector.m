@@ -8,6 +8,7 @@
 
 #import "LKPrivate.h"
 #import "LKDataVector.h"
+#import "LKOperation.h"
 
 
 
@@ -205,6 +206,15 @@
         if (ABS(my - his) > epsilon) return NO;
     }
     return YES;
+}
+
+
+
+#pragma mark Operations
+
+
+- (LKOperation *)operation:(LKOperationBlock)block {
+    return [LKOperation operationWithLength:self.length block:block];
 }
 
 

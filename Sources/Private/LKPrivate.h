@@ -8,6 +8,7 @@
 
 #import "LKTypes.h"
 #import "LKVector.h"
+#import "LKOperation.h"
 
 
 
@@ -20,6 +21,8 @@
 
 - (BOOL)isIndexValid:(LKInteger)index;
 - (void)validateIndex:(LKInteger)index;
+
+- (LKOperation *)operation:(LKOperationBlock)block;
 
 @end
 
