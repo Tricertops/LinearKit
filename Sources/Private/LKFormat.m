@@ -16,6 +16,9 @@
 
 
 
+#pragma mark Creating
+
+
 + (instancetype)formatWithType:(const char *)encodedType normalized:(BOOL)normalized {
     LKFloat factor = (normalized? [self defaultNormalizationfactorForType:encodedType] : 1);
     return [[self alloc] initWithType:encodedType normalization:factor];
@@ -40,6 +43,9 @@
     return self;
 }
 
+
+
+#pragma mark Types
 
 
 + (BOOL)isTypeSupported:(const char *)encodedType {
@@ -117,6 +123,9 @@
     return [signedTypes containsObject:@(encodedType)];
 }
 
+
+
+#pragma mark Converting
 
 
 #define LKTypeCompare(encoded, type)    ( [encoded isEqualToString:@(@encode(type))] )

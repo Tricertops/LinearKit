@@ -8,11 +8,22 @@
 
 
 
+#pragma mark - Types
+
 #import "LKTypes.h"
 #import "NSNumber.h"
+
+
+#pragma mark - Vectors
+
 #import "LKVector.h"
 #import "LKSubvector.h"
+
+
+#pragma mark - Operations
+
 #import "LKOperation.h"
+
 #import "LKVector+Generating.h"
 
 

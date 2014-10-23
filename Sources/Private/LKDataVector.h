@@ -6,14 +6,15 @@
 //  Copyright (c) 2014 Triceratops. All rights reserved.
 //
 
-#import "LKTypes.h"
 #import "LKVector.h"
 
 
 
 @interface LKDataVector : LKVector
 
+
 - (LKVector *)initWithMutableData:(NSMutableData *)data;
+
 
 @end
 

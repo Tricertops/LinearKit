@@ -15,7 +15,7 @@
 
 
 
-#pragma mark - Creating
+#pragma mark Creating
 
 
 - (LKVector *)initWithMutableData:(NSMutableData *)data {
@@ -46,7 +46,7 @@
 
 
 
-#pragma mark - Source
+#pragma mark Source
 
 
 - (LKVector *)copy {
@@ -77,7 +77,7 @@
 
 
 
-#pragma mark - Abstract
+#pragma mark Abstract
 
 
 - (LKFloat *)head {
@@ -96,7 +96,7 @@
 
 
 
-#pragma mark - Validation
+#pragma mark Validation
 
 
 - (BOOL)isIndexValid:(__unused LKInteger)index {
@@ -112,7 +112,7 @@
 
 
 
-#pragma mark - Accessing
+#pragma mark Accessing
 
 
 - (LKFloat)valueAtIndex:(LKInteger)index {
@@ -168,7 +168,7 @@
 
 
 
-#pragma mark - Equality
+#pragma mark Equality
 
 
 - (NSUInteger)hash {
@@ -209,7 +209,7 @@
 
 
 
-#pragma mark - Description
+#pragma mark Description
 
 
 - (NSString *)description {

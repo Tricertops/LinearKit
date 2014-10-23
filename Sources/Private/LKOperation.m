@@ -19,11 +19,13 @@
 
 
 
+#pragma mark -
+
 @implementation LKOperation
 
 
 
-#pragma mark - Creating
+#pragma mark Creating
 
 
 + (instancetype)operationWithLength:(LKInteger)length block:(LKOperationBlock)block {
@@ -47,7 +49,7 @@
 
 
 
-#pragma mark - Using
+#pragma mark Using
 
 
 - (LKVector *)vectorize {

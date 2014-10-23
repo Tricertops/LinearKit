@@ -13,6 +13,7 @@
 
 @interface LKSubvector ()
 
+
 @property (readonly) LKVector *source;
 @property (readonly) LKInteger offset;
 
@@ -22,18 +23,18 @@
 
 - (instancetype)initWithSource:(LKVector *)vector offset:(LKInteger)offset stride:(LKInteger)stride length:(LKInteger)length;
 
+
 @end
 
 
+
+#pragma mark -
 
 @implementation LKSubvector
 
 
 
-@synthesize head = _head;
-@synthesize stride = _stride;
-@synthesize length = _length;
-
+#pragma mark Creating
 
 
 - (instancetype)initWithSource:(LKVector *)vector offset:(LKInteger)offset stride:(LKInteger)stride length:(LKInteger)length {
@@ -54,6 +55,18 @@
 }
 
 
+
+#pragma mark Properties
+
+@synthesize head = _head;
+@synthesize stride = _stride;
+@synthesize length = _length;
+
+
+
+#pragma mark Translation
+
+
 - (LKInteger)indexToSource:(LKInteger)index {
     LKInteger stride = self->_stride / self->_source.stride;
     return self->_offset + index * stride;
@@ -70,12 +83,19 @@
 }
 
 
+
+#pragma mark Validation
+
+
 - (BOOL)isIndexValid:(LKInteger)index {
     if ( ! [super isIndexValid:index]) return NO;
     LKInteger sourceIndex = [self indexToSource:index];
     return [self->_source isIndexValid:sourceIndex];
 }
 
+
+
+#pragma mark Description
 
 
 - (NSString *)debugDescription {
@@ -88,8 +108,13 @@
 
 
 
+#pragma mark -
+
 @implementation LKVector (Subvector)
 
+
+
+#pragma mark Subrange
 
 
 - (LKVector *)subvectorFrom:(LKInteger)start {
@@ -107,11 +132,6 @@
 }
 
 
-- (LKVector *)subvectorBy:(LKInteger)stride {
-    return [[LKSubvector alloc] initWithSource:self offset:0 stride:stride length:ceil((LKFloat)self.length / stride)];
-}
-
-
 - (LKVector *)subvectorFrom:(LKInteger)start to:(LKInteger)end {
     return [[LKSubvector alloc] initWithSource:self offset:start stride:1 length:(end + 1) - start];
 }
@@ -122,9 +142,22 @@
 }
 
 
+
+#pragma mark Substride
+
+
+- (LKVector *)subvectorBy:(LKInteger)stride {
+    return [[LKSubvector alloc] initWithSource:self offset:0 stride:stride length:ceil((LKFloat)self.length / stride)];
+}
+
+
 - (LKVector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride {
     return [[LKSubvector alloc] initWithSource:self offset:start stride:stride length:ceil((LKFloat)(self.length-start) / stride)];
 }
+
+
+
+#pragma mark Reversing
 
 
 - (LKVector *)reversed {

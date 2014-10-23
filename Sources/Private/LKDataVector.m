@@ -13,22 +13,24 @@
 
 @interface LKDataVector ()
 
+
 @property (readonly) NSMutableData *data;
 
 @property (readonly) LKFloat* head;
 @property (readonly) LKInteger length;
 
+
 @end
 
 
+
+#pragma mark -
 
 @implementation LKDataVector
 
 
 
-@synthesize head = _head;
-@synthesize length = _length;
-
+#pragma mark Creating
 
 
 - (LKVector *)initWithMutableData:(NSMutableData *)data {
@@ -42,10 +44,19 @@
 }
 
 
+
+#pragma mark Properties
+
+@synthesize head = _head;
+@synthesize length = _length;
+
 - (LKInteger)stride {
     return 1;
 }
 
+
+
+#pragma mark Description
 
 
 - (NSString *)debugDescription {

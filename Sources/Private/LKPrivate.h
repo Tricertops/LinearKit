@@ -25,12 +25,16 @@
 
 
 
+#pragma mark - Exceptions
+
 extern NSString * const LKIndexException;
 extern NSString * const LKLengthException;
 extern NSString * const LKFormatException;
 extern NSException * LKException(NSString *name, NSString *format, ...) NS_FORMAT_FUNCTION(2, 3);
 
 
+
+#pragma mark - Invocation
 
 #define LKUnwrap(LKVector)      (LKVector.head), (LKVector.stride)
 
