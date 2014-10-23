@@ -46,22 +46,27 @@
 
 
 
-#pragma mark - Copying
+#pragma mark - Source
 
 
 - (LKVector *)copy {
     LKVector *vector = [LKVector vectorWithLength:self.length];
-    [vector setValues:self];
+    [self fillVector:vector];
     return vector;
 }
 
 
 - (LKVector *)copyWithZone:(__unused NSZone *)zone {
-    return [self copyWithZone:NULL];
+    return [self copy];
 }
 
 
-- (void)copyValuesTo:(LKVector *)vector {
+- (void)set:(id<LKSource>)source {
+    [source fillVector:self];
+}
+
+
+- (void)fillVector:(LKVector *)vector {
     LKInteger length = MIN(self.length, vector.length);
     // Adds zero, because there is no specialized function for vector copy with stride.
     LK_vDSP(vsadd)(LKUnwrap(self), &LKZero, LKUnwrap(vector), LKUnsigned(length)); //BENCH: Other fake operation?

@@ -21,8 +21,6 @@
 - (BOOL)isIndexValid:(LKInteger)index;
 - (void)validateIndex:(LKInteger)index;
 
-- (void)copyValuesTo:(LKVector *)vector;
-
 @end
 
 

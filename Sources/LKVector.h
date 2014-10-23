@@ -11,7 +11,7 @@
 
 
 
-@interface LKVector : NSObject <NSCopying>
+@interface LKVector : NSObject <LKSource>
 
 
 + (LKVector *)vectorWithLength:(LKInteger)length;
@@ -19,12 +19,13 @@
 #define LKVectorMake(LKFloat...)    _LKVectorMake(LKFloat)
 
 
-
 - (LKVector *)initWithMutableData:(NSMutableData *)data;
 + (LKVector *)new NS_UNAVAILABLE;
 - (LKVector *)init NS_UNAVAILABLE;
 
+
 - (LKVector *)copy;
+- (void)set:(id<LKSource>)source;
 
 
 @property (readonly) LKInteger length;

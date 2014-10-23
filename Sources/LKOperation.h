@@ -7,10 +7,17 @@
 //
 
 #import "LKTypes.h"
+#import "LKVector.h"
 
 
 
-@interface LKOperation : NSObject
+@interface LKOperation : NSObject <LKSource>
+
+
+- (LKVector *)vectorize;
+- (LKOperation *)copy;
+- (void)fillVector:(LKVector *)vector;
+
 
 @end
 

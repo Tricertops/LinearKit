@@ -31,3 +31,14 @@ extern NSUInteger LKHash(LKFloat);
 extern LKUInteger const LKHashFactor;
 
 
+
+@class LKVector;
+
+@protocol LKSource <NSObject, NSCopying>
+
+- (instancetype)copy;
+- (void)fillVector:(LKVector *)vector;
+
+@end
+
+

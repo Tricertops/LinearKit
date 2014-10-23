@@ -12,8 +12,37 @@
 
 @implementation LKOperation
 
+
 //TODO: Block taking destination.
 //TODO: Support variable length operations.
+
+
+- (LKVector *)vectorize {
+    LKVector *vector = [LKVector vectorWithLength:self.length];
+    [self fillVector:vector];
+    return vector;
+}
+
+
+- (LKOperation *)copy {
+    //TODO: Copy block
+    return nil;
+}
+
+
+- (LKVector *)copyWithZone:(__unused NSZone *)zone {
+    return [self copy];
+}
+
+
+- (void)fillVector:(LKVector *)vector {
+    //TODO: Check lengths
+    //TODO: Invoke block
+}
+
+
+
+
 
 @end
 
