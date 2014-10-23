@@ -20,6 +20,8 @@
 - (LKOperation *)negativeAbsolute;
 - (LKOperation *)negative;
 
+- (LKOperation *)signs;
+
 
 @end
 

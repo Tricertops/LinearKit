@@ -33,6 +33,7 @@ LKFloat const LKZero = 0;
 LKFloat const LKEpsion = LKPrecision(FLT_EPSILON, DBL_EPSILON);
 LKFloat const LKOne = 1;
 LKFloat const LKInfinity = INFINITY;
+LKFloat const LKNegativeInfinity = -INFINITY;
 LKFloat const LKNAN = NAN;
 
 

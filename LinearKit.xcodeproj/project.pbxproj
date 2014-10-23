@@ -31,6 +31,8 @@
 		5BB94F8519F9974600BAAB77 /* LKVector+Generating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB94F8319F9974600BAAB77 /* LKVector+Generating.m */; };
 		5BB94F8819F99CCA00BAAB77 /* LKVector+Signs.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB94F8619F99CCA00BAAB77 /* LKVector+Signs.h */; };
 		5BB94F8919F99CCA00BAAB77 /* LKVector+Signs.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB94F8719F99CCA00BAAB77 /* LKVector+Signs.m */; };
+		5BB94F8C19F99F4700BAAB77 /* LKVector+Limits.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB94F8A19F99F4700BAAB77 /* LKVector+Limits.h */; };
+		5BB94F8D19F99F4700BAAB77 /* LKVector+Limits.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB94F8B19F99F4700BAAB77 /* LKVector+Limits.m */; };
 		5BFDB4F419EE604C0030DC6F /* LKVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F219EE604C0030DC6F /* LKVector.h */; };
 		5BFDB4F819EE60860030DC6F /* LKTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BFDB4F619EE60860030DC6F /* LKTypes.h */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		5BB94F8319F9974600BAAB77 /* LKVector+Generating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Generating.m"; sourceTree = "<group>"; };
 		5BB94F8619F99CCA00BAAB77 /* LKVector+Signs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Signs.h"; sourceTree = "<group>"; };
 		5BB94F8719F99CCA00BAAB77 /* LKVector+Signs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Signs.m"; sourceTree = "<group>"; };
+		5BB94F8A19F99F4700BAAB77 /* LKVector+Limits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Limits.h"; sourceTree = "<group>"; };
+		5BB94F8B19F99F4700BAAB77 /* LKVector+Limits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Limits.m"; sourceTree = "<group>"; };
 		5BFDB4F219EE604C0030DC6F /* LKVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKVector.h; sourceTree = "<group>"; };
 		5BFDB4F619EE60860030DC6F /* LKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKTypes.h; sourceTree = "<group>"; };
 		5BFDB52919EE62D90030DC6F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +157,8 @@
 				5BB94F8319F9974600BAAB77 /* LKVector+Generating.m */,
 				5BB94F8619F99CCA00BAAB77 /* LKVector+Signs.h */,
 				5BB94F8719F99CCA00BAAB77 /* LKVector+Signs.m */,
+				5BB94F8A19F99F4700BAAB77 /* LKVector+Limits.h */,
+				5BB94F8B19F99F4700BAAB77 /* LKVector+Limits.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 				5B538E0119F82C4D005E7773 /* LKPrecision.h in Headers */,
 				5B538E0019F82C0D005E7773 /* LKOperation.h in Headers */,
 				5BFDB4F819EE60860030DC6F /* LKTypes.h in Headers */,
+				5BB94F8C19F99F4700BAAB77 /* LKVector+Limits.h in Headers */,
 				5BB94F8819F99CCA00BAAB77 /* LKVector+Signs.h in Headers */,
 				5B538E1819F8323A005E7773 /* LKPrivate.h in Headers */,
 				5BB94F8419F9974600BAAB77 /* LKVector+Generating.h in Headers */,
@@ -280,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B538E1719F8323A005E7773 /* LKOperation.m in Sources */,
+				5BB94F8D19F99F4700BAAB77 /* LKVector+Limits.m in Sources */,
 				5B538E1619F8323A005E7773 /* LKDataVector.m in Sources */,
 				5B538E1C19F8323A005E7773 /* LKVector.m in Sources */,
 				5B538E2219F83323005E7773 /* LKFormat.m in Sources */,

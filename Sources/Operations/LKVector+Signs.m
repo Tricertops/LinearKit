@@ -8,6 +8,7 @@
 
 #import "LKVector+Signs.h"
 #import "LKPrivate.h"
+#import "LKVector+Limits.h"
 
 
 
@@ -34,6 +35,11 @@
     return [self operation:^(LKVector *destination, LKUInteger length) {
         LK_vDSP(vneg)(LKUnwrap(self), LKUnwrap(destination), length);
     }];
+}
+
+
+- (LKOperation *)signs {
+    return [self comparedTo:0];
 }
 
 

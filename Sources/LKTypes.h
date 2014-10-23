@@ -23,10 +23,12 @@ extern LKInteger LKSigned(LKUInteger);
 #pragma mark - Floats
 
 typedef LKPrecision(float, double) LKFloat;
+
 extern LKFloat const LKZero;
 extern LKFloat const LKEpsion;
 extern LKFloat const LKOne;
 extern LKFloat const LKInfinity;
+extern LKFloat const LKNegativeInfinity;
 extern LKFloat const LKNAN;
 
 
