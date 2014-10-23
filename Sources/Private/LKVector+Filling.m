@@ -44,13 +44,6 @@
 
 
 
-- (void)setValues:(LKVector *)vector {
-    //! Reversing responsibility, because the other vector may know how to optimize the transaction.
-    [vector copyValuesTo:self];
-}
-
-
-
 @end
 
 

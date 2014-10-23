@@ -14,19 +14,24 @@
 @interface LKVector : NSObject <LKSource>
 
 
+#pragma mark - Creating
+
 + (LKVector *)vectorWithLength:(LKInteger)length;
 + (LKVector *)vectorFromData:(NSData *)data format:(LKFormat *)format;
 #define LKVectorMake(LKFloat...)    _LKVectorMake(LKFloat)
-
 
 - (LKVector *)initWithMutableData:(NSMutableData *)data;
 + (LKVector *)new NS_UNAVAILABLE;
 - (LKVector *)init NS_UNAVAILABLE;
 
 
+#pragma mark - Duplication
+
 - (LKVector *)copy;
 - (void)set:(id<LKSource>)source;
 
+
+#pragma mark - Accessing
 
 @property (readonly) LKInteger length;
 - (LKFloat)valueAtIndex:(LKInteger)index;
@@ -36,8 +41,13 @@
 - (LKFloat*(^)(LKInteger index))at;
 - (void)enumerateConcurrently:(BOOL)concurrently block:(void(^)(LKInteger index, LKFloat* reference))block;
 
+
+#pragma mark - Export
+
 - (NSMutableData *)copyDataWithFormat:(LKFormat *)format;
 
+
+#pragma mark - Comparison
 
 - (NSUInteger)hash;
 - (BOOL)isEqual:(LKVector *)other;
@@ -63,8 +73,6 @@
 - (void)fill:(LKFloat)value;
 - (void)generateFrom:(LKFloat)start by:(LKFloat)step;
 - (void)generateFrom:(LKFloat)start to:(LKFloat)end;
-
-- (void)setValues:(LKVector *)vector;
 
 @end
 

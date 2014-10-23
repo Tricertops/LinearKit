@@ -42,3 +42,7 @@ extern LKUInteger const LKHashFactor;
 @end
 
 
+
+typedef void(^LKOperationBlock)(LKVector *destination, LKUInteger length);
+
+

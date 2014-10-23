@@ -67,9 +67,11 @@
 
 
 - (void)fillVector:(LKVector *)vector {
-    LKInteger length = MIN(self.length, vector.length);
+    if (vector.length <= self.length) {
+        @throw LKException(LKLengthException, @"Vector is too long for this Operation: Vector %li, Operation %li", vector.length, self.length);
+    }
     // Adds zero, because there is no specialized function for vector copy with stride.
-    LK_vDSP(vsadd)(LKUnwrap(self), &LKZero, LKUnwrap(vector), LKUnsigned(length)); //BENCH: Other fake operation?
+    LK_vDSP(vsadd)(LKUnwrap(self), &LKZero, LKUnwrap(vector), LKUnsigned(vector.length)); //BENCH: Other fake operation?
 }
 
 
