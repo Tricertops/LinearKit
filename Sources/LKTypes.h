@@ -11,6 +11,7 @@
 #import "LKPrecision.h"
 
 
+#pragma mark - Integers
 
 typedef long LKInteger;
 typedef unsigned long LKUInteger;
@@ -18,6 +19,8 @@ extern LKInteger const LKIntegerMax;
 extern LKUInteger LKUnsigned(LKInteger);
 extern LKInteger LKSigned(LKUInteger);
 
+
+#pragma mark - Floats
 
 typedef LKPrecision(float, double) LKFloat;
 extern LKFloat const LKZero;
@@ -27,10 +30,13 @@ extern LKFloat const LKInfinity;
 extern LKFloat const LKNAN;
 
 
+#pragma mark - Hashing
+
 extern NSUInteger LKHash(LKFloat);
 extern LKUInteger const LKHashFactor;
 
 
+#pragma mark -
 
 @class LKVector;
 
@@ -42,6 +48,8 @@ extern LKUInteger const LKHashFactor;
 @end
 
 
+
+#pragma mark - Blocks
 
 typedef void(^LKOperationBlock)(LKVector *destination, LKUInteger length);
 

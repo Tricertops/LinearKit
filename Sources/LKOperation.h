@@ -14,13 +14,13 @@
 @interface LKOperation : NSObject <LKSource>
 
 
-#pragma mark - Creating
+#pragma mark Creating
 
 + (instancetype)operationWithLength:(LKInteger)length block:(LKOperationBlock)block;
 - (instancetype)initWithLength:(LKInteger)length block:(LKOperationBlock)block;
 
 
-#pragma mark - Using
+#pragma mark Using
 
 @property (readonly) LKInteger length;
 - (LKVector *)vectorize;

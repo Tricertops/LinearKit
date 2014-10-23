@@ -17,16 +17,25 @@
 
 
 
+#pragma mark -
+
 @interface LKVector (Subvector)
+
+
+#pragma mark Subrange
 
 - (LKSubvector *)subvectorFrom:(LKInteger)start;
 - (LKSubvector *)subvectorTo:(LKInteger)end;
 - (LKSubvector *)subvectorWithLength:(LKInteger)length;
-- (LKSubvector *)subvectorBy:(LKInteger)stride;
-
 - (LKSubvector *)subvectorFrom:(LKInteger)start to:(LKInteger)end;
 - (LKSubvector *)subvectorFrom:(LKInteger)start length:(LKInteger)length;
+
+#pragma mark Substride
+
+- (LKSubvector *)subvectorBy:(LKInteger)stride;
 - (LKSubvector *)subvectorFrom:(LKInteger)start by:(LKInteger)stride;
+
+#pragma mark Reversing
 
 - (LKSubvector *)reversed;
 
