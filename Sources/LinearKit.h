@@ -13,5 +13,6 @@
 #import "LKVector.h"
 #import "LKSubvector.h"
 #import "LKOperation.h"
+#import "LKVector+Generating.h"
 
 

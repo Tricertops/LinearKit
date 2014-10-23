@@ -68,16 +68,3 @@
 })
 
 
-
-#pragma mark -
-
-@interface LKVector (Filling)
-
-- (void)clear;
-- (void)fill:(LKFloat)value;
-- (void)generateFrom:(LKFloat)start by:(LKFloat)step;
-- (void)generateFrom:(LKFloat)start to:(LKFloat)end;
-
-@end
-
-
