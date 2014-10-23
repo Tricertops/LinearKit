@@ -37,7 +37,6 @@
 
 
 - (instancetype)initWithSource:(LKVector *)vector offset:(LKInteger)offset stride:(LKInteger)stride length:(LKInteger)length {
-    if ( ! vector) return nil;
     self = [super initSubclass];
     if (self) {
         self->_source = vector;

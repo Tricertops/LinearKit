@@ -44,7 +44,5 @@ extern LKUInteger const LKHashFactor;
 
 
 typedef void(^LKOperationBlock)(LKVector *destination, LKUInteger length);
-typedef void(^LKGeneratorBlock)(LKVector *destination);
-typedef LKFloat(^LKGeneratorIndexBlock)(LKInteger index, LKInteger length);
 
 

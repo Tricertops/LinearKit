@@ -67,7 +67,6 @@
 
 
 - (void)fillVector:(LKVector *)vector {
-    if ( ! vector) return;
     if (vector.length <= self.length) {
         @throw LKException(LKLengthException, @"Vector is too long for this Operation: Vector %li, Operation %li", vector.length, self.length);
     }
