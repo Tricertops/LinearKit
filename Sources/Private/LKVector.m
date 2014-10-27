@@ -229,7 +229,7 @@
     NSMutableArray *values = [NSMutableArray new];
     for (LKInteger index = 0; index < printedLength; index++) {
         LKFloat value = [self valueAtIndex:index];
-        [values addObject:[NSString stringWithFormat:@"%f", value]];
+        [values addObject:[NSString stringWithFormat:@"%g", value]];
     }
     
     NSMutableString *description = [NSMutableString new];

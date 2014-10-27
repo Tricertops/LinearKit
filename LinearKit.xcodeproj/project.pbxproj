@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5B0BD18219FE3DEC0049B3B7 /* LKVector+Squares.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B0BD18019FE3DEC0049B3B7 /* LKVector+Squares.h */; };
 		5B0BD18319FE3DEC0049B3B7 /* LKVector+Squares.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD18119FE3DEC0049B3B7 /* LKVector+Squares.m */; };
+		5B0BD18619FE40EC0049B3B7 /* LKVector+Miscellaneous.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B0BD18419FE40EC0049B3B7 /* LKVector+Miscellaneous.h */; };
+		5B0BD18719FE40EC0049B3B7 /* LKVector+Miscellaneous.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BD18519FE40EC0049B3B7 /* LKVector+Miscellaneous.m */; };
 		5B2D4A8A19F797A700D15E17 /* TestLKVector+Accessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D4A8919F797A700D15E17 /* TestLKVector+Accessing.m */; };
 		5B2D4A8C19F79C2300D15E17 /* TestLKVector+Subvector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D4A8B19F79C2300D15E17 /* TestLKVector+Subvector.m */; };
 		5B538E0019F82C0D005E7773 /* LKOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B538DFF19F82C08005E7773 /* LKOperation.h */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		5B0BD18019FE3DEC0049B3B7 /* LKVector+Squares.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Squares.h"; sourceTree = "<group>"; };
 		5B0BD18119FE3DEC0049B3B7 /* LKVector+Squares.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Squares.m"; sourceTree = "<group>"; };
+		5B0BD18419FE40EC0049B3B7 /* LKVector+Miscellaneous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Miscellaneous.h"; sourceTree = "<group>"; };
+		5B0BD18519FE40EC0049B3B7 /* LKVector+Miscellaneous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Miscellaneous.m"; sourceTree = "<group>"; };
 		5B2D4A8919F797A700D15E17 /* TestLKVector+Accessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestLKVector+Accessing.m"; sourceTree = "<group>"; };
 		5B2D4A8B19F79C2300D15E17 /* TestLKVector+Subvector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestLKVector+Subvector.m"; sourceTree = "<group>"; };
 		5B538DFF19F82C08005E7773 /* LKOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKOperation.h; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				5BB94F8B19F99F4700BAAB77 /* LKVector+Limits.m */,
 				5B0BD18019FE3DEC0049B3B7 /* LKVector+Squares.h */,
 				5B0BD18119FE3DEC0049B3B7 /* LKVector+Squares.m */,
+				5B0BD18419FE40EC0049B3B7 /* LKVector+Miscellaneous.h */,
+				5B0BD18519FE40EC0049B3B7 /* LKVector+Miscellaneous.m */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 				5B538E2519F835C5005E7773 /* NSNumber.h in Headers */,
 				5B538E0319F82C70005E7773 /* LKSubvector.h in Headers */,
 				5B538E1F19F8330D005E7773 /* LKFormat.h in Headers */,
+				5B0BD18619FE40EC0049B3B7 /* LKVector+Miscellaneous.h in Headers */,
 				5B0BD18219FE3DEC0049B3B7 /* LKVector+Squares.h in Headers */,
 				5B538E1519F8323A005E7773 /* LKDataVector.h in Headers */,
 				5B538E0119F82C4D005E7773 /* LKPrecision.h in Headers */,
@@ -297,6 +304,7 @@
 				5BB94F8D19F99F4700BAAB77 /* LKVector+Limits.m in Sources */,
 				5B538E1619F8323A005E7773 /* LKDataVector.m in Sources */,
 				5B538E1C19F8323A005E7773 /* LKVector.m in Sources */,
+				5B0BD18719FE40EC0049B3B7 /* LKVector+Miscellaneous.m in Sources */,
 				5B538E2219F83323005E7773 /* LKFormat.m in Sources */,
 				5B538E1A19F8323A005E7773 /* LKTypes.m in Sources */,
 				5B0BD18319FE3DEC0049B3B7 /* LKVector+Squares.m in Sources */,
