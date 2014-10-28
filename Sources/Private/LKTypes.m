@@ -14,6 +14,7 @@
 #pragma mark - Integers
 
 LKInteger const LKIntegerMax = LONG_MAX;
+LKInteger const LKIndexNotFound = -1;
 
 LKUInteger LKUnsigned(LKInteger integer) {
     if (integer < 0) @throw LKException(LKIndexException, @"This integer must not be negative.");

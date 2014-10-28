@@ -23,6 +23,10 @@
 - (LKOperation *)compressed;
 - (LKOperation *)compressedWithGate:(LKVector *)gate;
 
+- (LKInteger)findNumberOfZeroCrossings;
+- (LKInteger)indexOfZeroCrossing:(LKInteger)crossing;
+- (LKInteger)findZeroCrossingsWithMaxCount:(LKInteger)max lastIndex:(out LKInteger *)last;
+
 
 @end
 

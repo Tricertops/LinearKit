@@ -16,6 +16,7 @@
 typedef long LKInteger;
 typedef unsigned long LKUInteger;
 extern LKInteger const LKIntegerMax;
+extern LKInteger const LKIndexNotFound;
 extern LKUInteger LKUnsigned(LKInteger);
 extern LKInteger LKSigned(LKUInteger);
 
