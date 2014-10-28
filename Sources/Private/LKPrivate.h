@@ -8,6 +8,7 @@
 
 #import "LKTypes.h"
 #import "LKVector.h"
+#import "LKSubvector.h"
 #import "LKOperation.h"
 
 
@@ -22,7 +23,23 @@
 - (BOOL)isIndexValid:(LKInteger)index;
 - (void)validateIndex:(LKInteger)index;
 
+- (BOOL)isReverseOf:(LKVector *)vector;
+
 - (LKOperation *)operation:(LKOperationBlock)block;
+
+@end
+
+
+
+@interface LKSubvector ()
+
+@end
+
+
+
+@interface LKOperation ()
+
++ (LKOperation *)wrap:(LKVector *)vector;
 
 @end
 

@@ -68,12 +68,8 @@
 
 
 - (void)fillVector:(LKVector *)vector {
-    if ( ! vector) return;
-    if (vector.length > self.length) {
-        @throw LKException(LKLengthException, @"Vector is too long for this Operation: Vector %li, Operation %li", vector.length, self.length);
-    }
-    // Adds zero, because there is no specialized function for vector copy with stride.
-    LK_vDSP(vsadd)(LKUnwrap(self), &LKZero, LKUnwrap(vector), LKUnsigned(vector.length)); //BENCH: Other fake operation?
+    LKOperation *operation = [LKOperation wrap:self];
+    [operation fillVector:vector];
 }
 
 
@@ -205,6 +201,16 @@
         if (isnan(my) && isnan(his)) continue;
         if (ABS(my - his) > epsilon) return NO;
     }
+    return YES;
+}
+
+
+- (BOOL)isReverseOf:(LKVector *)vector {
+    if ( ! vector) return NO;
+    if (self == vector) return NO;
+    if (self.length != vector.length) return NO;
+    if (self.stride != -vector.stride) return NO;
+    if ([vector referenceAtIndex:(vector.length - 1)] != [self referenceAtIndex:0]) return NO;
     return YES;
 }
 

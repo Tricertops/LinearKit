@@ -79,6 +79,25 @@
 
 
 
+#pragma mark Factory
+
+
++ (LKOperation *)wrap:(LKVector *)vector {
+    return [LKOperation operationWithLength:vector.length block:^(LKVector *destination, LKUInteger length) {
+        if ([destination isReverseOf:vector]) {
+            //! Reverse in place.
+            vDSP_vrvrs(LKUnwrap(vector), length);
+        }
+        else {
+            //! Copy values.
+            // Adds zero, because there is no specialized function for vector copy with stride.
+            LK_vDSP(vsadd)(LKUnwrap(vector), &LKZero, LKUnwrap(destination), length); //BENCH: Other fake functions?
+        }
+    }];
+}
+
+
+
 @end
 
 
