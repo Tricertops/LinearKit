@@ -32,6 +32,20 @@
 
 
 
+- (LKOperation *)compressed {
+    return [self compressedWithGate:self];
+}
+
+
+- (LKOperation *)compressedWithGate:(LKVector *)gate {
+    //TODO: Get the final length somewhow?
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vcmprs)(LKUnwrap(self), LKUnwrap(gate), LKUnwrap(destination), length);
+    }];
+}
+
+
+
 @end
 
 

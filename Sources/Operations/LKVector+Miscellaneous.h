@@ -20,6 +20,9 @@
 
 - (LKOperation *)selected:(LKVector *)indexes;
 
+- (LKOperation *)compressed;
+- (LKOperation *)compressedWithGate:(LKVector *)gate;
+
 
 @end
 
