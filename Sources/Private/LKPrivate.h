@@ -25,6 +25,8 @@
 
 - (BOOL)isReverseOf:(LKVector *)vector;
 
+- (LKVector *)linearized;
+
 - (LKOperation *)operation:(LKOperationBlock)block;
 
 @end

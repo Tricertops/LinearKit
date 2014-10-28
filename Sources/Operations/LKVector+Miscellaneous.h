@@ -18,7 +18,7 @@
 //TODO: round, ceil, floor
 
 
-- (LKOperation *)select:(LKVector *)indexes;
+- (LKOperation *)selected:(LKVector *)indexes;
 
 
 @end

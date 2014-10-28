@@ -44,6 +44,11 @@
 }
 
 
+- (LKVector *)linearized {
+    return self;
+}
+
+
 
 #pragma mark Properties
 

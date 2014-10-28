@@ -224,6 +224,11 @@
 }
 
 
+- (LKVector *)linearized {
+    return nil;
+}
+
+
 
 #pragma mark Description
 

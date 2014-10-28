@@ -23,10 +23,10 @@
 
 
 
-- (LKOperation *)select:(LKVector *)indexes {
-    //TODO: Subvector must be linearized.
+- (LKOperation *)selected:(LKVector *)indexes {
+    LKVector *linearized = [self linearized]; //! This operation does not respect strides of Subvectors.
     return [self operation:^(LKVector *destination, LKUInteger length) {
-        LK_vDSP(vindex)(self.head, LKUnwrap(indexes), LKUnwrap(destination), length);
+        LK_vDSP(vindex)(linearized.head, LKUnwrap(indexes), LKUnwrap(destination), length);
     }];
 }
 

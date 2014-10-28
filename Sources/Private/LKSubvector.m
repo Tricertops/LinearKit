@@ -55,6 +55,11 @@
 }
 
 
+- (LKVector *)linearized {
+    return [self copy];
+}
+
+
 
 #pragma mark Properties
 
