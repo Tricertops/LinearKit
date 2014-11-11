@@ -37,6 +37,11 @@
 - (LKOperation *)simpsonIntegration:(LKFloat)step;
 - (LKOperation *)trapezoidalIntegration:(LKFloat)step;
 
+- (void)sortAscending:(BOOL)ascending;
+//TODO: Index sort, but needs index vectors
+
+- (LKOperation *)slidingWindowSum:(LKInteger)window;
+
 
 @end
 

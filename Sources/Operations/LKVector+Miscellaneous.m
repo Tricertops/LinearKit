@@ -118,6 +118,23 @@
 
 
 
+- (void)sortAscending:(BOOL)ascending {
+    LKVector *linearized = [self linearized];
+    LK_vDSP(vsort)(linearized.head, LKUnsigned(linearized.length), (ascending? 1 : -1));
+    [self set:linearized];
+}
+
+
+
+- (LKOperation *)slidingWindowSum:(LKInteger)window {
+    LKVector *subself = [self subvectorWithLength:self.length - window + 1];
+    return [subself operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vswsum)(LKUnwrap(self), LKUnwrap(destination), length, LKUnsigned(window));
+    }];
+}
+
+
+
 @end
 
 
