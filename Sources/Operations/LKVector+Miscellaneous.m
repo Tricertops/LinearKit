@@ -93,6 +93,31 @@
 
 
 
+- (LKOperation *)runningSumIntegration:(LKFloat)weight {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vrsum)(LKUnwrap(self), &weight, LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)simpsonIntegration:(LKFloat)step {
+    //TODO: Only out of place.
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vsimps)(LKUnwrap(self), &step, LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)trapezoidalIntegration:(LKFloat)step {
+    //TODO: Only out of place.
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vsimps)(LKUnwrap(self), &step, LKUnwrap(destination), length);
+        vDSP_vtrapz(LKUnwrap(self), &step, LKUnwrap(destination), length);
+    }];
+}
+
+
+
 @end
 
 

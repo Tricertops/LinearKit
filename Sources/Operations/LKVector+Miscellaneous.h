@@ -33,6 +33,11 @@
 - (void)averageInclude:(LKVector *)other weight:(LKFloat)weight;
 
 
+- (LKOperation *)runningSumIntegration:(LKFloat)weight;
+- (LKOperation *)simpsonIntegration:(LKFloat)step;
+- (LKOperation *)trapezoidalIntegration:(LKFloat)step;
+
+
 @end
 
 
