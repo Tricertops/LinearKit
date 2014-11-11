@@ -28,6 +28,20 @@
 - (LKInteger)findZeroCrossingsWithMaxCount:(LKInteger)max lastIndex:(out LKInteger *)last;
 
 
+- (LKOperation *)averageWith:(LKVector *)other;
+- (void)averageInclude:(LKVector *)other weight:(LKFloat)weight;
+
+
+@end
+
+
+
+@interface LKOperation (Miscellaneous)
+
+
++ (LKOperation *)averageOf:(NSArray *)vectors;
+
+
 @end
 
 

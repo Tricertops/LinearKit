@@ -88,6 +88,9 @@
             //! Reverse in place.
             vDSP_vrvrs(LKUnwrap(vector), length);
         }
+        else if (vector == destination) {
+            //! Do nothing.
+        }
         else {
             //! Copy values.
             // Adds zero, because there is no specialized function for vector copy with stride.
