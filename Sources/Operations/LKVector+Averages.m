@@ -29,6 +29,45 @@
 
 
 
+#pragma mark Means
+
+
+- (LKFloat)mean {
+    LKFloat mean = LKNAN;
+    LK_vDSP(meanv)(LKUnwrap(self), &mean, LKUnsigned(self.length));
+    return mean;
+}
+
+
+- (LKFloat)magnitudeMean {
+    LKFloat magnitudeMean = LKNAN;
+    LK_vDSP(meamgv)(LKUnwrap(self), &magnitudeMean, LKUnsigned(self.length));
+    return magnitudeMean;
+}
+
+
+- (LKFloat)squareMean {
+    LKFloat squareMean = LKNAN;
+    LK_vDSP(measqv)(LKUnwrap(self), &squareMean, LKUnsigned(self.length));
+    return squareMean;
+}
+
+
+- (LKFloat)signedSquareMean {
+    LKFloat signedSquareMean = LKNAN;
+    LK_vDSP(mvessq)(LKUnwrap(self), &signedSquareMean, LKUnsigned(self.length));
+    return signedSquareMean;
+}
+
+
+- (LKFloat)rootMeanSquare {
+    LKFloat rootMeanSquare = LKNAN;
+    LK_vDSP(rmsqv)(LKUnwrap(self), &rootMeanSquare, LKUnsigned(self.length));
+    return rootMeanSquare;
+}
+
+
+
 @end
 
 

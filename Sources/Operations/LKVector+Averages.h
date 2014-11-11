@@ -14,11 +14,19 @@
 @interface LKVector (Averages)
 
 
-#pragma mark - Averaging
+#pragma mark Averaging
 
 - (LKOperation *)averageWith:(LKVector *)other;
 - (void)averageInclude:(LKVector *)other weight:(LKFloat)weight;
 
+
+#pragma mark Means
+
+- (LKFloat)mean;
+- (LKFloat)magnitudeMean;
+- (LKFloat)squareMean;
+- (LKFloat)signedSquareMean;
+- (LKFloat)rootMeanSquare;
 
 
 @end
