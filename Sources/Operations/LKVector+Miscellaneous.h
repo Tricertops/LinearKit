@@ -31,7 +31,8 @@
 - (void)sortAscending:(BOOL)ascending;
 //TODO: Index sort, but needs index vectors
 
-
+- (LKOperation *)correlationWithFilter:(LKVector *)filter;
+- (LKOperation *)convolutionWithFilter:(LKVector *)filter;
 
 
 @end

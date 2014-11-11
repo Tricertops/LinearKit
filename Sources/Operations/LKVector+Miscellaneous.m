@@ -82,13 +82,25 @@
 
 
 
-
-
-
 - (void)sortAscending:(BOOL)ascending {
     LKVector *linearized = [self linearized];
     LK_vDSP(vsort)(linearized.head, LKUnsigned(linearized.length), (ascending? 1 : -1));
     [self set:linearized];
+}
+
+
+
+- (LKOperation *)correlationWithFilter:(LKVector *)filter {
+    LKVector *subself = [self subvectorWithLength:self.length - filter.length + 1];
+    return [subself operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(conv)(LKUnwrap(self), LKUnwrap(filter), LKUnwrap(destination), length, LKUnsigned(filter.length));
+    }];
+}
+
+
+
+- (LKOperation *)convolutionWithFilter:(LKVector *)filter {
+    return [self correlationWithFilter:filter.reversed];
 }
 
 
