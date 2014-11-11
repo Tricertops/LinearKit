@@ -28,15 +28,10 @@
 - (LKInteger)indexOfZeroCrossing:(LKInteger)crossing;
 - (LKInteger)findZeroCrossingsWithMaxCount:(LKInteger)max lastIndex:(out LKInteger *)last;
 
-
-- (LKOperation *)runningSumIntegration:(LKFloat)weight;
-- (LKOperation *)simpsonIntegration:(LKFloat)step;
-- (LKOperation *)trapezoidalIntegration:(LKFloat)step;
-
 - (void)sortAscending:(BOOL)ascending;
 //TODO: Index sort, but needs index vectors
 
-- (LKOperation *)slidingWindowSum:(LKInteger)window;
+
 
 
 @end

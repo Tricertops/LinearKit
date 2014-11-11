@@ -29,6 +29,8 @@
 		5B538E2819F835E4005E7773 /* NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B538E2719F835E4005E7773 /* NSNumber.m */; };
 		5B56DCFA1A12045F00CE935E /* LKVector+Averages.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B56DCF81A12045F00CE935E /* LKVector+Averages.h */; };
 		5B56DCFB1A12045F00CE935E /* LKVector+Averages.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B56DCF91A12045F00CE935E /* LKVector+Averages.m */; };
+		5B56DCFE1A1206A800CE935E /* LKVector+Summing.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B56DCFC1A1206A800CE935E /* LKVector+Summing.h */; };
+		5B56DCFF1A1206A800CE935E /* LKVector+Summing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B56DCFD1A1206A800CE935E /* LKVector+Summing.m */; };
 		5B61080C19EE5E2A0071B547 /* LinearKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B61080819EE5E2A0071B547 /* LinearKit.h */; };
 		5B736B2D19F1A82100DDDFCD /* TestLKVector+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B736B2C19F1A82100DDDFCD /* TestLKVector+Equality.m */; };
 		5B86E13619F0342F00523073 /* libLinearKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6107F019EE5E050071B547 /* libLinearKit.a */; };
@@ -75,6 +77,8 @@
 		5B538E2719F835E4005E7773 /* NSNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumber.m; sourceTree = "<group>"; };
 		5B56DCF81A12045F00CE935E /* LKVector+Averages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Averages.h"; sourceTree = "<group>"; };
 		5B56DCF91A12045F00CE935E /* LKVector+Averages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Averages.m"; sourceTree = "<group>"; };
+		5B56DCFC1A1206A800CE935E /* LKVector+Summing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Summing.h"; sourceTree = "<group>"; };
+		5B56DCFD1A1206A800CE935E /* LKVector+Summing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Summing.m"; sourceTree = "<group>"; };
 		5B6107F019EE5E050071B547 /* libLinearKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLinearKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B61080819EE5E2A0071B547 /* LinearKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearKit.h; sourceTree = "<group>"; };
 		5B736B2C19F1A82100DDDFCD /* TestLKVector+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestLKVector+Equality.m"; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				5B0BD18119FE3DEC0049B3B7 /* LKVector+Squares.m */,
 				5B56DCF81A12045F00CE935E /* LKVector+Averages.h */,
 				5B56DCF91A12045F00CE935E /* LKVector+Averages.m */,
+				5B56DCFC1A1206A800CE935E /* LKVector+Summing.h */,
+				5B56DCFD1A1206A800CE935E /* LKVector+Summing.m */,
 				5B0BD18419FE40EC0049B3B7 /* LKVector+Miscellaneous.h */,
 				5B0BD18519FE40EC0049B3B7 /* LKVector+Miscellaneous.m */,
 			);
@@ -207,6 +213,7 @@
 				5B0BD18219FE3DEC0049B3B7 /* LKVector+Squares.h in Headers */,
 				5B538E1519F8323A005E7773 /* LKDataVector.h in Headers */,
 				5B538E0119F82C4D005E7773 /* LKPrecision.h in Headers */,
+				5B56DCFE1A1206A800CE935E /* LKVector+Summing.h in Headers */,
 				5B538E0019F82C0D005E7773 /* LKOperation.h in Headers */,
 				5BFDB4F819EE60860030DC6F /* LKTypes.h in Headers */,
 				5BB94F8C19F99F4700BAAB77 /* LKVector+Limits.h in Headers */,
@@ -307,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B56DCFF1A1206A800CE935E /* LKVector+Summing.m in Sources */,
 				5B538E1719F8323A005E7773 /* LKOperation.m in Sources */,
 				5BB94F8D19F99F4700BAAB77 /* LKVector+Limits.m in Sources */,
 				5B538E1619F8323A005E7773 /* LKDataVector.m in Sources */,

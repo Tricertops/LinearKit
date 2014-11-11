@@ -29,5 +29,6 @@
 #import "LKVector+Limits.h"
 #import "LKVector+Squares.h"
 #import "LKVector+Averages.h"
+#import "LKVector+Summing.h"
 
 
