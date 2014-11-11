@@ -35,6 +35,16 @@
 - (LKOperation *)comparedTo:(LKFloat)limit mark:(LKFloat)value;
 
 
+#pragma mark Extremes
+
+- (LKOperation *)maximumWith:(LKVector *)other;
+- (LKOperation *)minimumWith:(LKVector *)other;
+
+- (LKOperation *)maximumMagnitudesWith:(LKVector *)other;
+- (LKOperation *)minimumMagnitudesWith:(LKVector *)other;
+
+- (LKOperation *)slidingWindowMaximum:(LKInteger)window;
+
 
 @end
 

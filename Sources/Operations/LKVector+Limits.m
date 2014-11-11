@@ -90,6 +90,45 @@
 
 
 
+#pragma mark Extremes
+
+
+- (LKOperation *)maximumWith:(LKVector *)other {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vmax)(LKUnwrap(self), LKUnwrap(other), LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)minimumWith:(LKVector *)other {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vmin)(LKUnwrap(self), LKUnwrap(other), LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)maximumMagnitudesWith:(LKVector *)other {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vmaxmg)(LKUnwrap(self), LKUnwrap(other), LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)minimumMagnitudesWith:(LKVector *)other {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vminmg)(LKUnwrap(self), LKUnwrap(other), LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)slidingWindowMaximum:(LKInteger)window {
+    LKVector *subself = [self subvectorWithLength:self.length - window + 1];
+    return [subself operation:^(LKVector *destination, LKUInteger length) {
+        vDSP_vswmax(LKUnwrap(self), LKUnwrap(destination), length, LKUnsigned(window));
+    }];
+}
+
+
 
 @end
 
