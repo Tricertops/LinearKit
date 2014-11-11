@@ -25,5 +25,9 @@
 #import "LKOperation.h"
 
 #import "LKVector+Generating.h"
+#import "LKVector+Signs.h"
+#import "LKVector+Limits.h"
+#import "LKVector+Squares.h"
+#import "LKVector+Averages.h"
 
 

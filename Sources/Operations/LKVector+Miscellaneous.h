@@ -29,10 +29,6 @@
 - (LKInteger)findZeroCrossingsWithMaxCount:(LKInteger)max lastIndex:(out LKInteger *)last;
 
 
-- (LKOperation *)averageWith:(LKVector *)other;
-- (void)averageInclude:(LKVector *)other weight:(LKFloat)weight;
-
-
 - (LKOperation *)runningSumIntegration:(LKFloat)weight;
 - (LKOperation *)simpsonIntegration:(LKFloat)step;
 - (LKOperation *)trapezoidalIntegration:(LKFloat)step;
@@ -41,16 +37,6 @@
 //TODO: Index sort, but needs index vectors
 
 - (LKOperation *)slidingWindowSum:(LKInteger)window;
-
-
-@end
-
-
-
-@interface LKOperation (Miscellaneous)
-
-
-+ (LKOperation *)averageOf:(NSArray *)vectors;
 
 
 @end
