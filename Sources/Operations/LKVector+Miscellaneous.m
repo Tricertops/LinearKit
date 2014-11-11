@@ -24,10 +24,24 @@
 
 
 - (LKOperation *)selected:(LKVector *)indexes {
+    return [self selected:indexes interpolate:NO];
+}
+
+
+- (LKOperation *)selected:(LKVector *)indexes interpolate:(BOOL)interpolate {
     LKVector *linearized = [self linearized]; //! This operation does not respect strides of Subvectors.
-    return [self operation:^(LKVector *destination, LKUInteger length) {
-        LK_vDSP(vindex)(linearized.head, LKUnwrap(indexes), LKUnwrap(destination), length);
-    }];
+    if (interpolate) {
+        //! Creating operation using indexes vector, so lengths match.
+        return [indexes operation:^(LKVector *destination, LKUInteger length) {
+            LK_vDSP(vlint)(linearized.head, LKUnwrap(indexes), LKUnwrap(destination), length, LKUnsigned(linearized.length));
+        }];
+    }
+    else {
+        //! Creating operation using indexes vector, so lengths match.
+        return [indexes operation:^(LKVector *destination, LKUInteger length) {
+            LK_vDSP(vindex)(linearized.head, LKUnwrap(indexes), LKUnwrap(destination), length);
+        }];
+    }
 }
 
 

@@ -19,6 +19,7 @@
 
 
 - (LKOperation *)selected:(LKVector *)indexes;
+- (LKOperation *)selected:(LKVector *)indexes interpolate:(BOOL)interpolate;
 
 - (LKOperation *)compressed;
 - (LKOperation *)compressedWithGate:(LKVector *)gate;
