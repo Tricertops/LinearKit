@@ -18,6 +18,34 @@
 #pragma mark Sums
 
 
+- (LKFloat)sum {
+    LKFloat sum = LKNAN;
+    LK_vDSP(sve)(LKUnwrap(self), &sum, LKUnsigned(self.length));
+    return sum;
+}
+
+
+- (LKFloat)magnitudesSum {
+    LKFloat magnitudesSum = LKNAN;
+    LK_vDSP(svemg)(LKUnwrap(self), &magnitudesSum, LKUnsigned(self.length));
+    return magnitudesSum;
+}
+
+
+- (LKFloat)squaresSum {
+    LKFloat squaresSum = LKNAN;
+    LK_vDSP(svesq)(LKUnwrap(self), &squaresSum, LKUnsigned(self.length));
+    return squaresSum;
+}
+
+
+- (LKFloat)signedSquaresSum {
+    LKFloat signedSquaresSum = LKNAN;
+    LK_vDSP(svs)(LKUnwrap(self), &signedSquaresSum, LKUnsigned(self.length));
+    return signedSquaresSum;
+}
+
+
 - (LKOperation *)slidingWindowSum:(LKInteger)window {
     LKVector *subself = [self subvectorWithLength:self.length - window + 1];
     return [subself operation:^(LKVector *destination, LKUInteger length) {

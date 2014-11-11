@@ -16,6 +16,11 @@
 
 #pragma mark Sums
 
+- (LKFloat)sum;
+- (LKFloat)magnitudesSum;
+- (LKFloat)squaresSum;
+- (LKFloat)signedSquaresSum;
+
 - (LKOperation *)slidingWindowSum:(LKInteger)window;
 
 
