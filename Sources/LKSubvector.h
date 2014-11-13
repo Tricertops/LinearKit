@@ -39,6 +39,13 @@
 
 - (LKSubvector *)reversed;
 
+
+#pragma mark Components
+
+- (LKSubvector *)component:(LKInteger)index of:(LKInteger)count;
+- (NSArray *)unzipped:(LKInteger)count;
+
+
 @end
 
 

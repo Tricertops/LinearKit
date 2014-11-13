@@ -171,6 +171,24 @@
 
 
 
+#pragma mark Components
+
+
+- (LKSubvector *)component:(LKInteger)index of:(LKInteger)count {
+    return [self subvectorFrom:index by:count];
+}
+
+
+- (NSArray *)unzipped:(LKInteger)count {
+    NSMutableArray *components = [NSMutableArray arrayWithCapacity:LKUnsigned(count)];
+    for (LKInteger index = 0; index < count; index++) {
+        [components addObject:[self component:index of:count]];
+    }
+    return components;
+}
+
+
+
 @end
 
 

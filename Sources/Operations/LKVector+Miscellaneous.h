@@ -37,6 +37,19 @@
 
 - (LKOperation *)multipliedByRampFrom:(LKFloat)first by:(LKFloat)step;
 
+- (LKOperation *)zippedWith:(LKVector *)other;
+
+
+
+@end
+
+
+
+@interface LKOperation (Miscellaneous)
+
+
++ (LKOperation *)zipped:(NSArray *)vectors;
+
 
 @end
 

@@ -113,6 +113,39 @@
 
 
 
+- (LKOperation *)zippedWith:(LKVector *)other {
+    return [LKOperation zipped:@[ self, other ]];
+}
+
+
+
+@end
+
+
+
+
+
+@implementation LKOperation (Miscellaneous)
+
+
+
++ (LKOperation *)zipped:(NSArray *)vectors {
+    LKInteger componentLength = [(LKVector *)vectors.firstObject length];
+    LKInteger count = LKSigned((unsigned long)vectors.count);
+    
+    return [LKOperation operationWithLength:(componentLength * count)
+                                      block:^(LKVector *destination, __unused LKUInteger length) {
+                                          NSArray *unzipped = [destination unzipped:count];
+                                          NSUInteger index = 0;
+                                          for (LKVector *component in unzipped) {
+                                              [component set:vectors[index]];
+                                              index ++;
+                                          }
+                                      }];
+}
+
+
+
 @end
 
 
