@@ -35,6 +35,8 @@
 - (LKOperation *)convolutedWithFilter:(LKVector *)filter;
 
 
+- (LKOperation *)multiplyByRampFrom:(LKFloat)first by:(LKFloat)step;
+
 @end
 
 
