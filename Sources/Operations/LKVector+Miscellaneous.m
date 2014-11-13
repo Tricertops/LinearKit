@@ -90,7 +90,7 @@
 
 
 
-- (LKOperation *)correlationWithFilter:(LKVector *)filter {
+- (LKOperation *)correlatedWithFilter:(LKVector *)filter {
     LKVector *subself = [self subvectorWithLength:self.length - filter.length + 1];
     return [subself operation:^(LKVector *destination, LKUInteger length) {
         LK_vDSP(conv)(LKUnwrap(self), LKUnwrap(filter), LKUnwrap(destination), length, LKUnsigned(filter.length));
@@ -99,8 +99,8 @@
 
 
 
-- (LKOperation *)convolutionWithFilter:(LKVector *)filter {
-    return [self correlationWithFilter:filter.reversed];
+- (LKOperation *)convolutedWithFilter:(LKVector *)filter {
+    return [self correlatedWithFilter:filter.reversed];
 }
 
 
