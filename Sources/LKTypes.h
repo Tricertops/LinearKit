@@ -50,6 +50,10 @@ extern LKUInteger const LKHashFactor;
 
 @end
 
+@protocol LKArithmetic <NSObject>
+
+@end
+
 
 
 #pragma mark - Blocks
