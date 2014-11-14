@@ -58,6 +58,7 @@ NSUInteger LKHash(LKFloat value) {
 NSString * const LKIndexException = @"LKIndexException";
 NSString * const LKLengthException = @"LKLengthException";
 NSString * const LKFormatException = @"LKFormatException";
+NSString * const LKArithmeticException = @"LKArithmeticException";
 
 NSException * LKException(NSString *name, NSString *format, ...) {
     va_list vargs;

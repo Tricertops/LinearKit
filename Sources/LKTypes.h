@@ -52,6 +52,9 @@ extern LKUInteger const LKHashFactor;
 
 @protocol LKArithmetic <NSObject>
 
+@optional
+- (LKFloat)LK_floatValue;
+
 @end
 
 

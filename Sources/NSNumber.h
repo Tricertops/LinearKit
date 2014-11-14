@@ -10,7 +10,7 @@
 
 
 
-@interface NSNumber (LinearKit)
+@interface NSNumber (LinearKit) <LKArithmetic>
 
 - (LKFloat)LK_floatValue;
 

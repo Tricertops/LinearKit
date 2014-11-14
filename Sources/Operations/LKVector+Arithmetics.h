@@ -11,7 +11,7 @@
 
 
 
-@interface LKVector (Arithmetics)
+@interface LKVector (Arithmetics) <LKArithmetic>
 
 
 
@@ -24,6 +24,7 @@
 
 - (LKOperation *)squared;
 - (LKOperation *)signedSquared;
+
 
 
 @end
