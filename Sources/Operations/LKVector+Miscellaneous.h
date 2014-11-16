@@ -38,6 +38,9 @@
 - (LKOperation *)zippedWith:(LKVector *)other;
 
 
+- (LKFloat)dotProductWith:(LKVector *)other;
+
+
 @end
 
 

@@ -114,6 +114,13 @@
 }
 
 
+- (LKFloat)dotProductWith:(LKVector *)other {
+    LKFloat dot = LKNAN;
+    LK_vDSP(dotpr)(LKUnwrap(self), LKUnwrap(other), &dot, LKUnsigned(self.length));
+    return dot;
+}
+
+
 
 @end
 
