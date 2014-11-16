@@ -29,7 +29,7 @@
 - (LKInteger)findZeroCrossingsWithMaxCount:(LKInteger)max lastIndex:(out LKInteger *)last;
 
 - (void)sortAscending:(BOOL)ascending;
-//TODO: Index sort, but needs index vectors
+- (void)swapWith:(LKVector *)other;
 
 - (LKOperation *)correlatedWithFilter:(LKVector *)filter;
 - (LKOperation *)convolutedWithFilter:(LKVector *)filter;

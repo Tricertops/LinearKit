@@ -89,6 +89,11 @@
 }
 
 
+- (void)swapWith:(LKVector *)other {
+    LK_vDSP(vswap)(LKUnwrap(self), LKUnwrap(other), LKUnsigned(self.length));
+}
+
+
 
 - (LKOperation *)correlatedWithFilter:(LKVector *)filter {
     LKVector *subself = [self subvectorWithLength:self.length - filter.length + 1];
