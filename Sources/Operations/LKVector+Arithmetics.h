@@ -41,6 +41,11 @@
 - (LKOperation *)subtracted:(id<LKArithmetic>)first multipliedBy:(id<LKArithmetic>)second;      // (A − B) × C
 - (LKOperation *)subtractedFrom:(id<LKArithmetic>)first multipliedBy:(id<LKArithmetic>)second;  // (B − A) × C
 
+- (LKOperation *)multipliedBy:(id<LKArithmetic>)first addedTo:(id<LKArithmetic>)second;         // (A × B) + C
+- (LKOperation *)multipliedBy:(id<LKArithmetic>)first subtracted:(id<LKArithmetic>)second;      // (A × B) − C
+- (LKOperation *)multipliedBy:(id<LKArithmetic>)first subtractedFrom:(id<LKArithmetic>)second;  // C − (A × B)
+
+
 
 @end
 
