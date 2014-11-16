@@ -18,7 +18,7 @@
 
 - (LKOperation *)absolute;
 - (LKOperation *)negativeAbsolute;
-- (LKOperation *)negative;
+- (LKOperation *)negated;
 
 - (LKOperation *)signs;
 

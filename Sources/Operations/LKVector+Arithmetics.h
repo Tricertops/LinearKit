@@ -14,6 +14,16 @@
 @interface LKVector (Arithmetics) <LKArithmetic>
 
 
+#pragma mark Single Operation
+
+- (LKOperation *)addedTo:(id<LKArithmetic>)other;
+- (LKOperation *)subtracted:(id<LKArithmetic>)other; // receiver - other
+- (LKOperation *)subtractedFrom:(id<LKArithmetic>)other; // other - receiver
+- (LKOperation *)multipliedBy:(id<LKArithmetic>)other;
+- (LKOperation *)dividedBy:(id<LKArithmetic>)other; // receiver / other
+- (LKOperation *)dividing:(id<LKArithmetic>)other; // other / receiver
+
+
 
 #pragma mark Multiply
 
