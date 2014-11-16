@@ -7,7 +7,7 @@
 //
 
 #import "LKVector+Arithmetics.h"
-#import "LKVector+Signs.h"
+#import "LKVector+Limits.h"
 #import "LKPrivate.h"
 #import "NSNumber.h"
 
@@ -17,6 +17,41 @@
 
 @implementation LKVector (Arithmetics)
 
+
+
+
+
+#pragma mark Signed Operations
+
+
+- (LKOperation *)signs {
+    return [self comparedTo:0];
+}
+
+
+- (LKOperation *)negated {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vneg)(LKUnwrap(self), LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)absolute {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vabs)(LKUnwrap(self), LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)negativeAbsolute {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vnabs)(LKUnwrap(self), LKUnwrap(destination), length);
+    }];
+}
+
+
+
+#pragma mark Helpers
 
 
 - (LKOperation *)singleOperand:(id<LKArithmetic>)operand scalar:(LKOperation *(^)(LKFloat scalar))scalarBlock vector:(LKOperation *(^)(LKVector *vector))vectorBlock {
@@ -36,14 +71,6 @@
 
 
 #pragma mark Addition & Subtraction
-
-
-
-- (LKOperation *)negated {
-    return [self operation:^(LKVector *destination, LKUInteger length) {
-        LK_vDSP(vneg)(LKUnwrap(self), LKUnwrap(destination), length);
-    }];
-}
 
 
 - (LKOperation *)addedTo:(id<LKArithmetic>)other {

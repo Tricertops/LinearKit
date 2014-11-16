@@ -15,9 +15,17 @@
 
 
 
+#pragma mark Signed Operations
+
+- (LKOperation *)signs;
+- (LKOperation *)negated;           // −A
+
+- (LKOperation *)absolute;          // |A|
+- (LKOperation *)negativeAbsolute;  // -|A|
+
+
 #pragma mark Addition & Subtraction
 
-- (LKOperation *)negated;       // −A
 - (LKOperation *)addedTo:(id<LKArithmetic>)other;           // A + B
 - (LKOperation *)subtracted:(id<LKArithmetic>)other;        // A − B
 - (LKOperation *)subtractedFrom:(id<LKArithmetic>)other;    // B − A

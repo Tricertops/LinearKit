@@ -35,8 +35,6 @@
 		5B86E14419F0660500523073 /* TestLKVector+Creating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86E14319F0660500523073 /* TestLKVector+Creating.m */; };
 		5BB94F8419F9974600BAAB77 /* LKVector+Generating.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB94F8219F9974600BAAB77 /* LKVector+Generating.h */; };
 		5BB94F8519F9974600BAAB77 /* LKVector+Generating.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB94F8319F9974600BAAB77 /* LKVector+Generating.m */; };
-		5BB94F8819F99CCA00BAAB77 /* LKVector+Signs.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB94F8619F99CCA00BAAB77 /* LKVector+Signs.h */; };
-		5BB94F8919F99CCA00BAAB77 /* LKVector+Signs.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB94F8719F99CCA00BAAB77 /* LKVector+Signs.m */; };
 		5BB94F8C19F99F4700BAAB77 /* LKVector+Limits.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB94F8A19F99F4700BAAB77 /* LKVector+Limits.h */; };
 		5BB94F8D19F99F4700BAAB77 /* LKVector+Limits.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB94F8B19F99F4700BAAB77 /* LKVector+Limits.m */; };
 		5BDF4F531A14B55600E04262 /* LKVector+Arithmetics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BDF4F511A14B55600E04262 /* LKVector+Arithmetics.h */; };
@@ -84,8 +82,6 @@
 		5B86E14319F0660500523073 /* TestLKVector+Creating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TestLKVector+Creating.m"; sourceTree = "<group>"; };
 		5BB94F8219F9974600BAAB77 /* LKVector+Generating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Generating.h"; sourceTree = "<group>"; };
 		5BB94F8319F9974600BAAB77 /* LKVector+Generating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Generating.m"; sourceTree = "<group>"; };
-		5BB94F8619F99CCA00BAAB77 /* LKVector+Signs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Signs.h"; sourceTree = "<group>"; };
-		5BB94F8719F99CCA00BAAB77 /* LKVector+Signs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Signs.m"; sourceTree = "<group>"; };
 		5BB94F8A19F99F4700BAAB77 /* LKVector+Limits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Limits.h"; sourceTree = "<group>"; };
 		5BB94F8B19F99F4700BAAB77 /* LKVector+Limits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKVector+Limits.m"; sourceTree = "<group>"; };
 		5BDF4F511A14B55600E04262 /* LKVector+Arithmetics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKVector+Arithmetics.h"; sourceTree = "<group>"; };
@@ -171,8 +167,6 @@
 			children = (
 				5BB94F8219F9974600BAAB77 /* LKVector+Generating.h */,
 				5BB94F8319F9974600BAAB77 /* LKVector+Generating.m */,
-				5BB94F8619F99CCA00BAAB77 /* LKVector+Signs.h */,
-				5BB94F8719F99CCA00BAAB77 /* LKVector+Signs.m */,
 				5BB94F8A19F99F4700BAAB77 /* LKVector+Limits.h */,
 				5BB94F8B19F99F4700BAAB77 /* LKVector+Limits.m */,
 				5B56DCF81A12045F00CE935E /* LKVector+Averages.h */,
@@ -216,7 +210,6 @@
 				5B538E0019F82C0D005E7773 /* LKOperation.h in Headers */,
 				5BFDB4F819EE60860030DC6F /* LKTypes.h in Headers */,
 				5BB94F8C19F99F4700BAAB77 /* LKVector+Limits.h in Headers */,
-				5BB94F8819F99CCA00BAAB77 /* LKVector+Signs.h in Headers */,
 				5B538E1819F8323A005E7773 /* LKPrivate.h in Headers */,
 				5B56DCFA1A12045F00CE935E /* LKVector+Averages.h in Headers */,
 				5BB94F8419F9974600BAAB77 /* LKVector+Generating.h in Headers */,
@@ -326,7 +319,6 @@
 				5BB94F8519F9974600BAAB77 /* LKVector+Generating.m in Sources */,
 				5B56DCFB1A12045F00CE935E /* LKVector+Averages.m in Sources */,
 				5B538E2819F835E4005E7773 /* NSNumber.m in Sources */,
-				5BB94F8919F99CCA00BAAB77 /* LKVector+Signs.m in Sources */,
 				5BDF4F541A14B55600E04262 /* LKVector+Arithmetics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
