@@ -49,9 +49,14 @@
 - (LKOperation *)addedTo:(id<LKArithmetic>)other {
     return [self singleOperand:other
                         scalar:^LKOperation *(LKFloat scalar) {
-                            return [self operation:^(LKVector *destination, LKUInteger length) {
-                                LK_vDSP(vsadd)(LKUnwrap(self), &scalar, LKUnwrap(destination), length);
-                            }];
+                            if (scalar == 0) {
+                                return [LKOperation wrap:self]; // No-op.
+                            }
+                            else {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vsadd)(LKUnwrap(self), &scalar, LKUnwrap(destination), length);
+                                }];
+                            }
                         }
                         vector:^LKOperation *(LKVector *vector) {
                             return [self operation:^(LKVector *destination, LKUInteger length) {
@@ -77,8 +82,13 @@
 - (LKOperation *)subtractedFrom:(id<LKArithmetic>)other {
     return [self singleOperand:other
                         scalar:^LKOperation *(LKFloat scalar) {
-                            // There is no dedicated function for scalar-vector subtraction?
-                            return [[[self negated] vectorize] addedTo:@(scalar)];
+                            if (scalar == 0) {
+                                return [LKOperation wrap:self]; // No-op.
+                            }
+                            else {
+                                // There is no dedicated function for scalar-vector subtraction?
+                                return [[[self negated] vectorize] addedTo:@(scalar)];
+                            }
                         }
                         vector:^LKOperation *(LKVector *vector) {
                             return [vector subtracted:self];
@@ -98,9 +108,18 @@
 - (LKOperation *)multipliedBy:(id<LKArithmetic>)other {
     return [self singleOperand:other
                         scalar:^LKOperation *(LKFloat scalar) {
-                            return [self operation:^(LKVector *destination, LKUInteger length) {
-                                LK_vDSP(vsmul)(LKUnwrap(self), &scalar, LKUnwrap(destination), length);
-                            }];
+                            // Cannot simplify for 0, because it may yield NaN for infinity.
+                            if (scalar == 1) {
+                                return [LKOperation wrap:self]; // No-op.
+                            }
+                            else if (scalar == -1) {
+                                return [self negated];
+                            }
+                            else {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vsmul)(LKUnwrap(self), &scalar, LKUnwrap(destination), length);
+                                }];
+                            }
                         }
                         vector:^LKOperation *(LKVector *vector) {
                             return [self operation:^(LKVector *destination, LKUInteger length) {
@@ -113,9 +132,18 @@
 - (LKOperation *)dividedBy:(id<LKArithmetic>)other {
     return [self singleOperand:other
                         scalar:^LKOperation *(LKFloat scalar) {
-                            return [self operation:^(LKVector *destination, LKUInteger length) {
-                                LK_vDSP(vsdiv)(LKUnwrap(self), &scalar, LKUnwrap(destination), length);
-                            }];
+                            // Cannot simplify for 0, because it may yield NaN for infinity.
+                            if (scalar == 1) {
+                                return [LKOperation wrap:self]; // No-op.
+                            }
+                            else if (scalar == -1) {
+                                return [self negated];
+                            }
+                            else {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vsdiv)(LKUnwrap(self), &scalar, LKUnwrap(destination), length);
+                                }];
+                            }
                         }
                         vector:^LKOperation *(LKVector *vector) {
                             return [self operation:^(LKVector *destination, LKUInteger length) {
