@@ -19,9 +19,6 @@
 
 
 
-#pragma mark Single Operation
-
-
 - (LKOperation *)singleOperand:(id<LKArithmetic>)operand scalar:(LKOperation *(^)(LKFloat scalar))scalarBlock vector:(LKOperation *(^)(LKVector *vector))vectorBlock {
     if ([operand respondsToSelector:@selector(LK_floatValue)]) {
         LKFloat scalar = [operand LK_floatValue];
@@ -34,6 +31,18 @@
     else {
         @throw LKException(LKArithmeticException, @"Unsupported oeprand: %@", operand);
     }
+}
+
+
+
+#pragma mark Addition & Subtraction
+
+
+
+- (LKOperation *)negated {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LK_vDSP(vneg)(LKUnwrap(self), LKUnwrap(destination), length);
+    }];
 }
 
 
@@ -74,6 +83,15 @@
                         vector:^LKOperation *(LKVector *vector) {
                             return [vector subtracted:self];
                         }];
+}
+
+
+
+#pragma mark Multiplication & Division
+
+
+- (LKOperation *)inverted {
+    return [self dividing:@1];
 }
 
 
@@ -120,24 +138,6 @@
 }
 
 
-
-
-
-#pragma mark Multiply
-
-
-- (LKOperation *)multipliedByRampFrom:(LKFloat)first by:(const LKFloat)step {
-    return [self operation:^(LKVector *destination, LKUInteger length) {
-        LKFloat start = first; // In-out argument, will be modified by the function.
-        vDSP_vrampmul(LKUnwrap(self), &start, &step, LKUnwrap(destination), length);
-    }];
-}
-
-
-
-#pragma mark Squares
-
-
 - (LKOperation *)squared {
     return [self operation:^(LKVector *destination, LKUInteger length) {
         LK_vDSP(vsq)(LKUnwrap(self), LKUnwrap(destination), length);
@@ -148,6 +148,14 @@
 - (LKOperation *)signedSquared {
     return [self operation:^(LKVector *destination, LKUInteger length) {
         LK_vDSP(vssq)(LKUnwrap(self), LKUnwrap(destination), length);
+    }];
+}
+
+
+- (LKOperation *)multipliedByRampFrom:(LKFloat)first by:(const LKFloat)step {
+    return [self operation:^(LKVector *destination, LKUInteger length) {
+        LKFloat start = first; // In-out argument, will be modified by the function.
+        vDSP_vrampmul(LKUnwrap(self), &start, &step, LKUnwrap(destination), length);
     }];
 }
 

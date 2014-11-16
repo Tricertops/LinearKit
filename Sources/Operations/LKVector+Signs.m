@@ -31,12 +31,6 @@
     }];
 }
 
-- (LKOperation *)negated {
-    return [self operation:^(LKVector *destination, LKUInteger length) {
-        LK_vDSP(vneg)(LKUnwrap(self), LKUnwrap(destination), length);
-    }];
-}
-
 
 - (LKOperation *)signs {
     return [self comparedTo:0];
