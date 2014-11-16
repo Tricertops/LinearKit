@@ -189,6 +189,87 @@
 
 
 
+#pragma mark Combined
+
+
+- (LKOperation *)addedTo:(id<LKArithmetic>)first multipliedBy:(id<LKArithmetic>)second {
+    return [self singleOperand:first scalar:^LKOperation *(LKFloat first) {
+        if (first == 0) {
+            return [self multipliedBy:second];
+        }
+        else {
+            return [[[self addedTo:@(first)] vectorize] multipliedBy:second];
+        }
+    } vector:^LKOperation *(LKVector *first) {
+        return [self singleOperand:second
+                            scalar:^LKOperation *(LKFloat second) {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vasm)(LKUnwrap(self), LKUnwrap(first), &second, LKUnwrap(destination), length);
+                                }];
+                            }
+                            vector:^LKOperation *(LKVector *second) {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vam)(LKUnwrap(self), LKUnwrap(first), LKUnwrap(second), LKUnwrap(destination), length);
+                                }];
+                            }];
+    }];
+}
+
+
+- (LKOperation *)subtracted:(id<LKArithmetic>)first multipliedBy:(id<LKArithmetic>)second {
+    return [self singleOperand:first scalar:^LKOperation *(LKFloat first) {
+        return [self addedTo:@(-first) multipliedBy:second];
+    } vector:^LKOperation *(LKVector *first) {
+        return [self singleOperand:second
+                            scalar:^LKOperation *(LKFloat second) {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vsbsm)(LKUnwrap(self), LKUnwrap(first), &second, LKUnwrap(destination), length);
+                                }];
+                            }
+                            vector:^LKOperation *(LKVector *second) {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vsbm)(LKUnwrap(self), LKUnwrap(first), LKUnwrap(second), LKUnwrap(destination), length);
+                                }];
+                            }];
+    }];
+}
+
+
+- (LKOperation *)subtractedFrom:(id<LKArithmetic>)first multipliedBy:(id<LKArithmetic>)second {
+    return [self singleOperand:first scalar:^LKOperation *(LKFloat first) {
+        return [[[self subtractedFrom:@(first)] vectorize] multipliedBy:second];
+    } vector:^LKOperation *(LKVector *first) {
+        return [self singleOperand:second
+                            scalar:^LKOperation *(LKFloat second) {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vsbsm)(LKUnwrap(first), LKUnwrap(self), &second, LKUnwrap(destination), length);
+                                }];
+                            }
+                            vector:^LKOperation *(LKVector *second) {
+                                return [self operation:^(LKVector *destination, LKUInteger length) {
+                                    LK_vDSP(vsbm)(LKUnwrap(first), LKUnwrap(self), LKUnwrap(second), LKUnwrap(destination), length);
+                                }];
+                            }];
+    }];
+}
+
+
+//- (LKOperation *)multipliedBy:(id<LKArithmetic>)other addedTo:(id<LKArithmetic>)other {
+//    
+//}
+//
+//
+//- (LKOperation *)multipliedBy:(id<LKArithmetic>)other subtracted:(id<LKArithmetic>)other {
+//    
+//}
+//
+//
+//- (LKOperation *)multipliedBy:(id<LKArithmetic>)other subtractedFrom:(id<LKArithmetic>)other {
+//    
+//}
+
+
+
 @end
 
 

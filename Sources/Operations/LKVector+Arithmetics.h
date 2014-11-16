@@ -17,10 +17,10 @@
 
 #pragma mark Addition & Subtraction
 
-- (LKOperation *)negated;       // -A
+- (LKOperation *)negated;       // −A
 - (LKOperation *)addedTo:(id<LKArithmetic>)other;           // A + B
-- (LKOperation *)subtracted:(id<LKArithmetic>)other;        // A - B
-- (LKOperation *)subtractedFrom:(id<LKArithmetic>)other;    // B - A
+- (LKOperation *)subtracted:(id<LKArithmetic>)other;        // A − B
+- (LKOperation *)subtractedFrom:(id<LKArithmetic>)other;    // B − A
 
 
 #pragma mark Multiplication & Division
@@ -35,8 +35,11 @@
 - (LKOperation *)multipliedByRampFrom:(LKFloat)first by:(LKFloat)step;
 
 
+#pragma mark Combined
 
-
+- (LKOperation *)addedTo:(id<LKArithmetic>)first multipliedBy:(id<LKArithmetic>)second;         // (A + B) × C
+- (LKOperation *)subtracted:(id<LKArithmetic>)first multipliedBy:(id<LKArithmetic>)second;      // (A − B) × C
+- (LKOperation *)subtractedFrom:(id<LKArithmetic>)first multipliedBy:(id<LKArithmetic>)second;  // (B − A) × C
 
 
 @end
