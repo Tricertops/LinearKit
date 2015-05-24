@@ -41,6 +41,13 @@
 - (LKFloat)dotProductWith:(LKVector *)other;
 
 
+//TODO: vpoly   - solve polynomes of any order
+//TODO: vpythg  - distance of coordinates, may need zero-strided vectors
+//TODO: venvlp  - preserve values between limits, zero other
+//TODO: tmerg   - tapered merge, values transition from first to second vector
+//TODO: vquint  - select with quadratic interpolation
+
+
 @end
 
 
