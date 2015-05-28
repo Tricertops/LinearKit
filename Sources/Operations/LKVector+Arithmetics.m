@@ -210,7 +210,7 @@
 - (LKOperation *)multipliedByRampFrom:(LKFloat)first by:(const LKFloat)step {
     return [self operation:^(LKVector *destination, LKUInteger length) {
         LKFloat start = first; // In-out argument, will be modified by the function.
-        vDSP_vrampmul(LKUnwrap(self), &start, &step, LKUnwrap(destination), length);
+        LK_vDSP(vrampmul)(LKUnwrap(self), &start, &step, LKUnwrap(destination), length);
     }];
 }
 

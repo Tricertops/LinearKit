@@ -75,7 +75,7 @@
 - (LKInteger)findZeroCrossingsWithMaxCount:(LKInteger)max lastIndex:(out LKInteger *)last {
     LKUInteger count = 0;
     LKUInteger index = 0;
-    vDSP_nzcros(LKUnwrap(self), LKUnsigned(max), &index, &count, LKUnsigned(self.length));
+    LK_vDSP(nzcros)(LKUnwrap(self), LKUnsigned(max), &index, &count, LKUnsigned(self.length));
     if (last) *last = LKSigned(index);
     return LKSigned(count);
 }

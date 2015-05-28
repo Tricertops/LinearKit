@@ -86,7 +86,7 @@
     return [LKOperation operationWithLength:vector.length block:^(LKVector *destination, LKUInteger length) {
         if ([destination isReverseOf:vector]) {
             //! Reverse in place.
-            vDSP_vrvrs(LKUnwrap(vector), length);
+            LK_vDSP(vrvrs)(LKUnwrap(vector), length);
         }
         else if (vector == destination) {
             //! Do nothing.

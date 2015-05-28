@@ -124,7 +124,7 @@
 - (LKOperation *)slidingWindowMaximum:(LKInteger)window {
     LKVector *subself = [self subvectorWithLength:self.length - window + 1];
     return [subself operation:^(LKVector *destination, LKUInteger length) {
-        vDSP_vswmax(LKUnwrap(self), LKUnwrap(destination), length, LKUnsigned(window));
+        LK_vDSP(vswmax)(LKUnwrap(self), LKUnwrap(destination), length, LKUnsigned(window));
     }];
 }
 
